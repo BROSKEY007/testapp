@@ -1,4 +1,4 @@
-# nasa-model#
+# nasa-model
 
 ## Purpose
 Your NASA competition project: predicting Moon and Mars compatibility from Earth analog signals. This is also your serious ML portfolio piece, so honesty about limits matters as much as accuracy.
