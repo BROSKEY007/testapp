@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: analog-engine
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/analog/health
+    envVars:
+      - key: DATA_PATH
+        value: data/nasa_sites.csv
+      - key: CORS_ORIGINS
+        value: "*"

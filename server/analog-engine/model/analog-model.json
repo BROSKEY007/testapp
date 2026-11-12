@@ -1,0 +1,273 @@
+{
+  "version": 1,
+  "trained_at": "2026-11-10T05:52:27.017Z",
+  "n": 30,
+  "class_counts": {
+    "good": 15,
+    "bad": 15
+  },
+  "C": 1,
+  "intercept": 0.017853326051027667,
+  "features": [
+    {
+      "key": "solar_index",
+      "label": "Avg solar index",
+      "mean": 4.314341499999999,
+      "sd": 1.115286019657222,
+      "coef": 1.0160188156638528
+    },
+    {
+      "key": "temp_swing",
+      "label": "Max temperature swing",
+      "mean": 17.563333333333333,
+      "sd": 5.987006671859392,
+      "coef": 1.1338620229675582
+    },
+    {
+      "key": "max_slope_deg",
+      "label": "Max slope",
+      "mean": 61.13886899999999,
+      "sd": 18.79789837134697,
+      "coef": 1.4502608055644195
+    },
+    {
+      "key": "avg_slope_deg",
+      "label": "Avg slope angle",
+      "mean": 3.6368296666666677,
+      "sd": 2.5543976505384896,
+      "coef": -0.7415753610498462
+    }
+  ],
+  "validation": {
+    "method": "leave-one-out (standardiser refit inside every fold)",
+    "accuracy": 0.7667,
+    "auc": 0.8267,
+    "accuracy_ci95": [
+      0.6,
+      0.9
+    ],
+    "baseline_accuracy": 0.5,
+    "confusion": {
+      "true_good": 11,
+      "false_good": 3,
+      "true_bad": 12,
+      "missed_good": 4
+    },
+    "per_site": [
+      {
+        "id": "1",
+        "name": "Atacama",
+        "label": 1,
+        "loo_p_good": 0.567,
+        "correct": true
+      },
+      {
+        "id": "2",
+        "name": "Mauna Kea",
+        "label": 1,
+        "loo_p_good": 0.3393,
+        "correct": false
+      },
+      {
+        "id": "3",
+        "name": "Lanzarote,Spain",
+        "label": 1,
+        "loo_p_good": 0.6762,
+        "correct": true
+      },
+      {
+        "id": "4",
+        "name": "Odadahraun,Iceland",
+        "label": 1,
+        "loo_p_good": 0.4445,
+        "correct": false
+      },
+      {
+        "id": "5",
+        "name": "Mount Etna",
+        "label": 1,
+        "loo_p_good": 0.6774,
+        "correct": true
+      },
+      {
+        "id": "6",
+        "name": "Death Valley",
+        "label": 1,
+        "loo_p_good": 0.8906,
+        "correct": true
+      },
+      {
+        "id": "7",
+        "name": "San Rafael Swell",
+        "label": 1,
+        "loo_p_good": 0.8722,
+        "correct": true
+      },
+      {
+        "id": "8",
+        "name": "Makgadikgadi Pan",
+        "label": 1,
+        "loo_p_good": 0.3479,
+        "correct": false
+      },
+      {
+        "id": "9",
+        "name": "Qaidam Basin",
+        "label": 1,
+        "loo_p_good": 0.6543,
+        "correct": true
+      },
+      {
+        "id": "10",
+        "name": "Makhtesh Ramon",
+        "label": 1,
+        "loo_p_good": 0.9503,
+        "correct": true
+      },
+      {
+        "id": "11",
+        "name": "Lonar Crater",
+        "label": 1,
+        "loo_p_good": 0.5392,
+        "correct": true
+      },
+      {
+        "id": "12",
+        "name": "Haughton Crater",
+        "label": 1,
+        "loo_p_good": 0.6082,
+        "correct": true
+      },
+      {
+        "id": "13",
+        "name": "PINGUALUIT Crater",
+        "label": 1,
+        "loo_p_good": 0.8706,
+        "correct": true
+      },
+      {
+        "id": "14",
+        "name": "McMurdo Dry Valleys",
+        "label": 1,
+        "loo_p_good": 0.5716,
+        "correct": true
+      },
+      {
+        "id": "15",
+        "name": "Sarychev Peak",
+        "label": 1,
+        "loo_p_good": 0.282,
+        "correct": false
+      },
+      {
+        "id": "16",
+        "name": "Amazon",
+        "label": 0,
+        "loo_p_good": 0.3237,
+        "correct": true
+      },
+      {
+        "id": "17",
+        "name": "Congo Basin Lowlands",
+        "label": 0,
+        "loo_p_good": 0.4652,
+        "correct": true
+      },
+      {
+        "id": "18",
+        "name": "Borneo Rainforest",
+        "label": 0,
+        "loo_p_good": 0.5921,
+        "correct": false
+      },
+      {
+        "id": "19",
+        "name": "London",
+        "label": 0,
+        "loo_p_good": 0.0719,
+        "correct": true
+      },
+      {
+        "id": "20",
+        "name": "Dublin,Ireland",
+        "label": 0,
+        "loo_p_good": 0.1326,
+        "correct": true
+      },
+      {
+        "id": "21",
+        "name": "Seattle,USA",
+        "label": 0,
+        "loo_p_good": 0.365,
+        "correct": true
+      },
+      {
+        "id": "22",
+        "name": "Auckland",
+        "label": 0,
+        "loo_p_good": 0.4104,
+        "correct": true
+      },
+      {
+        "id": "23",
+        "name": "Mississippi",
+        "label": 0,
+        "loo_p_good": 0.4098,
+        "correct": true
+      },
+      {
+        "id": "24",
+        "name": "The Pampas Lowlands",
+        "label": 0,
+        "loo_p_good": 0.1649,
+        "correct": true
+      },
+      {
+        "id": "25",
+        "name": "The Great Plains Farmland,USA",
+        "label": 0,
+        "loo_p_good": 0.5868,
+        "correct": false
+      },
+      {
+        "id": "26",
+        "name": "The Rhine River Valley,Germany",
+        "label": 0,
+        "loo_p_good": 0.4448,
+        "correct": true
+      },
+      {
+        "id": "27",
+        "name": "The West Siberian Plain,Russia",
+        "label": 0,
+        "loo_p_good": 0.1161,
+        "correct": true
+      },
+      {
+        "id": "28",
+        "name": "The Everglades,USA",
+        "label": 0,
+        "loo_p_good": 0.3157,
+        "correct": true
+      },
+      {
+        "id": "29",
+        "name": "Dhaka,Bangladesh",
+        "label": 0,
+        "loo_p_good": 0.553,
+        "correct": false
+      },
+      {
+        "id": "30",
+        "name": "Singapore Coastal Basin",
+        "label": 0,
+        "loo_p_good": 0.314,
+        "correct": true
+      }
+    ]
+  },
+  "data_warnings": [
+    "\"The Great Plains Farmland,USA\" and \"The Rhine River Valley,Germany\" have identical values for solar_index and temp_swing, which may be a copy error in the source data",
+    "Only 30 labelled sites, so accuracy estimates carry wide uncertainty"
+  ]
+}

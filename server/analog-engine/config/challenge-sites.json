@@ -1,0 +1,39 @@
+{
+  "_help": "Reference sites named in the NASA Space Apps challenge text (Atacama Desert, Haughton Crater, Death Valley). 'dataset_name' must match a row in data/nasa_sites.csv. Scores always come from the trained model, never from this file. lat and lon are approximate public coordinates of the named place for map display only, not the dataset's sample point.",
+  "source": "NASA Space Apps challenge text: 'Places on Earth that have analogous characteristics to the Moon or Mars - the Atacama Desert, Haughton Crater, Death Valley'",
+  "sites": [
+    {
+      "key": "atacama",
+      "dataset_name": "Atacama",
+      "display_name": "Atacama Desert",
+      "region": "Chile",
+      "lat": -24.5,
+      "lon": -69.25,
+      "terrain": "hyper-arid desert",
+      "analog_for": ["mars"],
+      "note": "Very dry desert terrain, used for testing rovers and methods for dry Martian surfaces."
+    },
+    {
+      "key": "haughton",
+      "dataset_name": "Haughton Crater",
+      "display_name": "Haughton Crater",
+      "region": "Devon Island, Nunavut, Canada",
+      "lat": 75.37,
+      "lon": -89.68,
+      "terrain": "polar desert, impact crater",
+      "analog_for": ["moon", "mars"],
+      "note": "Cold polar desert inside an impact crater, used for field tests of exploration equipment and operations."
+    },
+    {
+      "key": "death-valley",
+      "dataset_name": "Death Valley",
+      "display_name": "Death Valley",
+      "region": "California, USA",
+      "lat": 36.46,
+      "lon": -116.87,
+      "terrain": "hot arid basin, salt flats, alluvial fans",
+      "analog_for": ["mars"],
+      "note": "Hot, arid basin with large daily temperature swings and varied rocky terrain."
+    }
+  ]
+}

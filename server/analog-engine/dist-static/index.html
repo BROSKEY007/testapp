@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Analog Site Predictor</title>
+<style>
+  :root {
+    --bg: #f7f7f5; --panel: #ffffff; --ink: #1d2230; --muted: #646b7a; --line: #e2e3e8;
+    --good: #1f7a4d; --bad: #b3402f; --mid: #a07a12; --accent: #2d4fd1;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #12141a; --panel: #1b1e27; --ink: #e8eaf0; --muted: #9aa1b2; --line: #2c3040;
+            --good: #4cc38a; --bad: #ef7b69; --mid: #e0b84a; --accent: #7f9bff; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.5 system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
+  main { max-width: 1040px; margin: 0 auto; padding: 24px 16px 56px; }
+  h1 { font-size: 1.5rem; margin: 0 0 4px; }
+  h2 { font-size: 1.05rem; margin: 0 0 12px; }
+  p.sub { color: var(--muted); margin: 0 0 20px; }
+  .grid { display: grid; gap: 16px; grid-template-columns: minmax(0, 1fr); }
+  .grid > * { min-width: 0; }
+  @media (min-width: 860px) { .grid { grid-template-columns: 340px minmax(0, 1fr); align-items: start; } }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 16px; }
+  label { display: block; font-size: .85rem; color: var(--muted); margin: 10px 0 4px; }
+  input { width: 100%; padding: 8px 10px; border: 1px solid var(--line); border-radius: 6px; background: var(--bg); color: var(--ink); font: inherit; }
+  button { margin-top: 14px; width: 100%; padding: 10px; border: 0; border-radius: 6px; background: var(--accent); color: #fff; font: inherit; font-weight: 600; cursor: pointer; }
+  .result { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--line); }
+  .big { font-size: 1.9rem; font-weight: 700; }
+  .tag { display: inline-block; padding: 2px 8px; border-radius: 99px; font-size: .78rem; font-weight: 600; border: 1px solid currentColor; }
+  .good { color: var(--good); } .bad { color: var(--bad); } .borderline { color: var(--mid); }
+  .contrib { display: grid; grid-template-columns: 140px 1fr 52px; gap: 8px; align-items: center; font-size: .82rem; margin: 4px 0; }
+  .bar { height: 8px; background: var(--line); border-radius: 4px; position: relative; }
+  .bar i { position: absolute; top: 0; bottom: 0; border-radius: 4px; }
+  table { width: 100%; border-collapse: collapse; font-size: .88rem; }
+  th, td { text-align: left; padding: 7px 6px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+  th { color: var(--muted); font-weight: 600; font-size: .78rem; }
+  td.num { font-variant-numeric: tabular-nums; }
+  .pbar { width: 90px; height: 8px; background: var(--line); border-radius: 4px; overflow: hidden; display: inline-block; vertical-align: middle; margin-right: 6px; }
+  .pbar i { display: block; height: 100%; background: var(--accent); }
+  .warn { font-size: .85rem; color: var(--muted); margin: 6px 0 0; }
+  .warn b { color: var(--mid); }
+  .wrong { color: var(--bad); font-size: .78rem; }
+  .scroll { overflow-x: auto; }
+  small.note { color: var(--muted); display: block; margin-top: 10px; }
+  .cs-wrap { display: grid; gap: 16px; grid-template-columns: minmax(0, 1fr); }
+  @media (min-width: 860px) { .cs-wrap { grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); align-items: start; } }
+  .cs-wrap > * { min-width: 0; }
+  svg.map { width: 100%; height: auto; display: block; background: var(--bg); border: 1px solid var(--line); border-radius: 8px; }
+  svg.map line { stroke: var(--line); stroke-width: 1; }
+  svg.map text { fill: var(--muted); font-size: 10px; }
+  svg.map circle { fill: var(--good); stroke: var(--panel); stroke-width: 2; }
+  svg.map text.pt { fill: var(--ink); font-size: 12px; font-weight: 600; }
+  .cs-item { border-top: 1px solid var(--line); padding: 10px 0; }
+  .cs-item:first-child { border-top: 0; padding-top: 0; }
+  .cs-item h3 { font-size: .95rem; margin: 0 0 2px; }
+  .cs-item p { margin: 4px 0; font-size: .85rem; color: var(--muted); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Analog Site Predictor</h1>
+  <p class="sub">Which Earth locations resemble good Moon and Mars base and training sites, learned from labelled analog sites.</p>
+
+  <div class="card" id="stats" style="margin-bottom:16px">Loading model...</div>
+
+  <div class="card" id="challenge" style="margin-bottom:16px">
+    <h2>Sites named in the challenge</h2>
+    <div class="cs-wrap">
+      <div id="csmap"></div>
+      <div id="cslist">Loading...</div>
+    </div>
+    <small class="note">Map positions are approximate coordinates of the named places, not the dataset sample points. Scores come from the model. All three carry a "good" label in the dataset.</small>
+  </div>
+
+  <div class="grid">
+    <section class="card">
+      <h2>Score a new location</h2>
+      <div id="fields"></div>
+      <button id="go">Predict</button>
+      <div id="out"></div>
+    </section>
+    <section class="card">
+      <h2>Known sites, ranked</h2>
+      <div class="scroll"><table id="tbl"><thead><tr>
+        <th>#</th><th>Site</th><th>P(good)</th><th>Dataset label</th><th>Held-out check</th>
+      </tr></thead><tbody></tbody></table></div>
+      <small class="note">"Held-out check" asks: when this site is hidden and the model is refit on the other sites, does it still get the label right? That is the honest accuracy measure.</small>
+    </section>
+  </div>
+</main>
+
+<script src="analog-model.js"></script>
+<script>
+(async function () {
+  const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const [model, preds] = await Promise.all([
+    fetch('model.json').then((r) => r.json()),
+    fetch('predictions.json').then((r) => r.json())
+  ]);
+  const v = model.validation;
+  const pct = (x) => Math.round(x * 100);
+
+  document.getElementById('stats').innerHTML =
+    '<b>Honest accuracy: ' + pct(v.accuracy) + ' percent</b> (95% interval ' + pct(v.accuracy_ci95[0]) + ' to ' + pct(v.accuracy_ci95[1]) +
+    ', coin flip is 50), AUC ' + v.auc + ', tested by leave-one-out on ' + model.n + ' labelled sites.' +
+    model.data_warnings.map((w) => '<p class="warn"><b>Note:</b> ' + esc(w) + '</p>').join('');
+
+  // input form
+  const ref = Object.fromEntries(model.features.map((f) => [f.key, f.mean]));
+  document.getElementById('fields').innerHTML = model.features.map((f) =>
+    '<label for="f_' + f.key + '">' + esc(f.label) + '</label><input id="f_' + f.key + '" type="number" step="any" value="' + ref[f.key].toFixed(2) + '">'
+  ).join('');
+
+  function contribBars(list) {
+    const max = Math.max(1, ...list.map((c) => Math.abs(c.contribution)));
+    return list.map((c) => {
+      const w = Math.abs(c.contribution) / max * 50;
+      const style = c.contribution >= 0 ? 'left:50%;width:' + w + '%;background:var(--good)' : 'left:' + (50 - w) + '%;width:' + w + '%;background:var(--bad)';
+      return '<div class="contrib"><span>' + esc(c.label) + '</span><div class="bar"><i style="' + style + '"></i></div><span>' + (Math.abs(c.contribution) < 0.005 ? '0.00' : (c.contribution > 0 ? '+' : '') + c.contribution.toFixed(2)) + '</span></div>';
+    }).join('');
+  }
+
+  document.getElementById('go').onclick = function () {
+    const input = {};
+    model.features.forEach((f) => { input[f.key] = parseFloat(document.getElementById('f_' + f.key).value); });
+    const r = AnalogModel.predict(model, input);
+    const label = r.verdict === 'good' ? 'Good analog' : r.verdict === 'bad' ? 'Poor analog' : 'Borderline';
+    document.getElementById('out').innerHTML =
+      '<div class="result"><div class="big ' + r.verdict + '">' + pct(r.p_good) + '%</div>' +
+      '<span class="tag ' + r.verdict + '">' + label + '</span>' +
+      '<p>' + esc(r.summary) + '</p>' +
+      '<div style="margin-top:8px;color:var(--muted);font-size:.8rem">Left of center pushes toward poor, right toward good</div>' +
+      contribBars(r.contributions) + '</div>';
+  };
+
+  // ranked table
+  document.querySelector('#tbl tbody').innerHTML = preds.results.map((r) =>
+    '<tr><td class="num">' + r.rank + '</td><td>' + esc(r.name) + '</td>' +
+    '<td class="num"><span class="pbar"><i style="width:' + pct(r.p_good) + '%"></i></span>' + pct(r.p_good) + '%</td>' +
+    '<td>' + (r.label === 1 ? '<span class="good">good</span>' : '<span class="bad">bad</span>') + '</td>' +
+    '<td>' + (r.loo_correct ? 'correct' : '<span class="wrong">missed</span>') + '</td></tr>'
+  ).join('');
+
+  // challenge-named sites: map plus scores
+  fetch('challenge-sites.json').then((r) => r.json()).then((cs) => {
+    const W = 720, H = 360;
+    const X = (lon) => (lon + 180) / 360 * W;
+    const Y = (lat) => (90 - lat) / 180 * H;
+    let g = '';
+    for (let lon = -180; lon <= 180; lon += 60) g += '<line x1="' + X(lon) + '" y1="0" x2="' + X(lon) + '" y2="' + H + '"/><text x="' + (X(lon) + 3) + '" y="' + (H - 4) + '">' + lon + '</text>';
+    for (let lat = -60; lat <= 60; lat += 30) g += '<line x1="0" y1="' + Y(lat) + '" x2="' + W + '" y2="' + Y(lat) + '"/><text x="3" y="' + (Y(lat) - 3) + '">' + lat + '</text>';
+    const pts = cs.results.map((s) => {
+      const x = X(s.lon), y = Y(s.lat), right = x < W - 170;
+      return '<circle cx="' + x + '" cy="' + y + '" r="7"/><text class="pt" x="' + (right ? x + 12 : x - 12) + '" y="' + (y + 4) + '" text-anchor="' + (right ? 'start' : 'end') + '">' + esc(s.display_name) + ' ' + pct(s.p_good) + '%</text>';
+    }).join('');
+    document.getElementById('csmap').innerHTML = '<svg class="map" viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="Locations of the challenge-named sites on a latitude and longitude grid">' + g + pts + '</svg>';
+    document.getElementById('cslist').innerHTML = cs.results.map((s) =>
+      '<div class="cs-item"><h3>' + esc(s.display_name) + ' <span class="tag ' + s.verdict + '">' + pct(s.p_good) + '% ' + esc(s.verdict) + '</span></h3>' +
+      '<p>' + esc(s.region) + ' - ' + esc(s.terrain) + '. Rank ' + s.rank + ' of ' + s.of + '. Held-out check: ' + (s.loo_correct ? 'correct' : 'missed') + '.</p>' +
+      '<p>' + esc(s.note) + '</p>' +
+      '<p>Most similar known sites: ' + s.nearest_known_sites.map((n) => esc(n.name) + ' (' + (n.label === 1 ? 'good' : 'bad') + ')').join(', ') + '</p></div>'
+    ).join('') + (cs.missing.length ? '<p class="warn"><b>Not in dataset:</b> ' + esc(cs.missing.join(', ')) + '</p>' : '');
+  }).catch(() => { document.getElementById('challenge').style.display = 'none'; });
+
+  document.getElementById('go').click();
+})().catch((e) => { document.getElementById('stats').textContent = 'Could not load model files: ' + e.message + '. Serve this folder over http (for example "npx serve dist-static"), not file://'; });
+</script>
+</body>
+</html>

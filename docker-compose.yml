@@ -1,0 +1,26 @@
+# Local PostgreSQL for development:  docker compose up -d db
+# Full stack in containers:          docker compose up --build
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: terra
+      POSTGRES_PASSWORD: terra
+      POSTGRES_DB: terra
+    ports: ["5432:5432"]
+    volumes: ["terra-db:/var/lib/postgresql/data"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U terra -d terra"]
+      interval: 5s
+      retries: 10
+  app:
+    build: .
+    depends_on:
+      db: { condition: service_healthy }
+    environment:
+      DATABASE_URL: postgres://terra:terra@db:5432/terra
+      CORS_ORIGINS: http://localhost:8080
+    ports: ["8080:8080"]
+    command: sh -c "node server/src/db/migrate.js && node server/src/db/seed.js && node server/src/server.js"
+volumes:
+  terra-db:

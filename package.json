@@ -1,0 +1,26 @@
+{
+  "name": "terra-mission-atlas",
+  "version": "3.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.17"
+  },
+  "workspaces": [
+    "client",
+    "server",
+    "shared"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace @terra/client",
+    "dev:server": "npm run dev --workspace @terra/server",
+    "build": "npm run build --workspace @terra/client",
+    "start": "npm run start --workspace @terra/server",
+    "db:migrate": "npm run db:migrate --workspace @terra/server",
+    "db:seed": "npm run db:seed --workspace @terra/server",
+    "check": "npm run typecheck --workspace @terra/client && npm test --workspace @terra/server && npm run test:engine",
+    "catalog": "npm run catalog --workspace @terra/server",
+    "train": "npm run train --workspace @terra/server",
+    "test:engine": "cd server/analog-engine && node --test"
+  }
+}

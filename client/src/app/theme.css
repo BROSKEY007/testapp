@@ -1,0 +1,95 @@
+/* Shared shell colors keep the panels distinct from the planetary canvas. */
+:root {
+  color-scheme: dark;
+  --ink: #e0ece7;
+  --muted: #a4b7ba;
+  --green: #a4dab8;
+  --line: #2b3e47;
+  --paper: #14242e;
+  --shell: #101d26;
+  --panel-raised: #1c333c;
+}
+
+.header {
+  height: 60px;
+  padding-inline: 26px;
+  background: var(--shell);
+}
+
+.brand { font-size: 21px; gap: 9px; }
+.brand img { width: 32px; height: 32px; }
+.brand small { font-size: 7px; letter-spacing: 1.5px; }
+.header-description { font-size: 12px; }
+.prototype { color: #a9c2be; }
+.prototype i, .footer i { background: #99d5b0; }
+.workspace { min-height: calc(100vh - 112px); }
+.panel { background: var(--paper); }
+.section-label { color: #9bb6b2; }
+
+.location:hover { background: var(--panel-raised); }
+.location.selected {
+  background: #25443f;
+  border-color: #527e6b;
+}
+.location em, .location.selected b { color: #b2dfbc; }
+.location b { color: #9db4b5; }
+.sidebar-note { color: var(--muted); }
+.sidebar-note > span, .sidebar-note strong { color: #b1cbbd; }
+
+.score-ring {
+  background: conic-gradient(#a7d9b7 var(--score), #2b4249 0);
+}
+.score-ring strong small, .score-ring span,
+.character-heading span { color: #a5b9b8; }
+.sample-badge { color: #bbd7c3; background: #263f3c; }
+.metric strong { color: #bbdfc5; }
+.bar { background: #2b414a; }
+.bar i { background: #a3d2b2; }
+.metric:nth-child(2) .bar i { background: #91bfc0; }
+.metric:nth-child(3) .bar i { background: #b1bea0; }
+.metric:nth-child(4) .bar i { background: #c1b28e; }
+.connection p, .results details, .result-message { color: #b1c2c2; }
+.results summary, .results a { color: #b5dcc0; }
+.result-footer { color: #a5b9b5; }
+.light-button { background: #29483f; color: #d9ecdf; }
+.footer { background: var(--shell); color: #a4b7ba; }
+
+@media (max-width: 850px) {
+  .header { height: 56px; padding-inline: 18px; gap: 12px; }
+  .brand { font-size: 19px; letter-spacing: 3px; }
+  .brand img { width: 29px; height: 29px; }
+  .brand small { font-size: 6px; letter-spacing: 1.3px; }
+  .location { background: #1a303a; }
+  .location.selected { background: #25443f; }
+}
+
+/* ---- Model prediction panel and ranked site list ---- */
+:root { --good: #a7d9b7; --mid: #e3c98a; --poor: #e39a8a; }
+.verdict-good, .hit { color: var(--good) !important; }
+.verdict-borderline { color: var(--mid) !important; }
+.verdict-bad, .miss, .push-down { color: var(--poor) !important; }
+.verdict-ring-borderline { background: conic-gradient(var(--mid) var(--score), #2b4249 0); }
+.verdict-ring-bad { background: conic-gradient(var(--poor) var(--score), #2b4249 0); }
+.sample-badge { text-align: center; }
+.location .thumb { width: 44px; height: 44px; flex: none; border-radius: 50%; border: 1.5px solid currentColor; background: #182b34; display: grid; place-items: center; font-style: normal; font-size: 13px; font-weight: 700; }
+.location em span { color: var(--muted); }
+.view-controls button:disabled { opacity: 0.4; cursor: not-allowed; }
+@media (max-width: 1150px) { .location .thumb { width: 36px; height: 36px; font-size: 11px; } }
+.stage-heading em { font-style: normal; opacity: 0.7; }
+.metric small { color: var(--muted); margin-left: 6px; font-size: 9px; }
+.bar.diverging { position: relative; }
+.bar.diverging::after { content: ""; position: absolute; left: 50%; top: -3px; bottom: -3px; width: 1px; background: #6f878c; }
+.bar.diverging i { position: absolute; top: 0; }
+.bar.diverging i.up { left: 50%; background: var(--good) !important; border-radius: 0 4px 4px 0; }
+.bar.diverging i.down { right: 50%; background: var(--poor) !important; border-radius: 4px 0 0 4px; }
+.facts dl { margin: 10px 0 0; }
+.facts dl div, .nearest li { display: flex; justify-content: space-between; gap: 12px; font-size: 11px; line-height: 2; color: #b1c2c2; }
+.facts dd { margin: 0; text-align: right; white-space: nowrap; }
+.facts b { font-weight: 600; }
+.nearest { list-style: none; padding: 0; margin: 10px 0 0; }
+.nearest em { font-style: normal; }
+.accuracy-note { grid-column: 1 / -1; margin: 24px 0 0; padding: 12px 13px; border: 1px solid var(--line); border-radius: 10px; font-size: 10px; line-height: 1.75; color: #b1c2c2; background: #182b34; }
+@media (min-width: 851px) {
+  /* 30 sites: scroll the list inside the panel instead of stretching the page. */
+  .locations nav { max-height: calc(100vh - 300px); min-height: 320px; overflow-y: auto; padding-right: 4px; scrollbar-width: thin; scrollbar-color: #2b414a transparent; }
+}

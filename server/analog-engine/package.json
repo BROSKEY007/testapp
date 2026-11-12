@@ -1,0 +1,22 @@
+{
+  "name": "analog-engine",
+  "version": "1.0.0",
+  "description": "Predicts whether an Earth location is a good or bad Moon and Mars analog site, trained on labelled data",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "node --test",
+    "train": "node scripts/train.js",
+    "export": "node scripts/export-static.js",
+    "prompt": "node scripts/make-explanation-prompt.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "csv-parse": "^5.5.6",
+    "express": "^4.19.2"
+  }
+}
