@@ -27,13 +27,12 @@ export function enhanceSurface({
   const loader = new THREE.TextureLoader();
   renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1.18;
-  camera.near = 0.00005;
-  camera.updateProjectionMatrix();
+  renderer.toneMappingExposure = 1.05;
+  // near/far are fitted every frame in renderer.js (see the depth precision note there).
   scene.traverse((o) => {
-    if (o.isAmbientLight) o.intensity = 0.65;
+    if (o.isAmbientLight) o.intensity = 0.8;
     if (o.isDirectionalLight) {
-      o.intensity = 2.7;
+      o.intensity = 2.3;
       o.position.set(-2, 2, 5);
     }
   });
@@ -65,7 +64,7 @@ export function enhanceSurface({
   if (body === "Earth") {
     load("/assets/earth-normal.jpg", (t) => {
       base.material.normalMap = t;
-      base.material.normalScale = new THREE.Vector2(0.45, 0.45);
+      base.material.normalScale = new THREE.Vector2(0.3, 0.3);
       base.material.needsUpdate = true;
     });
     const cloudMaterial = new THREE.MeshPhongMaterial({
@@ -75,9 +74,10 @@ export function enhanceSurface({
       shininess: 0,
     });
     cloud = new THREE.Mesh(
-      new THREE.SphereGeometry(1.006, 96, 64),
+      new THREE.SphereGeometry(1.006, 128, 64),
       cloudMaterial,
     );
+    cloud.renderOrder = 1;
     group.add(cloud);
     extras.push(cloud);
     load("/assets/earth-clouds.png", (t) => {
@@ -104,6 +104,7 @@ export function enhanceSurface({
         blending: THREE.AdditiveBlending,
       }),
     );
+    atmosphere.renderOrder = 2;
     group.add(atmosphere);
     extras.push(atmosphere);
   }
@@ -133,7 +134,7 @@ export function enhanceSurface({
         for (const patch of info.patches) {
           const [west, south, east, north] = patch.bbox;
           const geometry = new THREE.SphereGeometry(
-            1.00002,
+            1.0001,
             64,
             64,
             THREE.MathUtils.degToRad(west + 180),
@@ -149,9 +150,12 @@ export function enhanceSurface({
             opacity: 0,
             polygonOffset: true,
             polygonOffsetFactor: -1,
+            polygonOffsetUnits: -4,
+            depthWrite: false,
             toneMapped: false,
           });
           const mesh = new THREE.Mesh(geometry, material);
+          mesh.renderOrder = 3;
           group.add(mesh);
           patches.push(mesh);
           loader.load(

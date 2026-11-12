@@ -29,7 +29,7 @@ export function createGlobe(
   const renderer = new THREE.WebGLRenderer({
     antialias: true,
     alpha: true,
-    powerPreference: "low-power",
+    powerPreference: "high-performance",
   });
   renderer.setPixelRatio(Math.min(devicePixelRatio, 1.75));
   renderer.outputColorSpace = THREE.SRGBColorSpace;
@@ -51,7 +51,7 @@ export function createGlobe(
     color: 0xffffff,
     shininess: 0,
   });
-  const sphere = new THREE.Mesh(new THREE.SphereGeometry(1, 80, 56), material);
+  const sphere = new THREE.Mesh(new THREE.SphereGeometry(1, 128, 64), material);
   group.add(sphere);
   const textures = [];
   new THREE.TextureLoader().load(
@@ -62,6 +62,8 @@ export function createGlobe(
         return;
       }
       t.colorSpace = THREE.SRGBColorSpace;
+      // Sharper at grazing angles near the limb; also removes shimmer while rotating.
+      t.anisotropy = renderer.capabilities.getMaxAnisotropy();
       material.map = t;
       material.needsUpdate = true;
       textures.push(t);
@@ -83,26 +85,26 @@ export function createGlobe(
     transparent: true,
     opacity: 0.12,
   });
+  const gridLines = [];
+  const addLine = (ps) => {
+    const line = new THREE.Line(
+      new THREE.BufferGeometry().setFromPoints(ps),
+      gridMaterial,
+    );
+    gridLines.push(line);
+    group.add(line);
+  };
   for (let lat = -60; lat <= 60; lat += 30) {
     const ps = [];
     for (let lon = -180; lon <= 180; lon += 3) ps.push(point(lat, lon, 1.003));
-    group.add(
-      new THREE.Line(
-        new THREE.BufferGeometry().setFromPoints(ps),
-        gridMaterial,
-      ),
-    );
+    addLine(ps);
   }
   for (let lon = -180; lon < 180; lon += 45) {
     const ps = [];
     for (let lat = -90; lat <= 90; lat += 3) ps.push(point(lat, lon, 1.003));
-    group.add(
-      new THREE.Line(
-        new THREE.BufferGeometry().setFromPoints(ps),
-        gridMaterial,
-      ),
-    );
+    addLine(ps);
   }
+  gridMaterial.depthWrite = false;
   const surface = enhanceSurface({
     scene,
     group,
@@ -232,11 +234,21 @@ export function createGlobe(
       if (t === 1) flight = null;
     }
     surface.update(distance);
-    group.children.forEach((o) => {
-      if (o.isLine) o.visible = distance > 1.25;
-    });
+    // Fade the graticule out instead of popping it, and skip it entirely when close.
+    const gridFade = THREE.MathUtils.clamp((distance - 1.25) / 0.3, 0, 1);
+    gridMaterial.opacity = 0.12 * gridFade;
+    gridLines.forEach((o) => (o.visible = gridFade > 0));
     group.rotation.set(pitch, yaw, 0, "XYZ");
     camera.position.z = distance;
+    // Depth precision is the main source of flicker. A fixed near plane of 0.00005 gives
+    // ~0.017 units of depth resolution in orbit, larger than the gaps between the surface
+    // (1.0), graticule (1.003) and clouds (1.006), so they z-fight. Fit near and far to
+    // what is actually visible: nothing can be closer than the surface, and nothing
+    // further than the horizon.
+    const gap = distance - 1;
+    camera.near = Math.max(gap * 0.4, 0.0002);
+    camera.far = Math.sqrt(distance * distance - 1) + 0.15;
+    camera.updateProjectionMatrix();
     camera.updateMatrixWorld();
     group.updateMatrixWorld();
     const v = point(location.lat, location.lon).applyMatrix4(group.matrixWorld);
