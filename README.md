@@ -1,11 +1,11 @@
-# TERRA · Earth to other worlds
+# ANALOG FINDER · Earth to other worlds
 
 A planetary analog explorer on the **PERN stack** (PostgreSQL, Express, React, Node.js). It shows 30 labelled Earth sites on a 3D globe and, for each one, what a trained model predicts: the probability that the site is a good Moon or Mars analog, which inputs pushed the prediction, how the model did when that site was held out, and the most similar known sites.
 
 ## What the numbers are
 
 - **Model:** logistic regression on four standardised inputs (average solar index, maximum temperature swing, maximum slope, average slope angle), trained on the 30 sites in `server/analog-engine/data/nasa_sites.csv`. It lives in `server/analog-engine/` and was written by the team's ML engineer.
-- **Accuracy:** 76.7% under leave-one-out testing (23 of 30), 95% interval 60 to 90%, AUC 0.83, against a 50% coin flip. Quote the range, not a single number.
+- **Accuracy:** 63.3% under leave-one-out testing (19 of 30), 95% interval 47 to 80%, AUC 0.65, against a 50% coin flip. Quote the range, not a single number.
 - **What the percentage means:** the probability that the dataset's labellers would call a site a good analog. It is not a probability of mission success, and it does not separate Moon from Mars.
 - **Open questions before judging** (see `server/analog-engine/README.md`): the source and units of the four input columns, the source of the good/bad labels, and a suspected duplicated row (Great Plains and Rhine Valley share two values).
 - **Map coordinates** in `shared/src/sites.js` are approximate place coordinates for the globe marker. They are not the points the dataset was sampled at. Replace them when the real sample coordinates are known.
@@ -126,7 +126,7 @@ npm run db:seed      # refresh PostgreSQL
 npm run check
 ```
 
-Then rebuild and redeploy. Some tests pin the current accuracy (76.7%) and one documented prediction, so they fail after a retrain until you update the expected numbers on purpose.
+Then rebuild and redeploy. Some tests pin the current accuracy (63.3%) and one documented prediction, so they fail after a retrain until you update the expected numbers on purpose.
 
 Restart the server after retraining. `POST /api/analog/reload` refreshes the engine's own routes only, not `/api/v1/locations`.
 

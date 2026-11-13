@@ -11,7 +11,7 @@ import "@fontsource/manrope/800.css";
 import "./globals.css";
 import "./theme.css";
 export const metadata: Metadata = {
-  title: "TERRA — Earth to other worlds",
+  title: "ANALOG FINDER — Earth to other worlds",
   description:
     "Explore terrestrial analogs, compare planetary environments, and discover places that help us prepare for the Moon and Mars.",
   icons: { icon: "/favicon.svg" },

@@ -16,62 +16,137 @@ export default {
     "rank": 1,
     "of": 30,
     "label": 1,
-    "pGood": 0.9529,
-    "score": 95.3,
+    "pGood": 0.8488,
+    "score": 84.9,
     "verdict": "good",
-    "looPGood": 0.9503,
+    "looPGood": 0.8319,
     "looCorrect": true,
-    "summary": "Predicted good analog (95 percent probability of a good analog). Pushes toward good: above-average avg solar index and above-average max temperature swing. Pushes toward poor: above-average avg slope angle.",
+    "summary": "Predicted good analog (85 percent probability of a good analog). Pushes toward good: above-average max temperature swing and above-average avg solar index. Pushes toward poor: above-average avg slope angle.",
     "features": {
-     "solar_index": 5.998923,
-     "temp_swing": 22.96,
-     "max_slope_deg": 72.15549,
-     "avg_slope_deg": 5.07065
+     "solar_index": 6.004,
+     "temp_swing": 22.59,
+     "max_slope_deg": 72.155,
+     "avg_slope_deg": 5.071
     },
     "contributions": [
      {
       "feature": "solar_index",
       "label": "Avg solar index",
-      "value": 5.998923,
-      "contribution": 1.535
+      "value": 6.004,
+      "contribution": 0.688
      },
      {
       "feature": "temp_swing",
       "label": "Max temperature swing",
-      "value": 22.96,
-      "contribution": 1.022
+      "value": 22.59,
+      "contribution": 0.75
      },
      {
       "feature": "max_slope_deg",
       "label": "Max slope",
-      "value": 72.15549,
-      "contribution": 0.85
+      "value": 72.155,
+      "contribution": 0.621
      },
      {
       "feature": "avg_slope_deg",
       "label": "Avg slope angle",
-      "value": 5.07065,
-      "contribution": -0.416
+      "value": 5.071,
+      "contribution": -0.323
      }
     ],
     "nearest": [
      {
+      "name": "The Pampas Lowlands",
+      "label": 0,
+      "distance": 1.047,
+      "displayName": "The Pampas Lowlands"
+     },
+     {
       "name": "Death Valley",
       "label": 1,
-      "distance": 1.199,
+      "distance": 1.221,
       "displayName": "Death Valley"
      },
      {
       "name": "San Rafael Swell",
       "label": 1,
-      "distance": 1.358,
+      "distance": 1.338,
       "displayName": "San Rafael Swell"
+     }
+    ]
+   }
+  },
+  {
+   "id": "atacama",
+   "datasetName": "Atacama",
+   "name": "Atacama Desert",
+   "country": "Chile",
+   "lat": -24.5,
+   "lon": -69.25,
+   "type": "Desert",
+   "tag": "Hyperarid desert",
+   "coordsApproximate": true,
+   "prediction": {
+    "datasetId": "1",
+    "rank": 2,
+    "of": 30,
+    "label": 1,
+    "pGood": 0.7823,
+    "score": 78.2,
+    "verdict": "good",
+    "looPGood": 0.7229,
+    "looCorrect": true,
+    "summary": "Predicted good analog (78 percent probability of a good analog). Pushes toward good: above-average avg solar index and above-average max temperature swing. Pushes toward poor: above-average avg slope angle.",
+    "features": {
+     "solar_index": 7.178,
+     "temp_swing": 21.86,
+     "max_slope_deg": 66.512,
+     "avg_slope_deg": 7.448
+    },
+    "contributions": [
+     {
+      "feature": "solar_index",
+      "label": "Avg solar index",
+      "value": 7.178,
+      "contribution": 1.182
      },
      {
-      "name": "Atacama",
+      "feature": "temp_swing",
+      "label": "Max temperature swing",
+      "value": 21.86,
+      "contribution": 0.664
+     },
+     {
+      "feature": "max_slope_deg",
+      "label": "Max slope",
+      "value": 66.512,
+      "contribution": 0.303
+     },
+     {
+      "feature": "avg_slope_deg",
+      "label": "Avg slope angle",
+      "value": 7.448,
+      "contribution": -0.859
+     }
+    ],
+    "nearest": [
+     {
+      "name": "Makhtesh Ramon",
       "label": 1,
-      "distance": 1.467,
-      "displayName": "Atacama Desert"
+      "distance": 1.381,
+      "displayName": "Makhtesh Ramon"
+     },
+     {
+      "name": "Death Valley",
+      "label": 1,
+      "distance": 1.465,
+      "displayName": "Death Valley"
+     },
+     {
+      "name": "San Rafael Swell",
+      "label": 1,
+      "distance": 1.678,
+      "displayName": "San Rafael Swell"
      }
     ]
    }
@@ -88,64 +163,64 @@ export default {
    "coordsApproximate": true,
    "prediction": {
     "datasetId": "6",
-    "rank": 2,
+    "rank": 3,
     "of": 30,
     "label": 1,
-    "pGood": 0.9034,
-    "score": 90.3,
+    "pGood": 0.7569,
+    "score": 75.7,
     "verdict": "good",
-    "looPGood": 0.8906,
+    "looPGood": 0.7141,
     "looCorrect": true,
-    "summary": "Predicted good analog (90 percent probability of a good analog). Pushes toward good: above-average max slope and above-average avg solar index. Pushes toward poor: above-average avg slope angle.",
+    "summary": "Predicted good analog (76 percent probability of a good analog). Pushes toward good: above-average max slope and above-average max temperature swing. Pushes toward poor: above-average avg slope angle.",
     "features": {
-     "solar_index": 5.636673,
-     "temp_swing": 22.1,
-     "max_slope_deg": 78.97973,
-     "avg_slope_deg": 7.84603
+     "solar_index": 5.614,
+     "temp_swing": 21.02,
+     "max_slope_deg": 78.98,
+     "avg_slope_deg": 7.846
     },
     "contributions": [
      {
       "feature": "solar_index",
       "label": "Avg solar index",
-      "value": 5.636673,
-      "contribution": 1.205
+      "value": 5.614,
+      "contribution": 0.524
      },
      {
       "feature": "temp_swing",
       "label": "Max temperature swing",
-      "value": 22.1,
-      "contribution": 0.859
+      "value": 21.02,
+      "contribution": 0.565
      },
      {
       "feature": "max_slope_deg",
       "label": "Max slope",
-      "value": 78.97973,
-      "contribution": 1.376
+      "value": 78.98,
+      "contribution": 1.006
      },
      {
       "feature": "avg_slope_deg",
       "label": "Avg slope angle",
-      "value": 7.84603,
-      "contribution": -1.222
+      "value": 7.846,
+      "contribution": -0.949
      }
     ],
     "nearest": [
      {
       "name": "San Rafael Swell",
       "label": 1,
-      "distance": 0.382,
+      "distance": 0.363,
       "displayName": "San Rafael Swell"
      },
      {
       "name": "Makhtesh Ramon",
       "label": 1,
-      "distance": 1.199,
+      "distance": 1.221,
       "displayName": "Makhtesh Ramon"
      },
      {
       "name": "Atacama",
       "label": 1,
-      "distance": 1.232,
+      "distance": 1.465,
       "displayName": "Atacama Desert"
      }
     ]
@@ -163,65 +238,65 @@ export default {
    "coordsApproximate": true,
    "prediction": {
     "datasetId": "7",
-    "rank": 3,
+    "rank": 4,
     "of": 30,
     "label": 1,
-    "pGood": 0.8889,
-    "score": 88.9,
+    "pGood": 0.7451,
+    "score": 74.5,
     "verdict": "good",
-    "looPGood": 0.8722,
+    "looPGood": 0.6985,
     "looCorrect": true,
-    "summary": "Predicted good analog (89 percent probability of a good analog). Pushes toward good: above-average max slope and above-average max temperature swing. Pushes toward poor: above-average avg slope angle.",
+    "summary": "Predicted good analog (75 percent probability of a good analog). Pushes toward good: above-average max slope and above-average max temperature swing. Pushes toward poor: above-average avg slope angle.",
     "features": {
-     "solar_index": 5.317401,
-     "temp_swing": 23.5,
-     "max_slope_deg": 78.06278,
-     "avg_slope_deg": 8.05294
+     "solar_index": 5.309,
+     "temp_swing": 22.41,
+     "max_slope_deg": 78.063,
+     "avg_slope_deg": 8.053
     },
     "contributions": [
      {
       "feature": "solar_index",
       "label": "Avg solar index",
-      "value": 5.317401,
-      "contribution": 0.914
+      "value": 5.309,
+      "contribution": 0.396
      },
      {
       "feature": "temp_swing",
       "label": "Max temperature swing",
-      "value": 23.5,
-      "contribution": 1.124
+      "value": 22.41,
+      "contribution": 0.729
      },
      {
       "feature": "max_slope_deg",
       "label": "Max slope",
-      "value": 78.06278,
-      "contribution": 1.306
+      "value": 78.063,
+      "contribution": 0.954
      },
      {
       "feature": "avg_slope_deg",
       "label": "Avg slope angle",
-      "value": 8.05294,
-      "contribution": -1.282
+      "value": 8.053,
+      "contribution": -0.996
      }
     ],
     "nearest": [
      {
       "name": "Death Valley",
       "label": 1,
-      "distance": 0.382,
+      "distance": 0.363,
       "displayName": "Death Valley"
      },
      {
       "name": "Makhtesh Ramon",
       "label": 1,
-      "distance": 1.358,
+      "distance": 1.338,
       "displayName": "Makhtesh Ramon"
      },
      {
-      "name": "Atacama",
-      "label": 1,
-      "distance": 1.514,
-      "displayName": "Atacama Desert"
+      "name": "The Pampas Lowlands",
+      "label": 0,
+      "distance": 1.521,
+      "displayName": "The Pampas Lowlands"
      }
     ]
    }
@@ -238,65 +313,65 @@ export default {
    "coordsApproximate": true,
    "prediction": {
     "datasetId": "13",
-    "rank": 4,
+    "rank": 5,
     "of": 30,
     "label": 1,
-    "pGood": 0.8848,
-    "score": 88.5,
+    "pGood": 0.7221,
+    "score": 72.2,
     "verdict": "good",
-    "looPGood": 0.8706,
+    "looPGood": 0.6727,
     "looCorrect": true,
-    "summary": "Predicted good analog (88 percent probability of a good analog). Pushes toward good: above-average max slope and above-average max temperature swing. Pushes toward poor: below-average avg solar index and above-average avg slope angle.",
+    "summary": "Predicted good analog (72 percent probability of a good analog). Pushes toward good: above-average max slope and above-average max temperature swing. Pushes toward poor: below-average avg solar index.",
     "features": {
-     "solar_index": 2.92018,
-     "temp_swing": 26.64,
-     "max_slope_deg": 86.02116,
-     "avg_slope_deg": 4.83304
+     "solar_index": 2.904,
+     "temp_swing": 20.02,
+     "max_slope_deg": 86.021,
+     "avg_slope_deg": 4.833
     },
     "contributions": [
      {
       "feature": "solar_index",
       "label": "Avg solar index",
-      "value": 2.92018,
-      "contribution": -1.27
+      "value": 2.904,
+      "contribution": -0.615
      },
      {
       "feature": "temp_swing",
       "label": "Max temperature swing",
-      "value": 26.64,
-      "contribution": 1.719
+      "value": 20.02,
+      "contribution": 0.448
      },
      {
       "feature": "max_slope_deg",
       "label": "Max slope",
-      "value": 86.02116,
-      "contribution": 1.92
+      "value": 86.021,
+      "contribution": 1.402
      },
      {
       "feature": "avg_slope_deg",
       "label": "Avg slope angle",
-      "value": 4.83304,
-      "contribution": -0.347
+      "value": 4.833,
+      "contribution": -0.27
      }
     ],
     "nearest": [
      {
-      "name": "Haughton Crater",
-      "label": 1,
-      "distance": 1.295,
-      "displayName": "Haughton Crater"
-     },
-     {
       "name": "McMurdo Dry Valleys",
       "label": 1,
-      "distance": 1.328,
+      "distance": 0.959,
       "displayName": "McMurdo Dry Valleys"
      },
      {
       "name": "Odadahraun,Iceland",
       "label": 1,
-      "distance": 1.744,
+      "distance": 1.007,
       "displayName": "Ódáðahraun"
+     },
+     {
+      "name": "Haughton Crater",
+      "label": 1,
+      "distance": 1.287,
+      "displayName": "Haughton Crater"
      }
     ]
    }
@@ -313,590 +388,65 @@ export default {
    "coordsApproximate": true,
    "prediction": {
     "datasetId": "3",
-    "rank": 5,
+    "rank": 6,
     "of": 30,
     "label": 1,
-    "pGood": 0.742,
-    "score": 74.2,
+    "pGood": 0.7132,
+    "score": 71.3,
     "verdict": "good",
-    "looPGood": 0.6762,
+    "looPGood": 0.6373,
     "looCorrect": true,
-    "summary": "Predicted good analog (74 percent probability of a good analog). Pushes toward good: above-average max slope and above-average avg solar index. Pushes toward poor: below-average max temperature swing.",
+    "summary": "Predicted good analog (71 percent probability of a good analog). Pushes toward good: above-average max slope and below-average avg slope angle. Pushes toward poor: below-average max temperature swing.",
     "features": {
-     "solar_index": 5.210126,
-     "temp_swing": 7.05,
-     "max_slope_deg": 79.37529,
-     "avg_slope_deg": 0.85818
+     "solar_index": 5.248,
+     "temp_swing": 6.85,
+     "max_slope_deg": 79.375,
+     "avg_slope_deg": 0.858
     },
     "contributions": [
      {
       "feature": "solar_index",
       "label": "Avg solar index",
-      "value": 5.210126,
-      "contribution": 0.816
+      "value": 5.248,
+      "contribution": 0.371
      },
      {
       "feature": "temp_swing",
       "label": "Max temperature swing",
-      "value": 7.05,
-      "contribution": -1.991
+      "value": 6.85,
+      "contribution": -1.103
      },
      {
       "feature": "max_slope_deg",
       "label": "Max slope",
-      "value": 79.37529,
-      "contribution": 1.407
+      "value": 79.375,
+      "contribution": 1.028
      },
      {
       "feature": "avg_slope_deg",
       "label": "Avg slope angle",
-      "value": 0.85818,
-      "contribution": 0.807
+      "value": 0.858,
+      "contribution": 0.627
      }
     ],
     "nearest": [
      {
       "name": "Singapore Coastal Basin",
       "label": 0,
-      "distance": 1.197,
+      "distance": 1.186,
       "displayName": "Singapore Coastal Basin"
-     },
-     {
-      "name": "Borneo Rainforest",
-      "label": 0,
-      "distance": 1.543,
-      "displayName": "Borneo Rainforest"
-     },
-     {
-      "name": "Mount Etna",
-      "label": 1,
-      "distance": 1.551,
-      "displayName": "Mount Etna"
-     }
-    ]
-   }
-  },
-  {
-   "id": "mount-etna",
-   "datasetName": "Mount Etna",
-   "name": "Mount Etna",
-   "country": "Sicily, Italy",
-   "lat": 37.75,
-   "lon": 14.99,
-   "type": "Volcanic",
-   "tag": "Active volcano",
-   "coordsApproximate": true,
-   "prediction": {
-    "datasetId": "5",
-    "rank": 6,
-    "of": 30,
-    "label": 1,
-    "pGood": 0.7034,
-    "score": 70.3,
-    "verdict": "good",
-    "looPGood": 0.6774,
-    "looCorrect": true,
-    "summary": "Predicted good analog (70 percent probability of a good analog). Pushes toward good: above-average max slope and below-average avg slope angle. Pushes toward poor: below-average max temperature swing.",
-    "features": {
-     "solar_index": 4.710827,
-     "temp_swing": 14.74,
-     "max_slope_deg": 68.18995,
-     "avg_slope_deg": 2
-    },
-    "contributions": [
-     {
-      "feature": "solar_index",
-      "label": "Avg solar index",
-      "value": 4.710827,
-      "contribution": 0.361
-     },
-     {
-      "feature": "temp_swing",
-      "label": "Max temperature swing",
-      "value": 14.74,
-      "contribution": -0.535
-     },
-     {
-      "feature": "max_slope_deg",
-      "label": "Max slope",
-      "value": 68.18995,
-      "contribution": 0.544
-     },
-     {
-      "feature": "avg_slope_deg",
-      "label": "Avg slope angle",
-      "value": 2,
-      "contribution": 0.475
-     }
-    ],
-    "nearest": [
-     {
-      "name": "Dhaka,Bangladesh",
-      "label": 0,
-      "distance": 0.663,
-      "displayName": "Dhaka"
      },
      {
       "name": "Auckland",
       "label": 0,
-      "distance": 1.017,
+      "distance": 1.527,
       "displayName": "Auckland"
      },
      {
-      "name": "Singapore Coastal Basin",
-      "label": 0,
-      "distance": 1.177,
-      "displayName": "Singapore Coastal Basin"
-     }
-    ]
-   }
-  },
-  {
-   "id": "qaidam-basin",
-   "datasetName": "Qaidam Basin",
-   "name": "Qaidam Basin",
-   "country": "Qinghai, China",
-   "lat": 37.3,
-   "lon": 94.5,
-   "type": "Desert",
-   "tag": "High desert basin",
-   "coordsApproximate": true,
-   "prediction": {
-    "datasetId": "9",
-    "rank": 7,
-    "of": 30,
-    "label": 1,
-    "pGood": 0.6992,
-    "score": 69.9,
-    "verdict": "good",
-    "looPGood": 0.6543,
-    "looCorrect": true,
-    "summary": "Predicted good analog (70 percent probability of a good analog). Pushes toward good: above-average max temperature swing and above-average avg solar index. Pushes toward poor: below-average max slope.",
-    "features": {
-     "solar_index": 5.350744,
-     "temp_swing": 23.16,
-     "max_slope_deg": 38.96561,
-     "avg_slope_deg": 1.80416
-    },
-    "contributions": [
-     {
-      "feature": "solar_index",
-      "label": "Avg solar index",
-      "value": 5.350744,
-      "contribution": 0.944
-     },
-     {
-      "feature": "temp_swing",
-      "label": "Max temperature swing",
-      "value": 23.16,
-      "contribution": 1.06
-     },
-     {
-      "feature": "max_slope_deg",
-      "label": "Max slope",
-      "value": 38.96561,
-      "contribution": -1.711
-     },
-     {
-      "feature": "avg_slope_deg",
-      "label": "Avg slope angle",
-      "value": 1.80416,
-      "contribution": 0.532
-     }
-    ],
-    "nearest": [
-     {
-      "name": "Lonar Crater",
+      "name": "Mount Etna",
       "label": 1,
-      "distance": 0.365,
-      "displayName": "Lonar Crater"
-     },
-     {
-      "name": "Congo Basin Lowlands",
-      "label": 0,
-      "distance": 0.934,
-      "displayName": "Congo Basin Lowlands"
-     },
-     {
-      "name": "Makgadikgadi Pan",
-      "label": 1,
-      "distance": 1.099,
-      "displayName": "Makgadikgadi Pan"
-     }
-    ]
-   }
-  },
-  {
-   "id": "atacama",
-   "datasetName": "Atacama",
-   "name": "Atacama Desert",
-   "country": "Chile",
-   "lat": -24.5,
-   "lon": -69.25,
-   "type": "Desert",
-   "tag": "Hyperarid desert",
-   "coordsApproximate": true,
-   "prediction": {
-    "datasetId": "1",
-    "rank": 8,
-    "of": 30,
-    "label": 1,
-    "pGood": 0.6722,
-    "score": 67.2,
-    "verdict": "good",
-    "looPGood": 0.567,
-    "looCorrect": true,
-    "summary": "Predicted good analog (67 percent probability of a good analog). Pushes toward good: above-average avg solar index and above-average max slope. Pushes toward poor: above-average avg slope angle.",
-    "features": {
-     "solar_index": 6.078107,
-     "temp_swing": 16.43,
-     "max_slope_deg": 66.51202,
-     "avg_slope_deg": 7.44811
-    },
-    "contributions": [
-     {
-      "feature": "solar_index",
-      "label": "Avg solar index",
-      "value": 6.078107,
-      "contribution": 1.607
-     },
-     {
-      "feature": "temp_swing",
-      "label": "Max temperature swing",
-      "value": 16.43,
-      "contribution": -0.215
-     },
-     {
-      "feature": "max_slope_deg",
-      "label": "Max slope",
-      "value": 66.51202,
-      "contribution": 0.415
-     },
-     {
-      "feature": "avg_slope_deg",
-      "label": "Avg slope angle",
-      "value": 7.44811,
-      "contribution": -1.106
-     }
-    ],
-    "nearest": [
-     {
-      "name": "Death Valley",
-      "label": 1,
-      "distance": 1.232,
-      "displayName": "Death Valley"
-     },
-     {
-      "name": "Makhtesh Ramon",
-      "label": 1,
-      "distance": 1.467,
-      "displayName": "Makhtesh Ramon"
-     },
-     {
-      "name": "San Rafael Swell",
-      "label": 1,
-      "distance": 1.514,
-      "displayName": "San Rafael Swell"
-     }
-    ]
-   }
-  },
-  {
-   "id": "haughton",
-   "datasetName": "Haughton Crater",
-   "name": "Haughton Crater",
-   "country": "Devon Island, Canada",
-   "lat": 75.38,
-   "lon": -89.67,
-   "type": "Polar",
-   "tag": "Impact crater",
-   "coordsApproximate": true,
-   "prediction": {
-    "datasetId": "12",
-    "rank": 9,
-    "of": 30,
-    "label": 1,
-    "pGood": 0.6577,
-    "score": 65.8,
-    "verdict": "good",
-    "looPGood": 0.6082,
-    "looCorrect": true,
-    "summary": "Predicted good analog (66 percent probability of a good analog). Pushes toward good: above-average max temperature swing. Pushes toward poor: below-average avg solar index and above-average avg slope angle.",
-    "features": {
-     "solar_index": 3.51215,
-     "temp_swing": 25.49,
-     "max_slope_deg": 64.11585,
-     "avg_slope_deg": 4.89298
-    },
-    "contributions": [
-     {
-      "feature": "solar_index",
-      "label": "Avg solar index",
-      "value": 3.51215,
-      "contribution": -0.731
-     },
-     {
-      "feature": "temp_swing",
-      "label": "Max temperature swing",
-      "value": 25.49,
-      "contribution": 1.501
-     },
-     {
-      "feature": "max_slope_deg",
-      "label": "Max slope",
-      "value": 64.11585,
-      "contribution": 0.23
-     },
-     {
-      "feature": "avg_slope_deg",
-      "label": "Avg slope angle",
-      "value": 4.89298,
-      "contribution": -0.365
-     }
-    ],
-    "nearest": [
-     {
-      "name": "The Great Plains Farmland,USA",
-      "label": 0,
-      "distance": 0.742,
-      "displayName": "Great Plains Farmland"
-     },
-     {
-      "name": "Seattle,USA",
-      "label": 0,
-      "distance": 0.949,
-      "displayName": "Seattle"
-     },
-     {
-      "name": "PINGUALUIT Crater",
-      "label": 1,
-      "distance": 1.295,
-      "displayName": "Pingualuit Crater"
-     }
-    ]
-   }
-  },
-  {
-   "id": "mcmurdo",
-   "datasetName": "McMurdo Dry Valleys",
-   "name": "McMurdo Dry Valleys",
-   "country": "Antarctica",
-   "lat": -77.5,
-   "lon": 162,
-   "type": "Polar",
-   "tag": "Cold desert",
-   "coordsApproximate": true,
-   "prediction": {
-    "datasetId": "14",
-    "rank": 10,
-    "of": 30,
-    "label": 1,
-    "pGood": 0.6455,
-    "score": 64.6,
-    "verdict": "good",
-    "looPGood": 0.5716,
-    "looCorrect": true,
-    "summary": "Predicted good analog (65 percent probability of a good analog). Pushes toward good: above-average max slope and above-average max temperature swing. Pushes toward poor: below-average avg solar index and above-average avg slope angle.",
-    "features": {
-     "solar_index": 2.980892,
-     "temp_swing": 19.89,
-     "max_slope_deg": 89.6757,
-     "avg_slope_deg": 6.55073
-    },
-    "contributions": [
-     {
-      "feature": "solar_index",
-      "label": "Avg solar index",
-      "value": 2.980892,
-      "contribution": -1.215
-     },
-     {
-      "feature": "temp_swing",
-      "label": "Max temperature swing",
-      "value": 19.89,
-      "contribution": 0.441
-     },
-     {
-      "feature": "max_slope_deg",
-      "label": "Max slope",
-      "value": 89.6757,
-      "contribution": 2.202
-     },
-     {
-      "feature": "avg_slope_deg",
-      "label": "Avg slope angle",
-      "value": 6.55073,
-      "contribution": -0.846
-     }
-    ],
-    "nearest": [
-     {
-      "name": "Odadahraun,Iceland",
-      "label": 1,
-      "distance": 1.243,
-      "displayName": "Ódáðahraun"
-     },
-     {
-      "name": "PINGUALUIT Crater",
-      "label": 1,
-      "distance": 1.328,
-      "displayName": "Pingualuit Crater"
-     },
-     {
-      "name": "The Pampas Lowlands",
-      "label": 0,
-      "distance": 1.706,
-      "displayName": "The Pampas Lowlands"
-     }
-    ]
-   }
-  },
-  {
-   "id": "lonar-crater",
-   "datasetName": "Lonar Crater",
-   "name": "Lonar Crater",
-   "country": "Maharashtra, India",
-   "lat": 19.98,
-   "lon": 76.51,
-   "type": "Crater",
-   "tag": "Impact crater",
-   "coordsApproximate": true,
-   "prediction": {
-    "datasetId": "11",
-    "rank": 11,
-    "of": 30,
-    "label": 1,
-    "pGood": 0.5907,
-    "score": 59.1,
-    "verdict": "borderline",
-    "looPGood": 0.5392,
-    "looCorrect": true,
-    "summary": "Borderline analog (59 percent probability of a good analog). Pushes toward good: above-average max temperature swing and above-average avg solar index. Pushes toward poor: below-average max slope.",
-    "features": {
-     "solar_index": 5.010941,
-     "temp_swing": 22.35,
-     "max_slope_deg": 40.09614,
-     "avg_slope_deg": 2.15061
-    },
-    "contributions": [
-     {
-      "feature": "solar_index",
-      "label": "Avg solar index",
-      "value": 5.010941,
-      "contribution": 0.635
-     },
-     {
-      "feature": "temp_swing",
-      "label": "Max temperature swing",
-      "value": 22.35,
-      "contribution": 0.907
-     },
-     {
-      "feature": "max_slope_deg",
-      "label": "Max slope",
-      "value": 40.09614,
-      "contribution": -1.623
-     },
-     {
-      "feature": "avg_slope_deg",
-      "label": "Avg slope angle",
-      "value": 2.15061,
-      "contribution": 0.431
-     }
-    ],
-    "nearest": [
-     {
-      "name": "Qaidam Basin",
-      "label": 1,
-      "distance": 0.365,
-      "displayName": "Qaidam Basin"
-     },
-     {
-      "name": "Congo Basin Lowlands",
-      "label": 0,
-      "distance": 0.886,
-      "displayName": "Congo Basin Lowlands"
-     },
-     {
-      "name": "The Rhine River Valley,Germany",
-      "label": 0,
-      "distance": 0.975,
-      "displayName": "Rhine River Valley"
-     }
-    ]
-   }
-  },
-  {
-   "id": "iceland",
-   "datasetName": "Odadahraun,Iceland",
-   "name": "Ódáðahraun",
-   "country": "Iceland",
-   "lat": 65.03,
-   "lon": -16.75,
-   "type": "Volcanic",
-   "tag": "Lava field",
-   "coordsApproximate": true,
-   "prediction": {
-    "datasetId": "4",
-    "rank": 12,
-    "of": 30,
-    "label": 1,
-    "pGood": 0.5588,
-    "score": 55.9,
-    "verdict": "borderline",
-    "looPGood": 0.4445,
-    "looCorrect": false,
-    "summary": "Borderline analog (56 percent probability of a good analog). Pushes toward good: above-average max slope. Pushes toward poor: below-average avg solar index.",
-    "features": {
-     "solar_index": 2.460177,
-     "temp_swing": 16.76,
-     "max_slope_deg": 88.94747,
-     "avg_slope_deg": 3.93169
-    },
-    "contributions": [
-     {
-      "feature": "solar_index",
-      "label": "Avg solar index",
-      "value": 2.460177,
-      "contribution": -1.689
-     },
-     {
-      "feature": "temp_swing",
-      "label": "Max temperature swing",
-      "value": 16.76,
-      "contribution": -0.152
-     },
-     {
-      "feature": "max_slope_deg",
-      "label": "Max slope",
-      "value": 88.94747,
-      "contribution": 2.145
-     },
-     {
-      "feature": "avg_slope_deg",
-      "label": "Avg slope angle",
-      "value": 3.93169,
-      "contribution": -0.086
-     }
-    ],
-    "nearest": [
-     {
-      "name": "McMurdo Dry Valleys",
-      "label": 1,
-      "distance": 1.243,
-      "displayName": "McMurdo Dry Valleys"
-     },
-     {
-      "name": "The Pampas Lowlands",
-      "label": 0,
-      "distance": 1.52,
-      "displayName": "The Pampas Lowlands"
-     },
-     {
-      "name": "Dublin,Ireland",
-      "label": 0,
-      "distance": 1.658,
-      "displayName": "Dublin"
+      "distance": 1.544,
+      "displayName": "Mount Etna"
      }
     ]
    }
@@ -913,65 +463,440 @@ export default {
    "coordsApproximate": true,
    "prediction": {
     "datasetId": "25",
-    "rank": 13,
+    "rank": 7,
     "of": 30,
     "label": 0,
-    "pGood": 0.5376,
-    "score": 53.8,
-    "verdict": "borderline",
-    "looPGood": 0.5868,
+    "pGood": 0.6903,
+    "score": 69,
+    "verdict": "good",
+    "looPGood": 0.7877,
     "looCorrect": false,
-    "summary": "Borderline analog (54 percent probability of a good analog). Pushes toward good: above-average max temperature swing. Pushes toward poor: above-average avg slope angle.",
+    "summary": "Predicted good analog (69 percent probability of a good analog). Pushes toward good: above-average max temperature swing.",
     "features": {
-     "solar_index": 4.04476,
-     "temp_swing": 22.71,
-     "max_slope_deg": 57.96359,
-     "avg_slope_deg": 4.84699
+     "solar_index": 4.582,
+     "temp_swing": 26.18,
+     "max_slope_deg": 57.964,
+     "avg_slope_deg": 4.847
     },
     "contributions": [
      {
       "feature": "solar_index",
       "label": "Avg solar index",
-      "value": 4.04476,
-      "contribution": -0.246
+      "value": 4.582,
+      "contribution": 0.091
      },
      {
       "feature": "temp_swing",
       "label": "Max temperature swing",
-      "value": 22.71,
-      "contribution": 0.975
+      "value": 26.18,
+      "contribution": 1.173
      },
      {
       "feature": "max_slope_deg",
       "label": "Max slope",
-      "value": 57.96359,
-      "contribution": -0.245
+      "value": 57.964,
+      "contribution": -0.179
      },
      {
       "feature": "avg_slope_deg",
       "label": "Avg slope angle",
-      "value": 4.84699,
-      "contribution": -0.351
+      "value": 4.847,
+      "contribution": -0.273
      }
     ],
     "nearest": [
      {
+      "name": "The Pampas Lowlands",
+      "label": 0,
+      "distance": 1.021,
+      "displayName": "The Pampas Lowlands"
+     },
+     {
       "name": "Seattle,USA",
       "label": 0,
-      "distance": 0.656,
+      "distance": 1.492,
       "displayName": "Seattle"
+     },
+     {
+      "name": "Makhtesh Ramon",
+      "label": 1,
+      "distance": 1.532,
+      "displayName": "Makhtesh Ramon"
+     }
+    ]
+   }
+  },
+  {
+   "id": "mount-etna",
+   "datasetName": "Mount Etna",
+   "name": "Mount Etna",
+   "country": "Sicily, Italy",
+   "lat": 37.75,
+   "lon": 14.99,
+   "type": "Volcanic",
+   "tag": "Active volcano",
+   "coordsApproximate": true,
+   "prediction": {
+    "datasetId": "5",
+    "rank": 8,
+    "of": 30,
+    "label": 1,
+    "pGood": 0.6577,
+    "score": 65.8,
+    "verdict": "good",
+    "looPGood": 0.6297,
+    "looCorrect": true,
+    "summary": "Predicted good analog (66 percent probability of a good analog). Pushes toward good: above-average max slope and below-average avg slope angle.",
+    "features": {
+     "solar_index": 4.707,
+     "temp_swing": 14.13,
+     "max_slope_deg": 68.19,
+     "avg_slope_deg": 2
+    },
+    "contributions": [
+     {
+      "feature": "solar_index",
+      "label": "Avg solar index",
+      "value": 4.707,
+      "contribution": 0.143
+     },
+     {
+      "feature": "temp_swing",
+      "label": "Max temperature swing",
+      "value": 14.13,
+      "contribution": -0.246
+     },
+     {
+      "feature": "max_slope_deg",
+      "label": "Max slope",
+      "value": 68.19,
+      "contribution": 0.397
+     },
+     {
+      "feature": "avg_slope_deg",
+      "label": "Avg slope angle",
+      "value": 2,
+      "contribution": 0.369
+     }
+    ],
+    "nearest": [
+     {
+      "name": "Dhaka,Bangladesh",
+      "label": 0,
+      "distance": 0.793,
+      "displayName": "Dhaka"
+     },
+     {
+      "name": "Auckland",
+      "label": 0,
+      "distance": 1.074,
+      "displayName": "Auckland"
+     },
+     {
+      "name": "Singapore Coastal Basin",
+      "label": 0,
+      "distance": 1.261,
+      "displayName": "Singapore Coastal Basin"
+     }
+    ]
+   }
+  },
+  {
+   "id": "pampas",
+   "datasetName": "The Pampas Lowlands",
+   "name": "The Pampas Lowlands",
+   "country": "Argentina",
+   "lat": -35,
+   "lon": -62,
+   "type": "Lowland",
+   "tag": "Grassland",
+   "coordsApproximate": true,
+   "prediction": {
+    "datasetId": "24",
+    "rank": 9,
+    "of": 30,
+    "label": 0,
+    "pGood": 0.6471,
+    "score": 64.7,
+    "verdict": "good",
+    "looPGood": 0.6939,
+    "looCorrect": false,
+    "summary": "Predicted good analog (65 percent probability of a good analog). Pushes toward good: above-average max temperature swing.",
+    "features": {
+     "solar_index": 4.938,
+     "temp_swing": 20.84,
+     "max_slope_deg": 63.228,
+     "avg_slope_deg": 4.903
+    },
+    "contributions": [
+     {
+      "feature": "solar_index",
+      "label": "Avg solar index",
+      "value": 4.938,
+      "contribution": 0.24
+     },
+     {
+      "feature": "temp_swing",
+      "label": "Max temperature swing",
+      "value": 20.84,
+      "contribution": 0.544
+     },
+     {
+      "feature": "max_slope_deg",
+      "label": "Max slope",
+      "value": 63.228,
+      "contribution": 0.118
+     },
+     {
+      "feature": "avg_slope_deg",
+      "label": "Avg slope angle",
+      "value": 4.903,
+      "contribution": -0.285
+     }
+    ],
+    "nearest": [
+     {
+      "name": "The Great Plains Farmland,USA",
+      "label": 0,
+      "distance": 1.021,
+      "displayName": "Great Plains Farmland"
+     },
+     {
+      "name": "Makhtesh Ramon",
+      "label": 1,
+      "distance": 1.047,
+      "displayName": "Makhtesh Ramon"
+     },
+     {
+      "name": "Seattle,USA",
+      "label": 0,
+      "distance": 1.18,
+      "displayName": "Seattle"
+     }
+    ]
+   }
+  },
+  {
+   "id": "iceland",
+   "datasetName": "Odadahraun,Iceland",
+   "name": "Ódáðahraun",
+   "country": "Iceland",
+   "lat": 65.03,
+   "lon": -16.75,
+   "type": "Volcanic",
+   "tag": "Lava field",
+   "coordsApproximate": true,
+   "prediction": {
+    "datasetId": "4",
+    "rank": 10,
+    "of": 30,
+    "label": 1,
+    "pGood": 0.6368,
+    "score": 63.7,
+    "verdict": "good",
+    "looPGood": 0.559,
+    "looCorrect": true,
+    "summary": "Predicted good analog (64 percent probability of a good analog). Pushes toward good: above-average max slope. Pushes toward poor: below-average avg solar index.",
+    "features": {
+     "solar_index": 2.456,
+     "temp_swing": 15.15,
+     "max_slope_deg": 88.947,
+     "avg_slope_deg": 3.932
+    },
+    "contributions": [
+     {
+      "feature": "solar_index",
+      "label": "Avg solar index",
+      "value": 2.456,
+      "contribution": -0.803
+     },
+     {
+      "feature": "temp_swing",
+      "label": "Max temperature swing",
+      "value": 15.15,
+      "contribution": -0.126
+     },
+     {
+      "feature": "max_slope_deg",
+      "label": "Max slope",
+      "value": 88.947,
+      "contribution": 1.567
+     },
+     {
+      "feature": "avg_slope_deg",
+      "label": "Avg slope angle",
+      "value": 3.932,
+      "contribution": -0.067
+     }
+    ],
+    "nearest": [
+     {
+      "name": "PINGUALUIT Crater",
+      "label": 1,
+      "distance": 1.007,
+      "displayName": "Pingualuit Crater"
+     },
+     {
+      "name": "McMurdo Dry Valleys",
+      "label": 1,
+      "distance": 1.129,
+      "displayName": "McMurdo Dry Valleys"
      },
      {
       "name": "Haughton Crater",
       "label": 1,
-      "distance": 0.742,
+      "distance": 1.456,
       "displayName": "Haughton Crater"
+     }
+    ]
+   }
+  },
+  {
+   "id": "mississippi",
+   "datasetName": "Mississippi",
+   "name": "Mississippi",
+   "country": "United States",
+   "lat": 32.7,
+   "lon": -90,
+   "type": "Lowland",
+   "tag": "Humid lowland",
+   "coordsApproximate": true,
+   "prediction": {
+    "datasetId": "23",
+    "rank": 11,
+    "of": 30,
+    "label": 0,
+    "pGood": 0.5977,
+    "score": 59.8,
+    "verdict": "borderline",
+    "looPGood": 0.6898,
+    "looCorrect": false,
+    "summary": "Borderline analog (60 percent probability of a good analog). Pushes toward good: below-average avg slope angle and above-average max temperature swing. Pushes toward poor: below-average max slope.",
+    "features": {
+     "solar_index": 4.67,
+     "temp_swing": 20.94,
+     "max_slope_deg": 43.757,
+     "avg_slope_deg": 0.521
+    },
+    "contributions": [
+     {
+      "feature": "solar_index",
+      "label": "Avg solar index",
+      "value": 4.67,
+      "contribution": 0.128
      },
      {
-      "name": "The Rhine River Valley,Germany",
+      "feature": "temp_swing",
+      "label": "Max temperature swing",
+      "value": 20.94,
+      "contribution": 0.556
+     },
+     {
+      "feature": "max_slope_deg",
+      "label": "Max slope",
+      "value": 43.757,
+      "contribution": -0.98
+     },
+     {
+      "feature": "avg_slope_deg",
+      "label": "Avg slope angle",
+      "value": 0.521,
+      "contribution": 0.702
+     }
+    ],
+    "nearest": [
+     {
+      "name": "Lonar Crater",
+      "label": 1,
+      "distance": 0.717,
+      "displayName": "Lonar Crater"
+     },
+     {
+      "name": "Qaidam Basin",
+      "label": 1,
+      "distance": 0.755,
+      "displayName": "Qaidam Basin"
+     },
+     {
+      "name": "Dhaka,Bangladesh",
       "label": 0,
-      "distance": 0.989,
-      "displayName": "Rhine River Valley"
+      "distance": 1.192,
+      "displayName": "Dhaka"
+     }
+    ]
+   }
+  },
+  {
+   "id": "mcmurdo",
+   "datasetName": "McMurdo Dry Valleys",
+   "name": "McMurdo Dry Valleys",
+   "country": "Antarctica",
+   "lat": -77.5,
+   "lon": 162,
+   "type": "Polar",
+   "tag": "Cold desert",
+   "coordsApproximate": true,
+   "prediction": {
+    "datasetId": "14",
+    "rank": 12,
+    "of": 30,
+    "label": 1,
+    "pGood": 0.5902,
+    "score": 59,
+    "verdict": "borderline",
+    "looPGood": 0.5133,
+    "looCorrect": true,
+    "summary": "Borderline analog (59 percent probability of a good analog). Pushes toward good: above-average max slope. Pushes toward poor: above-average avg slope angle and below-average avg solar index.",
+    "features": {
+     "solar_index": 2.973,
+     "temp_swing": 16.3,
+     "max_slope_deg": 89.676,
+     "avg_slope_deg": 6.551
+    },
+    "contributions": [
+     {
+      "feature": "solar_index",
+      "label": "Avg solar index",
+      "value": 2.973,
+      "contribution": -0.586
+     },
+     {
+      "feature": "temp_swing",
+      "label": "Max temperature swing",
+      "value": 16.3,
+      "contribution": 0.01
+     },
+     {
+      "feature": "max_slope_deg",
+      "label": "Max slope",
+      "value": 89.676,
+      "contribution": 1.608
+     },
+     {
+      "feature": "avg_slope_deg",
+      "label": "Avg slope angle",
+      "value": 6.551,
+      "contribution": -0.657
+     }
+    ],
+    "nearest": [
+     {
+      "name": "PINGUALUIT Crater",
+      "label": 1,
+      "distance": 0.959,
+      "displayName": "Pingualuit Crater"
+     },
+     {
+      "name": "Odadahraun,Iceland",
+      "label": 1,
+      "distance": 1.129,
+      "displayName": "Ódáðahraun"
+     },
+     {
+      "name": "Haughton Crater",
+      "label": 1,
+      "distance": 1.599,
+      "displayName": "Haughton Crater"
      }
     ]
    }
@@ -988,139 +913,64 @@ export default {
    "coordsApproximate": true,
    "prediction": {
     "datasetId": "29",
-    "rank": 14,
+    "rank": 13,
     "of": 30,
     "label": 0,
-    "pGood": 0.523,
-    "score": 52.3,
+    "pGood": 0.5798,
+    "score": 58,
     "verdict": "borderline",
-    "looPGood": 0.553,
+    "looPGood": 0.6153,
     "looCorrect": false,
-    "summary": "Borderline analog (52 percent probability of a good analog). Pushes toward good: below-average avg slope angle.",
+    "summary": "Borderline analog (58 percent probability of a good analog). Pushes toward good: below-average avg slope angle.",
     "features": {
-     "solar_index": 4.358188,
-     "temp_swing": 16.27,
-     "max_slope_deg": 58.35636,
-     "avg_slope_deg": 1.93592
+     "solar_index": 4.366,
+     "temp_swing": 17.12,
+     "max_slope_deg": 58.356,
+     "avg_slope_deg": 1.936
     },
     "contributions": [
      {
       "feature": "solar_index",
       "label": "Avg solar index",
-      "value": 4.358188,
-      "contribution": 0.04
+      "value": 4.366,
+      "contribution": 0
      },
      {
       "feature": "temp_swing",
       "label": "Max temperature swing",
-      "value": 16.27,
-      "contribution": -0.245
+      "value": 17.12,
+      "contribution": 0.106
      },
      {
       "feature": "max_slope_deg",
       "label": "Max slope",
-      "value": 58.35636,
-      "contribution": -0.215
+      "value": 58.356,
+      "contribution": -0.157
      },
      {
       "feature": "avg_slope_deg",
       "label": "Avg slope angle",
-      "value": 1.93592,
-      "contribution": 0.494
+      "value": 1.936,
+      "contribution": 0.383
      }
     ],
     "nearest": [
      {
       "name": "Mount Etna",
       "label": 1,
-      "distance": 0.663,
+      "distance": 0.793,
       "displayName": "Mount Etna"
      },
      {
       "name": "Mississippi",
       "label": 0,
-      "distance": 1.011,
+      "distance": 1.192,
       "displayName": "Mississippi"
-     },
-     {
-      "name": "Auckland",
-      "label": 0,
-      "distance": 1.346,
-      "displayName": "Auckland"
-     }
-    ]
-   }
-  },
-  {
-   "id": "makgadikgadi-pan",
-   "datasetName": "Makgadikgadi Pan",
-   "name": "Makgadikgadi Pan",
-   "country": "Botswana",
-   "lat": -20.7,
-   "lon": 25.4,
-   "type": "Desert",
-   "tag": "Salt pan",
-   "coordsApproximate": true,
-   "prediction": {
-    "datasetId": "8",
-    "rank": 15,
-    "of": 30,
-    "label": 1,
-    "pGood": 0.5148,
-    "score": 51.5,
-    "verdict": "borderline",
-    "looPGood": 0.3479,
-    "looCorrect": false,
-    "summary": "Borderline analog (51 percent probability of a good analog). Pushes toward good: above-average avg solar index and above-average max temperature swing. Pushes toward poor: below-average max slope.",
-    "features": {
-     "solar_index": 5.964546,
-     "temp_swing": 23.03,
-     "max_slope_deg": 21.14329,
-     "avg_slope_deg": 1.61013
-    },
-    "contributions": [
-     {
-      "feature": "solar_index",
-      "label": "Avg solar index",
-      "value": 5.964546,
-      "contribution": 1.503
-     },
-     {
-      "feature": "temp_swing",
-      "label": "Max temperature swing",
-      "value": 23.03,
-      "contribution": 1.035
-     },
-     {
-      "feature": "max_slope_deg",
-      "label": "Max slope",
-      "value": 21.14329,
-      "contribution": -3.086
-     },
-     {
-      "feature": "avg_slope_deg",
-      "label": "Avg slope angle",
-      "value": 1.61013,
-      "contribution": 0.588
-     }
-    ],
-    "nearest": [
-     {
-      "name": "Qaidam Basin",
-      "label": 1,
-      "distance": 1.099,
-      "displayName": "Qaidam Basin"
-     },
-     {
-      "name": "Congo Basin Lowlands",
-      "label": 0,
-      "distance": 1.268,
-      "displayName": "Congo Basin Lowlands"
      },
      {
       "name": "Lonar Crater",
       "label": 1,
-      "distance": 1.344,
+      "distance": 1.304,
       "displayName": "Lonar Crater"
      }
     ]
@@ -1138,65 +988,65 @@ export default {
    "coordsApproximate": true,
    "prediction": {
     "datasetId": "18",
-    "rank": 16,
+    "rank": 14,
     "of": 30,
     "label": 0,
-    "pGood": 0.4798,
-    "score": 48,
+    "pGood": 0.5381,
+    "score": 53.8,
     "verdict": "borderline",
-    "looPGood": 0.5921,
+    "looPGood": 0.6155,
     "looCorrect": false,
-    "summary": "Borderline analog (48 percent probability of a good analog). Pushes toward good: above-average max slope and above-average avg solar index. Pushes toward poor: below-average max temperature swing and above-average avg slope angle.",
+    "summary": "Borderline analog (54 percent probability of a good analog). Pushes toward good: above-average max slope. Pushes toward poor: below-average max temperature swing.",
     "features": {
-     "solar_index": 5.072088,
-     "temp_swing": 7.35,
-     "max_slope_deg": 80.29749,
-     "avg_slope_deg": 4.78368
+     "solar_index": 4.779,
+     "temp_swing": 9.16,
+     "max_slope_deg": 80.297,
+     "avg_slope_deg": 4.784
     },
     "contributions": [
      {
       "feature": "solar_index",
       "label": "Avg solar index",
-      "value": 5.072088,
-      "contribution": 0.69
+      "value": 4.779,
+      "contribution": 0.173
      },
      {
       "feature": "temp_swing",
       "label": "Max temperature swing",
-      "value": 7.35,
-      "contribution": -1.934
+      "value": 9.16,
+      "contribution": -0.831
      },
      {
       "feature": "max_slope_deg",
       "label": "Max slope",
-      "value": 80.29749,
-      "contribution": 1.478
+      "value": 80.297,
+      "contribution": 1.08
      },
      {
       "feature": "avg_slope_deg",
       "label": "Avg slope angle",
-      "value": 4.78368,
-      "contribution": -0.333
+      "value": 4.784,
+      "contribution": -0.259
      }
     ],
     "nearest": [
      {
       "name": "Auckland",
       "label": 0,
-      "distance": 1.04,
+      "distance": 0.731,
       "displayName": "Auckland"
      },
      {
       "name": "Singapore Coastal Basin",
       "label": 0,
-      "distance": 1.188,
+      "distance": 1.156,
       "displayName": "Singapore Coastal Basin"
      },
      {
-      "name": "Lanzarote,Spain",
+      "name": "Mount Etna",
       "label": 1,
-      "distance": 1.543,
-      "displayName": "Lanzarote"
+      "distance": 1.538,
+      "displayName": "Mount Etna"
      }
     ]
    }
@@ -1213,64 +1063,289 @@ export default {
    "coordsApproximate": true,
    "prediction": {
     "datasetId": "15",
-    "rank": 17,
+    "rank": 15,
     "of": 30,
     "label": 1,
-    "pGood": 0.4659,
-    "score": 46.6,
+    "pGood": 0.5341,
+    "score": 53.4,
     "verdict": "borderline",
-    "looPGood": 0.282,
+    "looPGood": 0.3935,
     "looCorrect": false,
-    "summary": "Borderline analog (47 percent probability of a good analog). Pushes toward good: above-average max slope and below-average avg slope angle. Pushes toward poor: below-average avg solar index and below-average max temperature swing.",
+    "summary": "Borderline analog (53 percent probability of a good analog). Pushes toward good: above-average max slope and below-average avg slope angle. Pushes toward poor: below-average max temperature swing and below-average avg solar index.",
     "features": {
-     "solar_index": 2.71087,
-     "temp_swing": 11.63,
-     "max_slope_deg": 79.57973,
-     "avg_slope_deg": 0.16714
+     "solar_index": 2.707,
+     "temp_swing": 7.92,
+     "max_slope_deg": 79.58,
+     "avg_slope_deg": 0.167
     },
     "contributions": [
      {
       "feature": "solar_index",
       "label": "Avg solar index",
-      "value": 2.71087,
-      "contribution": -1.461
+      "value": 2.707,
+      "contribution": -0.697
      },
      {
       "feature": "temp_swing",
       "label": "Max temperature swing",
-      "value": 11.63,
-      "contribution": -1.124
+      "value": 7.92,
+      "contribution": -0.977
      },
      {
       "feature": "max_slope_deg",
       "label": "Max slope",
-      "value": 79.57973,
-      "contribution": 1.423
+      "value": 79.58,
+      "contribution": 1.039
      },
      {
       "feature": "avg_slope_deg",
       "label": "Avg slope angle",
-      "value": 0.16714,
-      "contribution": 1.007
+      "value": 0.167,
+      "contribution": 0.782
      }
     ],
     "nearest": [
      {
       "name": "Dublin,Ireland",
       "label": 0,
-      "distance": 1.201,
+      "distance": 1.183,
       "displayName": "Dublin"
+     },
+     {
+      "name": "Singapore Coastal Basin",
+      "label": 0,
+      "distance": 1.964,
+      "displayName": "Singapore Coastal Basin"
      },
      {
       "name": "Odadahraun,Iceland",
       "label": 1,
-      "distance": 1.79,
+      "distance": 2.018,
       "displayName": "Ódáðahraun"
+     }
+    ]
+   }
+  },
+  {
+   "id": "qaidam-basin",
+   "datasetName": "Qaidam Basin",
+   "name": "Qaidam Basin",
+   "country": "Qinghai, China",
+   "lat": 37.3,
+   "lon": 94.5,
+   "type": "Desert",
+   "tag": "High desert basin",
+   "coordsApproximate": true,
+   "prediction": {
+    "datasetId": "9",
+    "rank": 16,
+    "of": 30,
+    "label": 1,
+    "pGood": 0.5235,
+    "score": 52.4,
+    "verdict": "borderline",
+    "looPGood": 0.4567,
+    "looCorrect": false,
+    "summary": "Borderline analog (52 percent probability of a good analog). Pushes toward good: above-average max temperature swing and below-average avg slope angle. Pushes toward poor: below-average max slope.",
+    "features": {
+     "solar_index": 5.28,
+     "temp_swing": 20.95,
+     "max_slope_deg": 38.966,
+     "avg_slope_deg": 1.804
+    },
+    "contributions": [
+     {
+      "feature": "solar_index",
+      "label": "Avg solar index",
+      "value": 5.28,
+      "contribution": 0.384
+     },
+     {
+      "feature": "temp_swing",
+      "label": "Max temperature swing",
+      "value": 20.95,
+      "contribution": 0.557
+     },
+     {
+      "feature": "max_slope_deg",
+      "label": "Max slope",
+      "value": 38.966,
+      "contribution": -1.25
+     },
+     {
+      "feature": "avg_slope_deg",
+      "label": "Avg slope angle",
+      "value": 1.804,
+      "contribution": 0.413
+     }
+    ],
+    "nearest": [
+     {
+      "name": "Lonar Crater",
+      "label": 1,
+      "distance": 0.285,
+      "displayName": "Lonar Crater"
+     },
+     {
+      "name": "Mississippi",
+      "label": 0,
+      "distance": 0.755,
+      "displayName": "Mississippi"
+     },
+     {
+      "name": "Makgadikgadi Pan",
+      "label": 1,
+      "distance": 1.13,
+      "displayName": "Makgadikgadi Pan"
+     }
+    ]
+   }
+  },
+  {
+   "id": "lonar-crater",
+   "datasetName": "Lonar Crater",
+   "name": "Lonar Crater",
+   "country": "Maharashtra, India",
+   "lat": 19.98,
+   "lon": 76.51,
+   "type": "Crater",
+   "tag": "Impact crater",
+   "coordsApproximate": true,
+   "prediction": {
+    "datasetId": "11",
+    "rank": 17,
+    "of": 30,
+    "label": 1,
+    "pGood": 0.4935,
+    "score": 49.4,
+    "verdict": "borderline",
+    "looPGood": 0.4319,
+    "looCorrect": false,
+    "summary": "Borderline analog (49 percent probability of a good analog). Pushes toward good: above-average max temperature swing and below-average avg slope angle. Pushes toward poor: below-average max slope.",
+    "features": {
+     "solar_index": 4.987,
+     "temp_swing": 21.1,
+     "max_slope_deg": 40.096,
+     "avg_slope_deg": 2.151
+    },
+    "contributions": [
+     {
+      "feature": "solar_index",
+      "label": "Avg solar index",
+      "value": 4.987,
+      "contribution": 0.261
+     },
+     {
+      "feature": "temp_swing",
+      "label": "Max temperature swing",
+      "value": 21.1,
+      "contribution": 0.575
+     },
+     {
+      "feature": "max_slope_deg",
+      "label": "Max slope",
+      "value": 40.096,
+      "contribution": -1.186
+     },
+     {
+      "feature": "avg_slope_deg",
+      "label": "Avg slope angle",
+      "value": 2.151,
+      "contribution": 0.335
+     }
+    ],
+    "nearest": [
+     {
+      "name": "Qaidam Basin",
+      "label": 1,
+      "distance": 0.285,
+      "displayName": "Qaidam Basin"
+     },
+     {
+      "name": "Mississippi",
+      "label": 0,
+      "distance": 0.717,
+      "displayName": "Mississippi"
+     },
+     {
+      "name": "Dhaka,Bangladesh",
+      "label": 0,
+      "distance": 1.304,
+      "displayName": "Dhaka"
+     }
+    ]
+   }
+  },
+  {
+   "id": "auckland",
+   "datasetName": "Auckland",
+   "name": "Auckland",
+   "country": "New Zealand",
+   "lat": -36.85,
+   "lon": 174.76,
+   "type": "Urban",
+   "tag": "Temperate city",
+   "coordsApproximate": true,
+   "prediction": {
+    "datasetId": "22",
+    "rank": 18,
+    "of": 30,
+    "label": 0,
+    "pGood": 0.4339,
+    "score": 43.4,
+    "verdict": "borderline",
+    "looPGood": 0.474,
+    "looCorrect": true,
+    "summary": "Borderline analog (43 percent probability of a good analog). Pushes toward good: above-average max slope. Pushes toward poor: below-average max temperature swing.",
+    "features": {
+     "solar_index": 4.393,
+     "temp_swing": 9.83,
+     "max_slope_deg": 70.457,
+     "avg_slope_deg": 3.811
+    },
+    "contributions": [
+     {
+      "feature": "solar_index",
+      "label": "Avg solar index",
+      "value": 4.393,
+      "contribution": 0.011
+     },
+     {
+      "feature": "temp_swing",
+      "label": "Max temperature swing",
+      "value": 9.83,
+      "contribution": -0.752
+     },
+     {
+      "feature": "max_slope_deg",
+      "label": "Max slope",
+      "value": 70.457,
+      "contribution": 0.525
+     },
+     {
+      "feature": "avg_slope_deg",
+      "label": "Avg slope angle",
+      "value": 3.811,
+      "contribution": -0.039
+     }
+    ],
+    "nearest": [
+     {
+      "name": "Singapore Coastal Basin",
+      "label": 0,
+      "distance": 0.663,
+      "displayName": "Singapore Coastal Basin"
+     },
+     {
+      "name": "Borneo Rainforest",
+      "label": 0,
+      "distance": 0.731,
+      "displayName": "Borneo Rainforest"
      },
      {
       "name": "Mount Etna",
       "label": 1,
-      "distance": 2.09,
+      "distance": 1.074,
       "displayName": "Mount Etna"
      }
     ]
@@ -1288,365 +1363,65 @@ export default {
    "coordsApproximate": true,
    "prediction": {
     "datasetId": "2",
-    "rank": 18,
+    "rank": 19,
     "of": 30,
     "label": 1,
-    "pGood": 0.4618,
-    "score": 46.2,
+    "pGood": 0.4144,
+    "score": 41.4,
     "verdict": "borderline",
-    "looPGood": 0.3393,
+    "looPGood": 0.2953,
     "looCorrect": false,
-    "summary": "Borderline analog (46 percent probability of a good analog). Pushes toward good: above-average avg solar index and below-average avg slope angle. Pushes toward poor: below-average max temperature swing and below-average max slope.",
+    "summary": "Borderline analog (41 percent probability of a good analog). Pushes toward good: below-average avg slope angle and above-average avg solar index. Pushes toward poor: below-average max temperature swing and below-average max slope.",
     "features": {
-     "solar_index": 5.782367,
-     "temp_swing": 9.03,
-     "max_slope_deg": 49.84862,
-     "avg_slope_deg": 0.26511
+     "solar_index": 5.467,
+     "temp_swing": 8.39,
+     "max_slope_deg": 49.849,
+     "avg_slope_deg": 0.265
     },
     "contributions": [
      {
       "feature": "solar_index",
       "label": "Avg solar index",
-      "value": 5.782367,
-      "contribution": 1.337
+      "value": 5.467,
+      "contribution": 0.463
      },
      {
       "feature": "temp_swing",
       "label": "Max temperature swing",
-      "value": 9.03,
-      "contribution": -1.616
+      "value": 8.39,
+      "contribution": -0.922
      },
      {
       "feature": "max_slope_deg",
       "label": "Max slope",
-      "value": 49.84862,
-      "contribution": -0.871
+      "value": 49.849,
+      "contribution": -0.636
      },
      {
       "feature": "avg_slope_deg",
       "label": "Avg slope angle",
-      "value": 0.26511,
-      "contribution": 0.979
+      "value": 0.265,
+      "contribution": 0.76
      }
     ],
     "nearest": [
      {
       "name": "The Everglades,USA",
       "label": 0,
-      "distance": 0.724,
+      "distance": 0.44,
       "displayName": "The Everglades"
      },
      {
-      "name": "Mississippi",
+      "name": "Congo Basin Lowlands",
       "label": 0,
-      "distance": 1.471,
-      "displayName": "Mississippi"
+      "distance": 1.413,
+      "displayName": "Congo Basin Lowlands"
      },
-     {
-      "name": "Lanzarote,Spain",
-      "label": 1,
-      "distance": 1.701,
-      "displayName": "Lanzarote"
-     }
-    ]
-   }
-  },
-  {
-   "id": "rhine-valley",
-   "datasetName": "The Rhine River Valley,Germany",
-   "name": "Rhine River Valley",
-   "country": "Germany",
-   "lat": 50,
-   "lon": 7.8,
-   "type": "Lowland",
-   "tag": "River valley",
-   "coordsApproximate": true,
-   "prediction": {
-    "datasetId": "26",
-    "rank": 19,
-    "of": 30,
-    "label": 0,
-    "pGood": 0.4022,
-    "score": 40.2,
-    "verdict": "borderline",
-    "looPGood": 0.4448,
-    "looCorrect": true,
-    "summary": "Borderline analog (40 percent probability of a good analog). Pushes toward good: above-average max temperature swing. Pushes toward poor: below-average max slope.",
-    "features": {
-     "solar_index": 4.04476,
-     "temp_swing": 22.71,
-     "max_slope_deg": 44.38675,
-     "avg_slope_deg": 3.12304
-    },
-    "contributions": [
-     {
-      "feature": "solar_index",
-      "label": "Avg solar index",
-      "value": 4.04476,
-      "contribution": -0.246
-     },
-     {
-      "feature": "temp_swing",
-      "label": "Max temperature swing",
-      "value": 22.71,
-      "contribution": 0.975
-     },
-     {
-      "feature": "max_slope_deg",
-      "label": "Max slope",
-      "value": 44.38675,
-      "contribution": -1.292
-     },
-     {
-      "feature": "avg_slope_deg",
-      "label": "Avg slope angle",
-      "value": 3.12304,
-      "contribution": 0.149
-     }
-    ],
-    "nearest": [
-     {
-      "name": "Lonar Crater",
-      "label": 1,
-      "distance": 0.975,
-      "displayName": "Lonar Crater"
-     },
-     {
-      "name": "The Great Plains Farmland,USA",
-      "label": 0,
-      "distance": 0.989,
-      "displayName": "Great Plains Farmland"
-     },
-     {
-      "name": "London",
-      "label": 0,
-      "distance": 1.281,
-      "displayName": "London"
-     }
-    ]
-   }
-  },
-  {
-   "id": "congo-basin",
-   "datasetName": "Congo Basin Lowlands",
-   "name": "Congo Basin Lowlands",
-   "country": "Central Africa",
-   "lat": -0.5,
-   "lon": 22,
-   "type": "Rainforest",
-   "tag": "Tropical lowland",
-   "coordsApproximate": true,
-   "prediction": {
-    "datasetId": "17",
-    "rank": 20,
-    "of": 30,
-    "label": 0,
-    "pGood": 0.3942,
-    "score": 39.4,
-    "verdict": "bad",
-    "looPGood": 0.4652,
-    "looCorrect": true,
-    "summary": "Predicted poor analog (39 percent probability of a good analog). Pushes toward good: below-average avg slope angle and above-average max temperature swing. Pushes toward poor: below-average max slope.",
-    "features": {
-     "solar_index": 4.697658,
-     "temp_swing": 22.07,
-     "max_slope_deg": 28.62888,
-     "avg_slope_deg": 0.68116
-    },
-    "contributions": [
-     {
-      "feature": "solar_index",
-      "label": "Avg solar index",
-      "value": 4.697658,
-      "contribution": 0.349
-     },
-     {
-      "feature": "temp_swing",
-      "label": "Max temperature swing",
-      "value": 22.07,
-      "contribution": 0.854
-     },
-     {
-      "feature": "max_slope_deg",
-      "label": "Max slope",
-      "value": 28.62888,
-      "contribution": -2.508
-     },
-     {
-      "feature": "avg_slope_deg",
-      "label": "Avg slope angle",
-      "value": 0.68116,
-      "contribution": 0.858
-     }
-    ],
-    "nearest": [
-     {
-      "name": "Lonar Crater",
-      "label": 1,
-      "distance": 0.886,
-      "displayName": "Lonar Crater"
-     },
-     {
-      "name": "Qaidam Basin",
-      "label": 1,
-      "distance": 0.934,
-      "displayName": "Qaidam Basin"
-     },
-     {
-      "name": "Makgadikgadi Pan",
-      "label": 1,
-      "distance": 1.268,
-      "displayName": "Makgadikgadi Pan"
-     }
-    ]
-   }
-  },
-  {
-   "id": "auckland",
-   "datasetName": "Auckland",
-   "name": "Auckland",
-   "country": "New Zealand",
-   "lat": -36.85,
-   "lon": 174.76,
-   "type": "Urban",
-   "tag": "Temperate city",
-   "coordsApproximate": true,
-   "prediction": {
-    "datasetId": "22",
-    "rank": 21,
-    "of": 30,
-    "label": 0,
-    "pGood": 0.3744,
-    "score": 37.4,
-    "verdict": "bad",
-    "looPGood": 0.4104,
-    "looCorrect": true,
-    "summary": "Predicted poor analog (37 percent probability of a good analog). Pushes toward good: above-average max slope. Pushes toward poor: below-average max temperature swing.",
-    "features": {
-     "solar_index": 4.41832,
-     "temp_swing": 10.73,
-     "max_slope_deg": 70.45663,
-     "avg_slope_deg": 3.811
-    },
-    "contributions": [
-     {
-      "feature": "solar_index",
-      "label": "Avg solar index",
-      "value": 4.41832,
-      "contribution": 0.095
-     },
-     {
-      "feature": "temp_swing",
-      "label": "Max temperature swing",
-      "value": 10.73,
-      "contribution": -1.294
-     },
-     {
-      "feature": "max_slope_deg",
-      "label": "Max slope",
-      "value": 70.45663,
-      "contribution": 0.719
-     },
-     {
-      "feature": "avg_slope_deg",
-      "label": "Avg slope angle",
-      "value": 3.811,
-      "contribution": -0.051
-     }
-    ],
-    "nearest": [
      {
       "name": "Singapore Coastal Basin",
       "label": 0,
-      "distance": 0.66,
+      "distance": 1.531,
       "displayName": "Singapore Coastal Basin"
-     },
-     {
-      "name": "Mount Etna",
-      "label": 1,
-      "distance": 1.017,
-      "displayName": "Mount Etna"
-     },
-     {
-      "name": "Borneo Rainforest",
-      "label": 0,
-      "distance": 1.04,
-      "displayName": "Borneo Rainforest"
-     }
-    ]
-   }
-  },
-  {
-   "id": "mississippi",
-   "datasetName": "Mississippi",
-   "name": "Mississippi",
-   "country": "United States",
-   "lat": 32.7,
-   "lon": -90,
-   "type": "Lowland",
-   "tag": "Humid lowland",
-   "coordsApproximate": true,
-   "prediction": {
-    "datasetId": "23",
-    "rank": 22,
-    "of": 30,
-    "label": 0,
-    "pGood": 0.3696,
-    "score": 37,
-    "verdict": "bad",
-    "looPGood": 0.4098,
-    "looCorrect": true,
-    "summary": "Predicted poor analog (37 percent probability of a good analog). Pushes toward good: below-average avg slope angle and above-average avg solar index. Pushes toward poor: below-average max slope and below-average max temperature swing.",
-    "features": {
-     "solar_index": 4.676804,
-     "temp_swing": 15.21,
-     "max_slope_deg": 43.75652,
-     "avg_slope_deg": 0.52102
-    },
-    "contributions": [
-     {
-      "feature": "solar_index",
-      "label": "Avg solar index",
-      "value": 4.676804,
-      "contribution": 0.33
-     },
-     {
-      "feature": "temp_swing",
-      "label": "Max temperature swing",
-      "value": 15.21,
-      "contribution": -0.446
-     },
-     {
-      "feature": "max_slope_deg",
-      "label": "Max slope",
-      "value": 43.75652,
-      "contribution": -1.341
-     },
-     {
-      "feature": "avg_slope_deg",
-      "label": "Avg slope angle",
-      "value": 0.52102,
-      "contribution": 0.905
-     }
-    ],
-    "nearest": [
-     {
-      "name": "Dhaka,Bangladesh",
-      "label": 0,
-      "distance": 1.011,
-      "displayName": "Dhaka"
-     },
-     {
-      "name": "The Everglades,USA",
-      "label": 0,
-      "distance": 1.054,
-      "displayName": "The Everglades"
-     },
-     {
-      "name": "Lonar Crater",
-      "label": 1,
-      "distance": 1.399,
-      "displayName": "Lonar Crater"
      }
     ]
    }
@@ -1663,65 +1438,140 @@ export default {
    "coordsApproximate": true,
    "prediction": {
     "datasetId": "21",
-    "rank": 23,
+    "rank": 20,
     "of": 30,
     "label": 0,
-    "pGood": 0.3339,
-    "score": 33.4,
-    "verdict": "bad",
-    "looPGood": 0.365,
+    "pGood": 0.4119,
+    "score": 41.2,
+    "verdict": "borderline",
+    "looPGood": 0.449,
     "looCorrect": true,
-    "summary": "Predicted poor analog (33 percent probability of a good analog). Pushes toward good: above-average max temperature swing. Pushes toward poor: below-average avg solar index and above-average avg slope angle.",
+    "summary": "Borderline analog (41 percent probability of a good analog). Pushes toward good: above-average max temperature swing. Pushes toward poor: below-average avg solar index and above-average avg slope angle.",
     "features": {
-     "solar_index": 3.551645,
-     "temp_swing": 19.95,
-     "max_slope_deg": 60.36313,
-     "avg_slope_deg": 5.03515
+     "solar_index": 3.563,
+     "temp_swing": 19.2,
+     "max_slope_deg": 60.363,
+     "avg_slope_deg": 5.035
     },
     "contributions": [
      {
       "feature": "solar_index",
       "label": "Avg solar index",
-      "value": 3.551645,
-      "contribution": -0.695
+      "value": 3.563,
+      "contribution": -0.338
      },
      {
       "feature": "temp_swing",
       "label": "Max temperature swing",
-      "value": 19.95,
-      "contribution": 0.452
+      "value": 19.2,
+      "contribution": 0.351
      },
      {
       "feature": "max_slope_deg",
       "label": "Max slope",
-      "value": 60.36313,
-      "contribution": -0.06
+      "value": 60.363,
+      "contribution": -0.044
      },
      {
       "feature": "avg_slope_deg",
       "label": "Avg slope angle",
-      "value": 5.03515,
-      "contribution": -0.406
+      "value": 5.035,
+      "contribution": -0.315
      }
     ],
     "nearest": [
      {
-      "name": "The Great Plains Farmland,USA",
-      "label": 0,
-      "distance": 0.656,
-      "displayName": "Great Plains Farmland"
+      "name": "Haughton Crater",
+      "label": 1,
+      "distance": 0.993,
+      "displayName": "Haughton Crater"
      },
      {
       "name": "The Pampas Lowlands",
       "label": 0,
-      "distance": 0.882,
+      "distance": 1.18,
       "displayName": "The Pampas Lowlands"
      },
      {
-      "name": "Haughton Crater",
+      "name": "The Rhine River Valley,Germany",
+      "label": 0,
+      "distance": 1.212,
+      "displayName": "Rhine River Valley"
+     }
+    ]
+   }
+  },
+  {
+   "id": "makgadikgadi-pan",
+   "datasetName": "Makgadikgadi Pan",
+   "name": "Makgadikgadi Pan",
+   "country": "Botswana",
+   "lat": -20.7,
+   "lon": 25.4,
+   "type": "Desert",
+   "tag": "Salt pan",
+   "coordsApproximate": true,
+   "prediction": {
+    "datasetId": "8",
+    "rank": 21,
+    "of": 30,
+    "label": 1,
+    "pGood": 0.3933,
+    "score": 39.3,
+    "verdict": "bad",
+    "looPGood": 0.2196,
+    "looCorrect": false,
+    "summary": "Predicted poor analog (39 percent probability of a good analog). Pushes toward good: above-average max temperature swing and above-average avg solar index. Pushes toward poor: below-average max slope.",
+    "features": {
+     "solar_index": 5.974,
+     "temp_swing": 22.15,
+     "max_slope_deg": 21.143,
+     "avg_slope_deg": 1.61
+    },
+    "contributions": [
+     {
+      "feature": "solar_index",
+      "label": "Avg solar index",
+      "value": 5.974,
+      "contribution": 0.676
+     },
+     {
+      "feature": "temp_swing",
+      "label": "Max temperature swing",
+      "value": 22.15,
+      "contribution": 0.698
+     },
+     {
+      "feature": "max_slope_deg",
+      "label": "Max slope",
+      "value": 21.143,
+      "contribution": -2.254
+     },
+     {
+      "feature": "avg_slope_deg",
+      "label": "Avg slope angle",
+      "value": 1.61,
+      "contribution": 0.457
+     }
+    ],
+    "nearest": [
+     {
+      "name": "Qaidam Basin",
       "label": 1,
-      "distance": 0.949,
-      "displayName": "Haughton Crater"
+      "distance": 1.13,
+      "displayName": "Qaidam Basin"
+     },
+     {
+      "name": "Lonar Crater",
+      "label": 1,
+      "distance": 1.325,
+      "displayName": "Lonar Crater"
+     },
+     {
+      "name": "Mississippi",
+      "label": 0,
+      "distance": 1.682,
+      "displayName": "Mississippi"
      }
     ]
    }
@@ -1738,65 +1588,65 @@ export default {
    "coordsApproximate": true,
    "prediction": {
     "datasetId": "30",
-    "rank": 24,
+    "rank": 22,
     "of": 30,
     "label": 0,
-    "pGood": 0.2816,
-    "score": 28.2,
+    "pGood": 0.3727,
+    "score": 37.3,
     "verdict": "bad",
-    "looPGood": 0.314,
+    "looPGood": 0.4214,
     "looCorrect": true,
-    "summary": "Predicted poor analog (28 percent probability of a good analog). Pushes toward good: above-average max slope. Pushes toward poor: below-average max temperature swing.",
+    "summary": "Predicted poor analog (37 percent probability of a good analog). Pushes toward poor: below-average max temperature swing.",
     "features": {
-     "solar_index": 4.553936,
-     "temp_swing": 8.02,
-     "max_slope_deg": 66.13615,
-     "avg_slope_deg": 2.77883
+     "solar_index": 4.541,
+     "temp_swing": 7.23,
+     "max_slope_deg": 66.136,
+     "avg_slope_deg": 2.779
     },
     "contributions": [
      {
       "feature": "solar_index",
       "label": "Avg solar index",
-      "value": 4.553936,
-      "contribution": 0.218
+      "value": 4.541,
+      "contribution": 0.073
      },
      {
       "feature": "temp_swing",
       "label": "Max temperature swing",
-      "value": 8.02,
-      "contribution": -1.807
+      "value": 7.23,
+      "contribution": -1.058
      },
      {
       "feature": "max_slope_deg",
       "label": "Max slope",
-      "value": 66.13615,
-      "contribution": 0.386
+      "value": 66.136,
+      "contribution": 0.282
      },
      {
       "feature": "avg_slope_deg",
       "label": "Avg slope angle",
-      "value": 2.77883,
-      "contribution": 0.249
+      "value": 2.779,
+      "contribution": 0.193
      }
     ],
     "nearest": [
      {
       "name": "Auckland",
       "label": 0,
-      "distance": 0.66,
+      "distance": 0.663,
       "displayName": "Auckland"
-     },
-     {
-      "name": "Mount Etna",
-      "label": 1,
-      "distance": 1.177,
-      "displayName": "Mount Etna"
      },
      {
       "name": "Borneo Rainforest",
       "label": 0,
-      "distance": 1.188,
+      "distance": 1.156,
       "displayName": "Borneo Rainforest"
+     },
+     {
+      "name": "Lanzarote,Spain",
+      "label": 1,
+      "distance": 1.186,
+      "displayName": "Lanzarote"
      }
     ]
    }
@@ -1813,64 +1663,214 @@ export default {
    "coordsApproximate": true,
    "prediction": {
     "datasetId": "28",
-    "rank": 25,
+    "rank": 23,
     "of": 30,
     "label": 0,
-    "pGood": 0.2795,
-    "score": 27.9,
+    "pGood": 0.3284,
+    "score": 32.8,
     "verdict": "bad",
-    "looPGood": 0.3157,
+    "looPGood": 0.3798,
     "looCorrect": true,
-    "summary": "Predicted poor analog (28 percent probability of a good analog). Pushes toward good: below-average avg slope angle and above-average avg solar index. Pushes toward poor: below-average max temperature swing and below-average max slope.",
+    "summary": "Predicted poor analog (33 percent probability of a good analog). Pushes toward good: below-average avg slope angle. Pushes toward poor: below-average max temperature swing and below-average max slope.",
     "features": {
-     "solar_index": 5.048129,
-     "temp_swing": 9.62,
-     "max_slope_deg": 49.51777,
-     "avg_slope_deg": 0.99289
+     "solar_index": 5.062,
+     "temp_swing": 8.25,
+     "max_slope_deg": 49.518,
+     "avg_slope_deg": 0.993
     },
     "contributions": [
      {
       "feature": "solar_index",
       "label": "Avg solar index",
-      "value": 5.048129,
-      "contribution": 0.668
+      "value": 5.062,
+      "contribution": 0.292
      },
      {
       "feature": "temp_swing",
       "label": "Max temperature swing",
-      "value": 9.62,
-      "contribution": -1.504
+      "value": 8.25,
+      "contribution": -0.938
      },
      {
       "feature": "max_slope_deg",
       "label": "Max slope",
-      "value": 49.51777,
-      "contribution": -0.897
+      "value": 49.518,
+      "contribution": -0.655
      },
      {
       "feature": "avg_slope_deg",
       "label": "Avg slope angle",
-      "value": 0.99289,
-      "contribution": 0.768
+      "value": 0.993,
+      "contribution": 0.596
      }
     ],
     "nearest": [
      {
       "name": "Mauna Kea",
       "label": 1,
-      "distance": 0.724,
+      "distance": 0.44,
       "displayName": "Mauna Kea"
-     },
-     {
-      "name": "Mississippi",
-      "label": 0,
-      "distance": 1.054,
-      "displayName": "Mississippi"
      },
      {
       "name": "Singapore Coastal Basin",
       "label": 0,
-      "distance": 1.24,
+      "distance": 1.219,
+      "displayName": "Singapore Coastal Basin"
+     },
+     {
+      "name": "Congo Basin Lowlands",
+      "label": 0,
+      "distance": 1.28,
+      "displayName": "Congo Basin Lowlands"
+     }
+    ]
+   }
+  },
+  {
+   "id": "haughton",
+   "datasetName": "Haughton Crater",
+   "name": "Haughton Crater",
+   "country": "Devon Island, Canada",
+   "lat": 75.38,
+   "lon": -89.67,
+   "type": "Polar",
+   "tag": "Impact crater",
+   "coordsApproximate": true,
+   "prediction": {
+    "datasetId": "12",
+    "rank": 24,
+    "of": 30,
+    "label": 1,
+    "pGood": 0.3215,
+    "score": 32.2,
+    "verdict": "bad",
+    "looPGood": 0.2188,
+    "looCorrect": false,
+    "summary": "Predicted poor analog (32 percent probability of a good analog). Pushes toward poor: below-average avg solar index.",
+    "features": {
+     "solar_index": 2.418,
+     "temp_swing": 17.9,
+     "max_slope_deg": 64.116,
+     "avg_slope_deg": 4.893
+    },
+    "contributions": [
+     {
+      "feature": "solar_index",
+      "label": "Avg solar index",
+      "value": 2.418,
+      "contribution": -0.819
+     },
+     {
+      "feature": "temp_swing",
+      "label": "Max temperature swing",
+      "value": 17.9,
+      "contribution": 0.198
+     },
+     {
+      "feature": "max_slope_deg",
+      "label": "Max slope",
+      "value": 64.116,
+      "contribution": 0.168
+     },
+     {
+      "feature": "avg_slope_deg",
+      "label": "Avg slope angle",
+      "value": 4.893,
+      "contribution": -0.283
+     }
+    ],
+    "nearest": [
+     {
+      "name": "Seattle,USA",
+      "label": 0,
+      "distance": 0.993,
+      "displayName": "Seattle"
+     },
+     {
+      "name": "PINGUALUIT Crater",
+      "label": 1,
+      "distance": 1.287,
+      "displayName": "Pingualuit Crater"
+     },
+     {
+      "name": "The Rhine River Valley,Germany",
+      "label": 0,
+      "distance": 1.378,
+      "displayName": "Rhine River Valley"
+     }
+    ]
+   }
+  },
+  {
+   "id": "dublin",
+   "datasetName": "Dublin,Ireland",
+   "name": "Dublin",
+   "country": "Ireland",
+   "lat": 53.35,
+   "lon": -6.26,
+   "type": "Urban",
+   "tag": "Temperate city",
+   "coordsApproximate": true,
+   "prediction": {
+    "datasetId": "20",
+    "rank": 25,
+    "of": 30,
+    "label": 0,
+    "pGood": 0.2929,
+    "score": 29.3,
+    "verdict": "bad",
+    "looPGood": 0.3311,
+    "looCorrect": true,
+    "summary": "Predicted poor analog (29 percent probability of a good analog). Pushes toward good: above-average max slope. Pushes toward poor: below-average max temperature swing and below-average avg solar index.",
+    "features": {
+     "solar_index": 2.788,
+     "temp_swing": 9.07,
+     "max_slope_deg": 68.889,
+     "avg_slope_deg": 2.761
+    },
+    "contributions": [
+     {
+      "feature": "solar_index",
+      "label": "Avg solar index",
+      "value": 2.788,
+      "contribution": -0.663
+     },
+     {
+      "feature": "temp_swing",
+      "label": "Max temperature swing",
+      "value": 9.07,
+      "contribution": -0.842
+     },
+     {
+      "feature": "max_slope_deg",
+      "label": "Max slope",
+      "value": 68.889,
+      "contribution": 0.437
+     },
+     {
+      "feature": "avg_slope_deg",
+      "label": "Avg slope angle",
+      "value": 2.761,
+      "contribution": 0.197
+     }
+    ],
+    "nearest": [
+     {
+      "name": "Sarychev Peak",
+      "label": 1,
+      "distance": 1.183,
+      "displayName": "Sarychev Peak"
+     },
+     {
+      "name": "Auckland",
+      "label": 0,
+      "distance": 1.394,
+      "displayName": "Auckland"
+     },
+     {
+      "name": "Singapore Coastal Basin",
+      "label": 0,
+      "distance": 1.487,
       "displayName": "Singapore Coastal Basin"
      }
     ]
@@ -1891,287 +1891,137 @@ export default {
     "rank": 26,
     "of": 30,
     "label": 0,
-    "pGood": 0.2386,
-    "score": 23.9,
+    "pGood": 0.2477,
+    "score": 24.8,
     "verdict": "bad",
-    "looPGood": 0.3237,
+    "looPGood": 0.3705,
     "looCorrect": true,
-    "summary": "Predicted poor analog (24 percent probability of a good analog). Pushes toward good: above-average max slope. Pushes toward poor: above-average avg slope angle and below-average avg solar index.",
+    "summary": "Predicted poor analog (25 percent probability of a good analog). Pushes toward good: above-average max slope. Pushes toward poor: above-average avg slope angle and below-average max temperature swing.",
     "features": {
-     "solar_index": 3.821863,
-     "temp_swing": 18.64,
-     "max_slope_deg": 74.72789,
-     "avg_slope_deg": 10.46317
+     "solar_index": 4.689,
+     "temp_swing": 12.29,
+     "max_slope_deg": 74.728,
+     "avg_slope_deg": 10.463
     },
     "contributions": [
      {
       "feature": "solar_index",
       "label": "Avg solar index",
-      "value": 3.821863,
-      "contribution": -0.449
+      "value": 4.689,
+      "contribution": 0.136
      },
      {
       "feature": "temp_swing",
       "label": "Max temperature swing",
-      "value": 18.64,
-      "contribution": 0.204
+      "value": 12.29,
+      "contribution": -0.463
      },
      {
       "feature": "max_slope_deg",
       "label": "Max slope",
-      "value": 74.72789,
-      "contribution": 1.048
+      "value": 74.728,
+      "contribution": 0.766
      },
      {
       "feature": "avg_slope_deg",
       "label": "Avg slope angle",
-      "value": 10.46317,
-      "contribution": -1.982
+      "value": 10.463,
+      "contribution": -1.539
      }
     ],
     "nearest": [
-     {
-      "name": "San Rafael Swell",
-      "label": 1,
-      "distance": 1.838,
-      "displayName": "San Rafael Swell"
-     },
-     {
-      "name": "McMurdo Dry Valleys",
-      "label": 1,
-      "distance": 1.895,
-      "displayName": "McMurdo Dry Valleys"
-     },
      {
       "name": "Death Valley",
       "label": 1,
-      "distance": 2.021,
+      "distance": 2.007,
       "displayName": "Death Valley"
+     },
+     {
+      "name": "San Rafael Swell",
+      "label": 1,
+      "distance": 2.082,
+      "displayName": "San Rafael Swell"
+     },
+     {
+      "name": "Borneo Rainforest",
+      "label": 0,
+      "distance": 2.31,
+      "displayName": "Borneo Rainforest"
      }
     ]
    }
   },
   {
-   "id": "pampas",
-   "datasetName": "The Pampas Lowlands",
-   "name": "The Pampas Lowlands",
-   "country": "Argentina",
-   "lat": -35,
-   "lon": -62,
+   "id": "rhine-valley",
+   "datasetName": "The Rhine River Valley,Germany",
+   "name": "Rhine River Valley",
+   "country": "Germany",
+   "lat": 50,
+   "lon": 7.8,
    "type": "Lowland",
-   "tag": "Grassland",
+   "tag": "River valley",
    "coordsApproximate": true,
    "prediction": {
-    "datasetId": "24",
+    "datasetId": "26",
     "rank": 27,
     "of": 30,
     "label": 0,
-    "pGood": 0.1499,
-    "score": 15,
+    "pGood": 0.2391,
+    "score": 23.9,
     "verdict": "bad",
-    "looPGood": 0.1649,
+    "looPGood": 0.2664,
     "looCorrect": true,
-    "summary": "Predicted poor analog (15 percent probability of a good analog). Pushes toward poor: below-average avg solar index and below-average max temperature swing.",
+    "summary": "Predicted poor analog (24 percent probability of a good analog). Pushes toward poor: below-average max slope and below-average avg solar index.",
     "features": {
-     "solar_index": 3.024556,
-     "temp_swing": 15.6,
-     "max_slope_deg": 63.22815,
-     "avg_slope_deg": 4.90341
+     "solar_index": 3.101,
+     "temp_swing": 18.03,
+     "max_slope_deg": 44.387,
+     "avg_slope_deg": 3.123
     },
     "contributions": [
      {
       "feature": "solar_index",
       "label": "Avg solar index",
-      "value": 3.024556,
-      "contribution": -1.175
+      "value": 3.101,
+      "contribution": -0.532
      },
      {
       "feature": "temp_swing",
       "label": "Max temperature swing",
-      "value": 15.6,
-      "contribution": -0.372
+      "value": 18.03,
+      "contribution": 0.213
      },
      {
       "feature": "max_slope_deg",
       "label": "Max slope",
-      "value": 63.22815,
-      "contribution": 0.161
+      "value": 44.387,
+      "contribution": -0.944
      },
      {
       "feature": "avg_slope_deg",
       "label": "Avg slope angle",
-      "value": 4.90341,
-      "contribution": -0.368
+      "value": 3.123,
+      "contribution": 0.116
      }
     ],
     "nearest": [
+     {
+      "name": "London",
+      "label": 0,
+      "distance": 0.386,
+      "displayName": "London"
+     },
      {
       "name": "Seattle,USA",
       "label": 0,
-      "distance": 0.882,
+      "distance": 1.212,
       "displayName": "Seattle"
      },
      {
-      "name": "Dublin,Ireland",
+      "name": "Dhaka,Bangladesh",
       "label": 0,
-      "distance": 1.323,
-      "displayName": "Dublin"
-     },
-     {
-      "name": "London",
-      "label": 0,
-      "distance": 1.378,
-      "displayName": "London"
-     }
-    ]
-   }
-  },
-  {
-   "id": "dublin",
-   "datasetName": "Dublin,Ireland",
-   "name": "Dublin",
-   "country": "Ireland",
-   "lat": 53.35,
-   "lon": -6.26,
-   "type": "Urban",
-   "tag": "Temperate city",
-   "coordsApproximate": true,
-   "prediction": {
-    "datasetId": "20",
-    "rank": 28,
-    "of": 30,
-    "label": 0,
-    "pGood": 0.1214,
-    "score": 12.1,
-    "verdict": "bad",
-    "looPGood": 0.1326,
-    "looCorrect": true,
-    "summary": "Predicted poor analog (12 percent probability of a good analog). Pushes toward good: above-average max slope. Pushes toward poor: below-average max temperature swing and below-average avg solar index.",
-    "features": {
-     "solar_index": 2.781555,
-     "temp_swing": 9.89,
-     "max_slope_deg": 68.88903,
-     "avg_slope_deg": 2.76138
-    },
-    "contributions": [
-     {
-      "feature": "solar_index",
-      "label": "Avg solar index",
-      "value": 2.781555,
-      "contribution": -1.396
-     },
-     {
-      "feature": "temp_swing",
-      "label": "Max temperature swing",
-      "value": 9.89,
-      "contribution": -1.453
-     },
-     {
-      "feature": "max_slope_deg",
-      "label": "Max slope",
-      "value": 68.88903,
-      "contribution": 0.598
-     },
-     {
-      "feature": "avg_slope_deg",
-      "label": "Avg slope angle",
-      "value": 2.76138,
-      "contribution": 0.254
-     }
-    ],
-    "nearest": [
-     {
-      "name": "Sarychev Peak",
-      "label": 1,
-      "distance": 1.201,
-      "displayName": "Sarychev Peak"
-     },
-     {
-      "name": "The Pampas Lowlands",
-      "label": 0,
-      "distance": 1.323,
-      "displayName": "The Pampas Lowlands"
-     },
-     {
-      "name": "Auckland",
-      "label": 0,
-      "distance": 1.533,
-      "displayName": "Auckland"
-     }
-    ]
-   }
-  },
-  {
-   "id": "west-siberian-plain",
-   "datasetName": "The West Siberian Plain,Russia",
-   "name": "West Siberian Plain",
-   "country": "Russia",
-   "lat": 61,
-   "lon": 73,
-   "type": "Lowland",
-   "tag": "Boreal plain",
-   "coordsApproximate": true,
-   "prediction": {
-    "datasetId": "27",
-    "rank": 29,
-    "of": 30,
-    "label": 0,
-    "pGood": 0.105,
-    "score": 10.5,
-    "verdict": "bad",
-    "looPGood": 0.1161,
-    "looCorrect": true,
-    "summary": "Predicted poor analog (10 percent probability of a good analog). Pushes toward good: above-average max temperature swing and below-average avg slope angle. Pushes toward poor: below-average max slope and below-average avg solar index.",
-    "features": {
-     "solar_index": 2.642508,
-     "temp_swing": 26.04,
-     "max_slope_deg": 24.84106,
-     "avg_slope_deg": 1.71885
-    },
-    "contributions": [
-     {
-      "feature": "solar_index",
-      "label": "Avg solar index",
-      "value": 2.642508,
-      "contribution": -1.523
-     },
-     {
-      "feature": "temp_swing",
-      "label": "Max temperature swing",
-      "value": 26.04,
-      "contribution": 1.605
-     },
-     {
-      "feature": "max_slope_deg",
-      "label": "Max slope",
-      "value": 24.84106,
-      "contribution": -2.8
-     },
-     {
-      "feature": "avg_slope_deg",
-      "label": "Avg slope angle",
-      "value": 1.71885,
-      "contribution": 0.557
-     }
-    ],
-    "nearest": [
-     {
-      "name": "The Rhine River Valley,Germany",
-      "label": 0,
-      "distance": 1.809,
-      "displayName": "Rhine River Valley"
-     },
-     {
-      "name": "London",
-      "label": 0,
-      "distance": 1.83,
-      "displayName": "London"
-     },
-     {
-      "name": "Congo Basin Lowlands",
-      "label": 0,
-      "distance": 2.01,
-      "displayName": "Congo Basin Lowlands"
+      "distance": 1.371,
+      "displayName": "Dhaka"
      }
     ]
    }
@@ -2188,65 +2038,215 @@ export default {
    "coordsApproximate": true,
    "prediction": {
     "datasetId": "19",
-    "rank": 30,
+    "rank": 28,
     "of": 30,
     "label": 0,
-    "pGood": 0.0672,
-    "score": 6.7,
+    "pGood": 0.1631,
+    "score": 16.3,
     "verdict": "bad",
-    "looPGood": 0.0719,
+    "looPGood": 0.181,
     "looCorrect": true,
-    "summary": "Predicted poor analog (7 percent probability of a good analog). Pushes toward poor: below-average max slope and below-average avg solar index.",
+    "summary": "Predicted poor analog (16 percent probability of a good analog). Pushes toward poor: below-average max slope and below-average avg solar index.",
     "features": {
-     "solar_index": 3.048551,
-     "temp_swing": 17.33,
-     "max_slope_deg": 40.94784,
-     "avg_slope_deg": 3.2669
+     "solar_index": 3.029,
+     "temp_swing": 16.15,
+     "max_slope_deg": 40.948,
+     "avg_slope_deg": 3.267
     },
     "contributions": [
      {
       "feature": "solar_index",
       "label": "Avg solar index",
-      "value": 3.048551,
-      "contribution": -1.153
+      "value": 3.029,
+      "contribution": -0.562
      },
      {
       "feature": "temp_swing",
       "label": "Max temperature swing",
-      "value": 17.33,
-      "contribution": -0.044
+      "value": 16.15,
+      "contribution": -0.008
      },
      {
       "feature": "max_slope_deg",
       "label": "Max slope",
-      "value": 40.94784,
-      "contribution": -1.558
+      "value": 40.948,
+      "contribution": -1.138
      },
      {
       "feature": "avg_slope_deg",
       "label": "Avg slope angle",
-      "value": 3.2669,
-      "contribution": 0.107
+      "value": 3.267,
+      "contribution": 0.083
      }
     ],
     "nearest": [
      {
       "name": "The Rhine River Valley,Germany",
       "label": 0,
-      "distance": 1.281,
+      "distance": 0.386,
       "displayName": "Rhine River Valley"
-     },
-     {
-      "name": "The Pampas Lowlands",
-      "label": 0,
-      "distance": 1.378,
-      "displayName": "The Pampas Lowlands"
      },
      {
       "name": "Seattle,USA",
       "label": 0,
-      "distance": 1.393,
+      "distance": 1.423,
       "displayName": "Seattle"
+     },
+     {
+      "name": "Haughton Crater",
+      "label": 1,
+      "distance": 1.507,
+      "displayName": "Haughton Crater"
+     }
+    ]
+   }
+  },
+  {
+   "id": "congo-basin",
+   "datasetName": "Congo Basin Lowlands",
+   "name": "Congo Basin Lowlands",
+   "country": "Central Africa",
+   "lat": -0.5,
+   "lon": 22,
+   "type": "Rainforest",
+   "tag": "Tropical lowland",
+   "coordsApproximate": true,
+   "prediction": {
+    "datasetId": "17",
+    "rank": 29,
+    "of": 30,
+    "label": 0,
+    "pGood": 0.1626,
+    "score": 16.3,
+    "verdict": "bad",
+    "looPGood": 0.1809,
+    "looCorrect": true,
+    "summary": "Predicted poor analog (16 percent probability of a good analog). Pushes toward good: below-average avg slope angle. Pushes toward poor: below-average max slope and below-average max temperature swing.",
+    "features": {
+     "solar_index": 4.658,
+     "temp_swing": 11.25,
+     "max_slope_deg": 28.629,
+     "avg_slope_deg": 0.681
+    },
+    "contributions": [
+     {
+      "feature": "solar_index",
+      "label": "Avg solar index",
+      "value": 4.658,
+      "contribution": 0.123
+     },
+     {
+      "feature": "temp_swing",
+      "label": "Max temperature swing",
+      "value": 11.25,
+      "contribution": -0.585
+     },
+     {
+      "feature": "max_slope_deg",
+      "label": "Max slope",
+      "value": 28.629,
+      "contribution": -1.832
+     },
+     {
+      "feature": "avg_slope_deg",
+      "label": "Avg slope angle",
+      "value": 0.681,
+      "contribution": 0.666
+     }
+    ],
+    "nearest": [
+     {
+      "name": "The Everglades,USA",
+      "label": 0,
+      "distance": 1.28,
+      "displayName": "The Everglades"
+     },
+     {
+      "name": "Mauna Kea",
+      "label": 1,
+      "distance": 1.413,
+      "displayName": "Mauna Kea"
+     },
+     {
+      "name": "Mississippi",
+      "label": 0,
+      "distance": 1.882,
+      "displayName": "Mississippi"
+     }
+    ]
+   }
+  },
+  {
+   "id": "west-siberian-plain",
+   "datasetName": "The West Siberian Plain,Russia",
+   "name": "West Siberian Plain",
+   "country": "Russia",
+   "lat": 61,
+   "lon": 73,
+   "type": "Lowland",
+   "tag": "Boreal plain",
+   "coordsApproximate": true,
+   "prediction": {
+    "datasetId": "27",
+    "rank": 30,
+    "of": 30,
+    "label": 0,
+    "pGood": 0.1612,
+    "score": 16.1,
+    "verdict": "bad",
+    "looPGood": 0.1922,
+    "looCorrect": true,
+    "summary": "Predicted poor analog (16 percent probability of a good analog). Pushes toward good: above-average max temperature swing and below-average avg slope angle. Pushes toward poor: below-average max slope and below-average avg solar index.",
+    "features": {
+     "solar_index": 2.608,
+     "temp_swing": 22.28,
+     "max_slope_deg": 24.841,
+     "avg_slope_deg": 1.719
+    },
+    "contributions": [
+     {
+      "feature": "solar_index",
+      "label": "Avg solar index",
+      "value": 2.608,
+      "contribution": -0.739
+     },
+     {
+      "feature": "temp_swing",
+      "label": "Max temperature swing",
+      "value": 22.28,
+      "contribution": 0.714
+     },
+     {
+      "feature": "max_slope_deg",
+      "label": "Max slope",
+      "value": 24.841,
+      "contribution": -2.046
+     },
+     {
+      "feature": "avg_slope_deg",
+      "label": "Avg slope angle",
+      "value": 1.719,
+      "contribution": 0.432
+     }
+    ],
+    "nearest": [
+     {
+      "name": "The Rhine River Valley,Germany",
+      "label": 0,
+      "distance": 1.451,
+      "displayName": "Rhine River Valley"
+     },
+     {
+      "name": "London",
+      "label": 0,
+      "distance": 1.542,
+      "displayName": "London"
+     },
+     {
+      "name": "Mississippi",
+      "label": 0,
+      "distance": 2.043,
+      "displayName": "Mississippi"
      }
     ]
    }
@@ -2263,44 +2263,43 @@ export default {
    {
     "key": "solar_index",
     "label": "Avg solar index",
-    "coef": 1.0160188156638528
+    "coef": 0.5100168418107422
    },
    {
     "key": "temp_swing",
     "label": "Max temperature swing",
-    "coef": 1.1338620229675582
+    "coef": 0.6711982899599992
    },
    {
     "key": "max_slope_deg",
     "label": "Max slope",
-    "coef": 1.4502608055644195
+    "coef": 1.059424657276211
    },
    {
     "key": "avg_slope_deg",
     "label": "Avg slope angle",
-    "coef": -0.7415753610498462
+    "coef": -0.5759077493446346
    }
   ],
   "validation": {
    "method": "leave-one-out (standardiser refit inside every fold)",
-   "accuracy": 0.7667,
+   "accuracy": 0.6333,
    "accuracyCi95": [
-    0.6,
-    0.9
+    0.467,
+    0.8
    ],
-   "auc": 0.8267,
+   "auc": 0.6533,
    "baselineAccuracy": 0.5,
    "confusion": {
-    "true_good": 11,
-    "false_good": 3,
-    "true_bad": 12,
-    "missed_good": 4
+    "true_good": 9,
+    "false_good": 5,
+    "true_bad": 10,
+    "missed_good": 6
    }
   },
   "dataWarnings": [
-   "\"The Great Plains Farmland,USA\" and \"The Rhine River Valley,Germany\" have identical values for solar_index and temp_swing, which may be a copy error in the source data",
    "Only 30 labelled sites, so accuracy estimates carry wide uncertainty"
   ],
-  "trainedAt": "2026-11-10T05:52:27.017Z"
+  "trainedAt": "2026-11-12T21:11:47.849Z"
  }
 };

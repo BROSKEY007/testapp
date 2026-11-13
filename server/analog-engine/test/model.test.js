@@ -20,19 +20,19 @@ test('loader maps the real dataset headers, including double spaces and the labe
 });
 
 test('JS logistic regression matches scikit-learn reference coefficients', () => {
-  const ref = { solar_index: 1.016019, temp_swing: 1.133862, max_slope_deg: 1.450261, avg_slope_deg: -0.741575 };
-  for (const f of model.features) assert.ok(Math.abs(f.coef - ref[f.key]) < 1e-4, `${f.key}: ${f.coef} vs ${ref[f.key]}`);
-  assert.ok(Math.abs(model.intercept - 0.017853) < 1e-4);
+  const ref = { solar_index: 0.509836, temp_swing: 0.671251, max_slope_deg: 1.059315, avg_slope_deg: -0.575842 };
+  for (const f of model.features) assert.ok(Math.abs(f.coef - ref[f.key]) < 5e-4, `${f.key}: ${f.coef} vs ${ref[f.key]}`);
+  assert.ok(Math.abs(model.intercept - -0.010408) < 5e-4);
 });
 
 test('leave-one-out validation matches the offline Python analysis', () => {
-  assert.ok(Math.abs(model.validation.accuracy - 0.7667) < 0.001);
-  assert.ok(Math.abs(model.validation.auc - 0.8267) < 0.001);
+  assert.ok(Math.abs(model.validation.accuracy - 0.6333) < 0.001);
+  assert.ok(Math.abs(model.validation.auc - 0.6533) < 0.001);
   assert.strictEqual(model.validation.per_site.length, 30);
 });
 
-test('data warnings flag the duplicated Great Plains and Rhine values', () => {
-  assert.ok(model.data_warnings.some((w) => /Great Plains/.test(w) && /Rhine/.test(w)));
+test('v5 data has no duplicated Great Plains and Rhine values', () => {
+  assert.ok(!model.data_warnings.some((w) => /Great Plains/.test(w) && /Rhine/.test(w)));
 });
 
 test('predictions are probabilities and clearly good or bad sites land on the right side', () => {

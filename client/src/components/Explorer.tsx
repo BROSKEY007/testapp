@@ -46,10 +46,10 @@ export default function Explorer() {
   return (
     <>
       <header className="header">
-        <a className="brand" href="/" aria-label="TERRA home">
+        <a className="brand" href="/" aria-label="ANALOG FINDER home">
           <img src="/favicon.svg" alt="" />
           <span>
-            TERRA<small>EARTH TO OTHER WORLDS</small>
+            ANALOG FINDER<small>EARTH TO OTHER WORLDS</small>
           </span>
         </a>
         <div className="header-description">
