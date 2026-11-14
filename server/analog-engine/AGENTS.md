@@ -8,7 +8,7 @@ NASA Space Apps challenge entry. Find places on Earth that resemble the Moon and
 
 ## Data
 
-`data/nasa_sites.csv`: 30 labelled Earth sites (15 good analogs, 15 bad). Columns: location name, avg solar index, max temp swing, min slope (always 0, ignored), max slope, avg slope angle, label (1 good, 0 bad). Units are not documented, so do not state any.
+`data/nasa_sites.csv`: 30 labelled Earth sites (15 good analogs, 15 bad), converted from `NASA_analogs_v5_corrected.xlsx`. The model uses all 16 numeric parameters: solar, temperature swing, max and avg slope, precipitation, PET, aridity index, max and peak wind, max and mean TRI, max and mean TWI, albedo, insolation and NDVI. Not features: lat, lon, years_used (constant), label and the text columns. McMurdo has no NDVI and is mean-imputed. Units are not documented, so do not state any.
 
 ## Stack and layout
 
@@ -21,7 +21,7 @@ Node.js 18 or newer, Express 4, no database.
 - `src/server.js`: standalone server for demos.
 - `scripts/export-static.js` and `public/demo.html`: server-free build in `dist-static/`.
 - `src/challenge.js` and `config/challenge-sites.json`: the three sites named in the challenge text (Atacama, Haughton Crater, Death Valley), joined to model predictions and served at `/challenge-sites`. Names must match CSV rows. Coordinates are display only.
-- `src/profiles.js` and `src/scoring.js`: optional Moon and Mars range-profile approach for richer datasets. Not used by the current dataset.
+- `src/profiles.js` and `src/scoring.js`: optional Moon and Mars range-profile approach. It is not used by the learned model; the v5 dataset now has albedo, NDVI, precipitation and slope but still lacks several attributes those profiles need.
 - `scripts/analysis/*.py`: Python analysis behind the model choice.
 - `test/`: run `npm test`.
 
@@ -30,16 +30,16 @@ Node.js 18 or newer, Express 4, no database.
 1. Run `npm test` after any change to `src/model.js`, `src/loader.js`, `src/scoring.js` or `src/profiles.js`. Add a test for any new behavior.
 2. Keep Moon and Mars range numbers in `src/profiles.js` only, and model feature definitions in `FEATURES` in `src/model.js` only. Do not hardcode them elsewhere.
 3. The real dataset is `data/nasa_sites.csv`. Never add invented or synthetic rows to it, and never present made-up data as a finding.
-4. Accuracy claims must come from leave-one-out validation (76.7 percent, interval 60 to 90, about 70 percent when model selection is nested). Never quote training accuracy. Never tune the model until the leave-one-out number looks better without saying how many variants were tried.
+4. Accuracy claims must come from leave-one-out validation (86.7 percent, interval 73 to 97; 90 percent when selection over 8 declared candidates is nested; the 4-parameter model scores 63 percent). Never quote training accuracy. Never tune the model until the leave-one-out number looks better without saying how many variants were tried.
 5. Do not change the response shape of `/predictions`, `/predict` or `/model` without telling the user, because a teammate's code depends on it.
-6. Be honest in write-ups. There are only 30 sites. The Great Plains and Rhine rows share identical solar and swing values, which may be a copy error. The negative weight on avg slope is a statistical pattern and not a geological rule. Earth cannot match lunar or Martian radiation, pressure or gravity. The prediction reflects agreement with the dataset's labels, not mission suitability.
+6. Be honest in write-ups. There are only 30 sites. Great Plains/Rhine (insolation), Congo/Rhine (Max_TWI) and Buenos Aires/Everglades (peak wind) share identical values, which may be copy errors. Several parameters are near-duplicates (max and peak wind, avg slope and mean TRI), so single coefficients are not independent effects. Negative weights such as avg slope are statistical patterns and not a geological rule. Earth cannot match lunar or Martian radiation, pressure or gravity. The prediction reflects agreement with the dataset's labels, not mission suitability.
 7. Prefer small, tested changes. Explain what you changed and why in two or three sentences.
 
 ## Useful tasks to help with
 
-- Fix the suspect duplicated row in the CSV once the source is checked, then run `npm run train` and `npm test` (some tests pin the current accuracy and will need their numbers updated, with the new values explained).
+- Check the suspect duplicated values in the CSV against the source, then run `npm run train` and `npm test` (some tests pin the current accuracy and will need their numbers updated, with the new values explained).
 - Build a frontend: map of sites coloured by `p_good`, a predict form posting to `/predict`, a methodology panel from `/model`, and `loo_correct` shown per site.
-- If a richer dataset arrives (rainfall, vegetation, albedo), add its columns to `config/columns.json` and to `FEATURES` in `src/model.js`, retrain and compare leave-one-out results.
+- If more columns arrive, add them to `config/columns.json` and to `FEATURES` in `src/model.js`, retrain and compare leave-one-out results.
 - Write the project description and limitations section for the submission.
 
 ## First message to paste into an assistant that cannot read the repo

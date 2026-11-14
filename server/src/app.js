@@ -11,6 +11,8 @@ import { createEngine } from "./services/engine.service.js";
 import { apiRateLimit } from "./middleware/rateLimit.js";
 import { createHealthController } from "./controllers/health.controller.js";
 import { createV1Router } from "./routes/v1.routes.js";
+import { createPredictController } from "./controllers/predict.controller.js";
+import { engineGuard } from "./middleware/engineGuard.js";
 import { apiNotFound, errorHandler } from "./middleware/errorHandler.js";
 
 const clientBuild = fileURLToPath(new URL("../../client/out/", import.meta.url));
@@ -57,12 +59,29 @@ export function createApp({
   app.use(express.json({ limit: "16kb" }));
 
   app.get("/api/v1/health", createHealthController({ pool, engine }));
+  // Behind a reverse proxy with TRUST_PROXY=0 every visitor shares one rate-limit bucket.
+  // Say so once instead of letting the demo return 429 for everybody.
+  if (config.trustProxy === 0) {
+    let warned = false;
+    app.use((req, _res, next) => {
+      if (!warned && req.headers["x-forwarded-for"]) {
+        warned = true;
+        console.warn(
+          "X-Forwarded-For received while TRUST_PROXY=0: all visitors share one rate limit. Set TRUST_PROXY=1 behind Render, Railway, Fly or Nginx.",
+        );
+      }
+      next();
+    });
+  }
   app.use("/api", apiRateLimit());
   // Site list with predictions, for the client.
   app.use("/api/v1", createV1Router({ siteModel, engine }));
   // The analog engine's own API (predict, predictions, model, challenge-sites, ...).
   // See server/analog-engine/docs/api-reference.md.
-  app.use("/api/analog", engine.router());
+  const predict = createPredictController({ engine });
+  app.get("/api/analog/predict", predict);
+  app.post("/api/analog/predict", predict);
+  app.use("/api/analog", engineGuard(engine), engine.router());
   app.use("/api", apiNotFound);
 
   // Serve the exported React client when it has been built (npm run build).

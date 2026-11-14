@@ -13,6 +13,8 @@ export function getConfig(env = process.env) {
     host: env.HOST || (nodeEnv === "production" ? "0.0.0.0" : "127.0.0.1"),
     port,
     trustProxy,
+    // False when the variable was never set, so start-up can warn in production.
+    trustProxyExplicit: env.TRUST_PROXY !== undefined && env.TRUST_PROXY !== "",
     origins: (env.CORS_ORIGINS || "http://localhost:4174,http://127.0.0.1:4174")
       .split(",")
       .map((s) => s.trim())

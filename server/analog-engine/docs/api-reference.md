@@ -70,14 +70,26 @@ Request body:
 
 ```json
 {
-  "solar_index": 5,
-  "temp_swing": 20,
-  "max_slope_deg": 60,
-  "avg_slope_deg": 3
+  "solar_index": 5.9,
+  "temp_swing": 23,
+  "max_slope_deg": 70,
+  "avg_slope_deg": 5,
+  "precip_mm_yr": 190,
+  "pet_mm_yr": 1700,
+  "aridity_index": 0.11,
+  "max_wind_ms": 12.7,
+  "peak_wind_ms": 14.6,
+  "max_tri": 260,
+  "mean_tri": 7.5,
+  "max_twi": 24,
+  "mean_twi": 7.4,
+  "albedo": 0.35,
+  "insolation_kwh": 6.0,
+  "ndvi": 0.12
 }
 ```
 
-At least one of the four model features must be provided as a usable numeric value. Missing features are imputed using the training mean and listed in `imputed`. The response's confidence is reduced when imputation occurs.
+The model has 16 features: `solar_index`, `temp_swing`, `max_slope_deg`, `avg_slope_deg`, `precip_mm_yr`, `pet_mm_yr`, `aridity_index`, `max_wind_ms`, `peak_wind_ms`, `max_tri`, `mean_tri`, `max_twi`, `mean_twi`, `albedo`, `insolation_kwh`, `ndvi`. At least one must be provided as a usable numeric value, and the more that are provided the better the score. Missing features are imputed using the training mean and listed in `imputed`. The response's confidence is reduced when imputation occurs.
 
 The response includes `p_good`, `score`, `predicted_label`, `verdict`, `confidence`, `imputed`, `summary`, feature `contributions`, `nearest_known_sites` and `model_accuracy`.
 
@@ -93,9 +105,9 @@ The response includes `p_good`, `score`, `predicted_label`, `verdict`, `confiden
 `GET /model`
 
 Use the returned `validation` object to render the accuracy statement and related methodology. Current reference result:
-- leave-one-out accuracy: 0.7667 (76.7 percent);
-- 95 percent bootstrap interval: 60 to 90 percent;
-- AUC: 0.8267;
+- leave-one-out accuracy: 0.8667 (86.7 percent, 26 of 30);
+- 95 percent bootstrap interval: 73 to 97 percent;
+- AUC: 0.9422;
 - sample size: 30.
 
 These are the current model's values, not permanent constants. Read the endpoint at runtime.

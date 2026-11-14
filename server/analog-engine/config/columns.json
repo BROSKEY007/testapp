@@ -1,27 +1,144 @@
 {
   "_help": "Maps YOUR dataset column names to the engine's canonical attributes. Edit only this file when the dataset changes. Each entry is a list of possible column names (first match wins, case-insensitive, repeated spaces ignored), or an object with column(s) plus optional scale and offset applied as value * scale + offset (use offset -273.15 for Kelvin).",
   "identity": {
-    "id": ["id", "site_id", "uid"],
-    "name": ["location name", "name", "site", "site_name", "location"],
-    "lat": ["lat", "latitude"],
-    "lon": ["lon", "lng", "longitude"]
+    "id": [
+      "id",
+      "site_id",
+      "uid"
+    ],
+    "name": [
+      "location name",
+      "name",
+      "site",
+      "site_name",
+      "location"
+    ],
+    "lat": [
+      "lat",
+      "latitude"
+    ],
+    "lon": [
+      "lon",
+      "lng",
+      "longitude"
+    ]
   },
-  "label": ["label(good/bad analog)", "label", "is_good_analog", "analog"],
+  "label": [
+    "label",
+    "label(good/bad analog)",
+    "is_good_analog",
+    "analog"
+  ],
   "attributes": {
-    "solar_index": ["avg solar index", "solar_index", "solar"],
-    "temp_swing": ["max temp swing", "temp_swing", "max_temp_swing"],
-    "max_slope_deg": ["max slope", "max_slope", "max_slope_deg"],
-    "avg_slope_deg": ["avg slope angle", "avg_slope", "avg_slope_deg", "avg slope"],
-    "elevation_m": ["elevation_m", "elevation", "elev", "dem"],
-    "slope_deg": ["slope_deg"],
-    "temp_mean_c": ["temp_mean_c", "temp_mean", "t_mean", "lst_mean_c"],
-    "temp_diurnal_range_c": ["temp_diurnal_range_c", "diurnal_range", "dtr"],
-    "precip_mm_yr": ["precip_mm_yr", "precip", "precipitation"],
-    "ndvi": ["ndvi"],
-    "albedo": ["albedo"],
-    "soil_iron_pct": ["soil_iron_pct", "iron_pct", "fe_pct", "feo_pct"],
-    "rock_abundance_pct": ["rock_abundance_pct", "rock_abundance", "rock_pct"],
-    "radar_backscatter_db": ["radar_backscatter_db", "backscatter", "sigma0_db"],
-    "infra_distance_km": ["infra_distance_km", "road_distance_km", "dist_infra_km"]
+    "solar_index": [
+      "avg_solar_kwh_m2_day",
+      "avg solar index",
+      "solar_index",
+      "solar"
+    ],
+    "temp_swing": [
+      "max_temp_swing_c",
+      "max temp swing",
+      "temp_swing",
+      "max_temp_swing"
+    ],
+    "max_slope_deg": [
+      "max slope",
+      "max_slope",
+      "max_slope_deg"
+    ],
+    "avg_slope_deg": [
+      "avg slope angle",
+      "avg_slope",
+      "avg_slope_deg",
+      "avg slope"
+    ],
+    "elevation_m": [
+      "elevation_m",
+      "elevation",
+      "elev",
+      "dem"
+    ],
+    "slope_deg": [
+      "slope_deg"
+    ],
+    "temp_mean_c": [
+      "temp_mean_c",
+      "temp_mean",
+      "t_mean",
+      "lst_mean_c"
+    ],
+    "temp_diurnal_range_c": [
+      "temp_diurnal_range_c",
+      "diurnal_range",
+      "dtr"
+    ],
+    "precip_mm_yr": [
+      "mean_annual_precip_mm",
+      "precip_mm_yr",
+      "precip",
+      "precipitation"
+    ],
+    "ndvi": [
+      "ndvi"
+    ],
+    "albedo": [
+      "mean_surface_albedo",
+      "albedo"
+    ],
+    "soil_iron_pct": [
+      "soil_iron_pct",
+      "iron_pct",
+      "fe_pct",
+      "feo_pct"
+    ],
+    "rock_abundance_pct": [
+      "rock_abundance_pct",
+      "rock_abundance",
+      "rock_pct"
+    ],
+    "radar_backscatter_db": [
+      "radar_backscatter_db",
+      "backscatter",
+      "sigma0_db"
+    ],
+    "infra_distance_km": [
+      "infra_distance_km",
+      "road_distance_km",
+      "dist_infra_km"
+    ],
+    "pet_mm_yr": [
+      "mean_annual_pet_mm",
+      "pet_mm_yr",
+      "pet"
+    ],
+    "aridity_index": [
+      "aridity_index"
+    ],
+    "max_wind_ms": [
+      "max_wind_speed_ms",
+      "max_wind_ms"
+    ],
+    "peak_wind_ms": [
+      "peak_wind_2021_2025_ms",
+      "peak_wind_ms"
+    ],
+    "max_tri": [
+      "max_tri"
+    ],
+    "mean_tri": [
+      "mean_tri"
+    ],
+    "max_twi": [
+      "max_twi"
+    ],
+    "mean_twi": [
+      "mean_twi"
+    ],
+    "insolation_kwh": [
+      "mean_insolation(kwh/m^2/day)",
+      "mean_insolation",
+      "insolation_kwh"
+    ]
   }
 }

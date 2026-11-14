@@ -40,18 +40,18 @@ Smoke test: `GET /api/analog/health` should return `"model_loaded": true` and `"
 
 **Score any location**
 
-`POST /api/analog/predict` with JSON, or `GET /api/analog/predict?solar_index=5.9&temp_swing=23&max_slope_deg=70&avg_slope_deg=5`
+`POST /api/analog/predict` with JSON, or `GET /api/analog/predict?solar_index=5.9&temp_swing=23&max_slope_deg=70&avg_slope_deg=5&precip_mm_yr=190&pet_mm_yr=1700&aridity_index=0.11&max_wind_ms=12.7&peak_wind_ms=14.6&max_tri=260&mean_tri=7.5&max_twi=24&mean_twi=7.4&albedo=0.35&insolation_kwh=6.0&ndvi=0.12` (all 16 features; see the list in `docs/api-reference.md`)
 
 ```json
-{ "p_good": 0.9416, "score": 94.2, "predicted_label": 1,
+{ "p_good": 0.9747, "score": 97.5, "predicted_label": 1,
   "verdict": "good", "confidence": "higher", "imputed": [],
-  "summary": "Predicted good analog (94 percent probability of a good analog). ...",
-  "contributions": [ { "feature": "solar_index", "label": "Avg solar index", "value": 5.9, "z": 1.422, "contribution": 1.445, "imputed": false } ],
-  "nearest_known_sites": [ { "id": "10", "name": "Makhtesh Ramon", "label": 1, "distance": 0.148 } ],
-  "model_accuracy": { "method": "leave-one-out", "accuracy": 0.7667, "auc": 0.8267, "n": 30 } }
+  "summary": "Predicted good analog (97 percent probability of a good analog). ...",
+  "contributions": [ { "feature": "solar_index", "label": "Avg solar index", "value": 5.9, "z": 1.264, "contribution": 0.194, "imputed": false } ],
+  "nearest_known_sites": [ { "id": "10", "name": "Makhtesh Ramon", "label": 1, "distance": 0.193 } ],
+  "model_accuracy": { "method": "leave-one-out", "accuracy": 0.8667, "auc": 0.9422, "n": 30 } }
 ```
 
-Rules: send at least one of the four features. Missing ones are filled with the training average and listed in `imputed`. In that case `confidence` becomes `"reduced"`. No usable feature returns 400. `verdict` is `good` at 0.6 or above, `bad` at 0.4 or below, otherwise `borderline`. `contribution` is the push on the log-odds: positive means toward good.
+Rules: the model uses 16 features, so send as many as you have (the frontend form should offer all 16, taken from `features` in `GET /model`); at least one is required. Missing ones are filled with the training average and listed in `imputed`. In that case `confidence` becomes `"reduced"`. No usable feature returns 400. `verdict` is `good` at 0.6 or above, `bad` at 0.4 or below, otherwise `borderline`. `contribution` is the push on the log-odds: positive means toward good.
 
 **Methodology panel**
 
@@ -67,7 +67,7 @@ Other routes: `GET /sites`, `GET /sites/:id` (raw rows, 404 if unknown), `GET /d
 
 Show this wherever a prediction appears, or link to a methodology section:
 
-> Predictions come from a model trained on 30 labelled sites. Tested by leave-one-out, it is right 77 percent of the time (95 percent interval 60 to 90 percent; a coin flip is 50 percent).
+> Predictions come from a model trained on 30 labelled sites. Tested by leave-one-out, it is right 87 percent of the time (95 percent interval 73 to 97 percent; a coin flip is 50 percent).
 
 Please also surface `loo_correct` per known site so judges can see where the model is unsure. Do not show training accuracy. Do not describe `p_good` as a probability of mission success: it is the probability that the dataset's labellers would call the site a good analog.
 
@@ -82,7 +82,7 @@ Please also surface `loo_correct` per known site so judges can see where the mod
 
 ## 5. Changing the data
 
-If the CSV changes: update `config/columns.json` only if column names changed, run `npm run train`, then restart or `POST /reload`. `npm run train` prints the new held-out accuracy and any data warnings. Some tests pin the current accuracy (76.7 percent) and the scikit-learn reference coefficients, so they will fail after a retrain until their expected numbers are updated on purpose.
+If the CSV changes: update `config/columns.json` only if column names changed, run `npm run train`, then restart or `POST /reload`. `npm run train` prints the new held-out accuracy and any data warnings. Some tests pin the current accuracy (86.7 percent) and the scikit-learn reference coefficients, so they will fail after a retrain until their expected numbers are updated on purpose.
 
 ## 6. No server option
 
@@ -90,12 +90,14 @@ If the CSV changes: update `config/columns.json` only if column names changed, r
 
 ## 7. Open items and honest limits
 
-- **Atacama scores only 67 percent** (rank 8 of 30). It is labelled good and the model agrees, but with little margin. This reflects how little four numbers capture. Do not tune the model to push named sites up.
-- **The three sites named in the challenge text are checked.** Atacama, Haughton Crater and Death Valley are all in the CSV and all labelled good. The model scores them 67 percent (rank 8), 66 percent (rank 9) and 90 percent (rank 2) and gets all three right under leave-one-out. Haughton's two closest known sites by features are labelled bad (Great Plains, Seattle), so its margin is thin. No rows were added or changed.
-- **Possible data error:** Great Plains Farmland and Rhine River Valley have identical Solar Index and Temp Swing values. Verify against the source.
+- **The model now uses all 16 numeric parameters of the v5 dataset** (it used only 4 before). Held-out accuracy rose from 63 percent (the old 4 parameters on the corrected data) to 86.7 percent, AUC 0.94. The model was fitted once with default settings, not tuned.
+- **The three sites named in the challenge text are checked.** Atacama, Haughton Crater and Death Valley are in the CSV and all labelled good. The model scores them 98 percent (rank 1 of 30), 63 percent (rank 14) and 95 percent (rank 5). Atacama and Death Valley are right under leave-one-out. Haughton is wrong when held out (leave-one-out probability 0.33), so treat its score as thin. Do not tune the model to push named sites up.
+- **Four sites are misclassified when held out:** Lonar Crater, Haughton Crater and Sarychev Peak (labelled good, predicted poor) and Great Plains Farmland (labelled bad, predicted good).
+- **Possible data errors** (identical values at different sites, listed in `GET /model` under `data_warnings`): Great Plains Farmland and Rhine River Valley share Mean_insolation; Congo Basin Lowlands and Rhine River Valley share Max_TWI; Buenos Aires and Everglades share peak wind. Verify against the source.
+- **McMurdo has no NDVI.** Its value is filled with the training average, so it is still scored.
 - **Units are not documented.** Do not print units next to the values in the UI until the dataset documentation confirms them.
 - **Only 30 sites.** Treat every accuracy figure as a rough estimate.
 
 ## 8. Checks
 
-`npm install && npm test` runs 28 tests, including an integration test that mounts the router in a bare Express app the way you will. All pass at hand-off.
+`npm install && npm test` runs 29 tests, including an integration test that mounts the router in a bare Express app the way you will. All pass at hand-off.

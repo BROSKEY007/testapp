@@ -133,10 +133,11 @@ const response = await fetch(`${API}/predict`, {
   method: 'POST',
   headers: { 'content-type': 'application/json' },
   body: JSON.stringify({
-    solar_index: 5,
-    temp_swing: 20,
-    max_slope_deg: 60,
-    avg_slope_deg: 3
+    solar_index: 5.9, temp_swing: 23, max_slope_deg: 70, avg_slope_deg: 5,
+    precip_mm_yr: 190, pet_mm_yr: 1700, aridity_index: 0.11,
+    max_wind_ms: 12.7, peak_wind_ms: 14.6,
+    max_tri: 260, mean_tri: 7.5, max_twi: 24, mean_twi: 7.4,
+    albedo: 0.35, insolation_kwh: 6.0, ndvi: 0.12
   })
 });
 
@@ -147,7 +148,7 @@ if (!response.ok) {
 const prediction = await response.json();
 ```
 
-At least one recognized feature must be supplied. Missing features are imputed using the training means and listed in `imputed`; the response confidence is reduced in that case.
+The model uses 16 parameters: `solar_index`, `temp_swing`, `max_slope_deg`, `avg_slope_deg`, `precip_mm_yr`, `pet_mm_yr`, `aridity_index`, `max_wind_ms`, `peak_wind_ms`, `max_tri`, `mean_tri`, `max_twi`, `mean_twi`, `albedo`, `insolation_kwh`, `ndvi`. Send as many as you have: the more that are supplied, the more reliable the score. At least one must be supplied. Any that are missing are imputed using the training means and listed in `imputed`; the response confidence is reduced in that case. The form should therefore offer all 16 fields (they are listed in `features` from `GET /model`).
 
 ### Accuracy and methodology panel
 
@@ -163,7 +164,7 @@ Use the model response to populate the accuracy/methodology panel. Do not hardco
 
 Every prediction view must communicate the model's validation performance. For the current model, use this exact wording:
 
-> Right 77 percent of the time by leave-one-out (95 percent interval 60 to 90).
+> Right 87 percent of the time by leave-one-out (95 percent interval 73 to 97).
 
 The authoritative underlying values are in `/model`. Keep the wording synchronized with those values after retraining.
 
@@ -210,10 +211,11 @@ For scoring a new location in the browser, load `model.json` and `analog-model.j
 
 ```js
 const result = AnalogModel.predict(model, {
-  solar_index: 5,
-  temp_swing: 20,
-  max_slope_deg: 60,
-  avg_slope_deg: 3
+  solar_index: 5.9, temp_swing: 23, max_slope_deg: 70, avg_slope_deg: 5,
+  precip_mm_yr: 190, pet_mm_yr: 1700, aridity_index: 0.11,
+  max_wind_ms: 12.7, peak_wind_ms: 14.6,
+  max_tri: 260, mean_tri: 7.5, max_twi: 24, mean_twi: 7.4,
+  albedo: 0.35, insolation_kwh: 6.0, ndvi: 0.12
 });
 ```
 

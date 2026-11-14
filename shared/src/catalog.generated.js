@@ -2,6 +2,167 @@
 export default {
  "locations": [
   {
+   "id": "iceland",
+   "datasetName": "Odadahraun",
+   "name": "Ódáðahraun",
+   "country": "Iceland",
+   "lat": 65.03,
+   "lon": -16.75,
+   "type": "Volcanic",
+   "tag": "Lava field",
+   "coordsApproximate": true,
+   "prediction": {
+    "datasetId": "4",
+    "rank": 1,
+    "of": 30,
+    "label": 1,
+    "pGood": 0.978,
+    "heldOut": true,
+    "fitPGood": 0.9744,
+    "score": 97.8,
+    "verdict": "good",
+    "looPGood": 0.978,
+    "looCorrect": true,
+    "summary": "Predicted good analog (98 percent held-out probability of a good analog). Pushes toward good: below-average ndvi and above-average mean surface albedo. Pushes toward poor: below-average mean insolation.",
+    "features": {
+     "solar_index": 2.456,
+     "temp_swing": 15.15,
+     "max_slope_deg": 88.947,
+     "avg_slope_deg": 3.932,
+     "precip_mm_yr": 842.5,
+     "pet_mm_yr": 190.1,
+     "aridity_index": 4.431,
+     "max_wind_ms": 26.3,
+     "peak_wind_ms": 30.59,
+     "max_tri": 209.37,
+     "mean_tri": 5.12,
+     "max_twi": 31.38,
+     "mean_twi": 10.1,
+     "albedo": 0.47,
+     "insolation_kwh": 2.4878,
+     "ndvi": -0.0413
+    },
+    "contributions": [
+     {
+      "feature": "solar_index",
+      "label": "Avg solar index",
+      "value": 2.456,
+      "contribution": -0.242
+     },
+     {
+      "feature": "temp_swing",
+      "label": "Max temperature swing",
+      "value": 15.15,
+      "contribution": -0.052
+     },
+     {
+      "feature": "max_slope_deg",
+      "label": "Max slope",
+      "value": 88.947,
+      "contribution": 0.36
+     },
+     {
+      "feature": "avg_slope_deg",
+      "label": "Avg slope angle",
+      "value": 3.932,
+      "contribution": -0.021
+     },
+     {
+      "feature": "precip_mm_yr",
+      "label": "Mean annual precipitation",
+      "value": 842.5,
+      "contribution": 0.221
+     },
+     {
+      "feature": "pet_mm_yr",
+      "label": "Mean annual PET",
+      "value": 190.1,
+      "contribution": -0.034
+     },
+     {
+      "feature": "aridity_index",
+      "label": "Aridity index",
+      "value": 4.431,
+      "contribution": 0.432
+     },
+     {
+      "feature": "max_wind_ms",
+      "label": "Max wind speed",
+      "value": 26.3,
+      "contribution": 0.198
+     },
+     {
+      "feature": "peak_wind_ms",
+      "label": "Peak wind 2021-2025",
+      "value": 30.59,
+      "contribution": -0.27
+     },
+     {
+      "feature": "max_tri",
+      "label": "Max TRI",
+      "value": 209.37,
+      "contribution": -0.047
+     },
+     {
+      "feature": "mean_tri",
+      "label": "Mean TRI",
+      "value": 5.12,
+      "contribution": 0.009
+     },
+     {
+      "feature": "max_twi",
+      "label": "Max TWI",
+      "value": 31.38,
+      "contribution": 1.372
+     },
+     {
+      "feature": "mean_twi",
+      "label": "Mean TWI",
+      "value": 10.1,
+      "contribution": 0.261
+     },
+     {
+      "feature": "albedo",
+      "label": "Mean surface albedo",
+      "value": 0.47,
+      "contribution": 1.454
+     },
+     {
+      "feature": "insolation_kwh",
+      "label": "Mean insolation",
+      "value": 2.4878,
+      "contribution": -1.611
+     },
+     {
+      "feature": "ndvi",
+      "label": "NDVI",
+      "value": -0.0413,
+      "contribution": 1.612
+     }
+    ],
+    "nearest": [
+     {
+      "name": "McMurdo Dry Valleys",
+      "label": 1,
+      "distance": 2.607,
+      "displayName": "McMurdo Dry Valleys"
+     },
+     {
+      "name": "Pingualuit Crater",
+      "label": 1,
+      "distance": 4.574,
+      "displayName": "Pingualuit Crater"
+     },
+     {
+      "name": "Dublin",
+      "label": 0,
+      "distance": 5.583,
+      "displayName": "Dublin"
+     }
+    ]
+   }
+  },
+  {
    "id": "makhtesh-ramon",
    "datasetName": "Makhtesh Ramon",
    "name": "Makhtesh Ramon",
@@ -13,64 +174,150 @@ export default {
    "coordsApproximate": true,
    "prediction": {
     "datasetId": "10",
-    "rank": 1,
+    "rank": 2,
     "of": 30,
     "label": 1,
-    "pGood": 0.8488,
-    "score": 84.9,
+    "pGood": 0.9749,
+    "heldOut": true,
+    "fitPGood": 0.9765,
+    "score": 97.5,
     "verdict": "good",
-    "looPGood": 0.8319,
+    "looPGood": 0.9749,
     "looCorrect": true,
-    "summary": "Predicted good analog (85 percent probability of a good analog). Pushes toward good: above-average max temperature swing and above-average avg solar index. Pushes toward poor: above-average avg slope angle.",
+    "summary": "Predicted good analog (97 percent held-out probability of a good analog). Pushes toward good: above-average mean insolation and above-average mean surface albedo. Pushes toward poor: below-average mean twi.",
     "features": {
      "solar_index": 6.004,
      "temp_swing": 22.59,
      "max_slope_deg": 72.155,
-     "avg_slope_deg": 5.071
+     "avg_slope_deg": 5.071,
+     "precip_mm_yr": 186.9,
+     "pet_mm_yr": 1685.8,
+     "aridity_index": 0.1109,
+     "max_wind_ms": 12.69,
+     "peak_wind_ms": 14.58,
+     "max_tri": 262.54,
+     "mean_tri": 7.52,
+     "max_twi": 24.11,
+     "mean_twi": 7.39,
+     "albedo": 0.36,
+     "insolation_kwh": 5.9878,
+     "ndvi": 0.1214
     },
     "contributions": [
      {
       "feature": "solar_index",
       "label": "Avg solar index",
       "value": 6.004,
-      "contribution": 0.688
+      "contribution": 0.208
      },
      {
       "feature": "temp_swing",
       "label": "Max temperature swing",
       "value": 22.59,
-      "contribution": 0.75
+      "contribution": 0.312
      },
      {
       "feature": "max_slope_deg",
       "label": "Max slope",
       "value": 72.155,
-      "contribution": 0.621
+      "contribution": 0.143
      },
      {
       "feature": "avg_slope_deg",
       "label": "Avg slope angle",
       "value": 5.071,
-      "contribution": -0.323
+      "contribution": -0.102
+     },
+     {
+      "feature": "precip_mm_yr",
+      "label": "Mean annual precipitation",
+      "value": 186.9,
+      "contribution": 0.703
+     },
+     {
+      "feature": "pet_mm_yr",
+      "label": "Mean annual PET",
+      "value": 1685.8,
+      "contribution": 0.03
+     },
+     {
+      "feature": "aridity_index",
+      "label": "Aridity index",
+      "value": 0.1109,
+      "contribution": -0.224
+     },
+     {
+      "feature": "max_wind_ms",
+      "label": "Max wind speed",
+      "value": 12.69,
+      "contribution": -0.019
+     },
+     {
+      "feature": "peak_wind_ms",
+      "label": "Peak wind 2021-2025",
+      "value": 14.58,
+      "contribution": 0.024
+     },
+     {
+      "feature": "max_tri",
+      "label": "Max TRI",
+      "value": 262.54,
+      "contribution": 0.067
+     },
+     {
+      "feature": "mean_tri",
+      "label": "Mean TRI",
+      "value": 7.52,
+      "contribution": -0.063
+     },
+     {
+      "feature": "max_twi",
+      "label": "Max TWI",
+      "value": 24.11,
+      "contribution": 0.002
+     },
+     {
+      "feature": "mean_twi",
+      "label": "Mean TWI",
+      "value": 7.39,
+      "contribution": -0.53
+     },
+     {
+      "feature": "albedo",
+      "label": "Mean surface albedo",
+      "value": 0.36,
+      "contribution": 0.902
+     },
+     {
+      "feature": "insolation_kwh",
+      "label": "Mean insolation",
+      "value": 5.9878,
+      "contribution": 1.49
+     },
+     {
+      "feature": "ndvi",
+      "label": "NDVI",
+      "value": 0.1214,
+      "contribution": 0.786
      }
     ],
     "nearest": [
      {
-      "name": "The Pampas Lowlands",
-      "label": 0,
-      "distance": 1.047,
-      "displayName": "The Pampas Lowlands"
-     },
-     {
       "name": "Death Valley",
       "label": 1,
-      "distance": 1.221,
+      "distance": 2.374,
       "displayName": "Death Valley"
+     },
+     {
+      "name": "Atacama",
+      "label": 1,
+      "distance": 2.482,
+      "displayName": "Atacama Desert"
      },
      {
       "name": "San Rafael Swell",
       "label": 1,
-      "distance": 1.338,
+      "distance": 2.555,
       "displayName": "San Rafael Swell"
      }
     ]
@@ -88,65 +335,473 @@ export default {
    "coordsApproximate": true,
    "prediction": {
     "datasetId": "1",
-    "rank": 2,
+    "rank": 3,
     "of": 30,
     "label": 1,
-    "pGood": 0.7823,
-    "score": 78.2,
+    "pGood": 0.9743,
+    "heldOut": true,
+    "fitPGood": 0.9768,
+    "score": 97.4,
     "verdict": "good",
-    "looPGood": 0.7229,
+    "looPGood": 0.9743,
     "looCorrect": true,
-    "summary": "Predicted good analog (78 percent probability of a good analog). Pushes toward good: above-average avg solar index and above-average max temperature swing. Pushes toward poor: above-average avg slope angle.",
+    "summary": "Predicted good analog (97 percent held-out probability of a good analog). Pushes toward good: above-average mean insolation and below-average ndvi.",
     "features": {
      "solar_index": 7.178,
      "temp_swing": 21.86,
      "max_slope_deg": 66.512,
-     "avg_slope_deg": 7.448
+     "avg_slope_deg": 7.448,
+     "precip_mm_yr": 5.7,
+     "pet_mm_yr": 1520.8,
+     "aridity_index": 0.0038,
+     "max_wind_ms": 11.85,
+     "peak_wind_ms": 12.74,
+     "max_tri": 397.91,
+     "mean_tri": 6.56,
+     "max_twi": 23.39,
+     "mean_twi": 8.94,
+     "albedo": 0.18,
+     "insolation_kwh": 6.006,
+     "ndvi": 0.069
     },
     "contributions": [
      {
       "feature": "solar_index",
       "label": "Avg solar index",
       "value": 7.178,
-      "contribution": 1.182
+      "contribution": 0.356
      },
      {
       "feature": "temp_swing",
       "label": "Max temperature swing",
       "value": 21.86,
-      "contribution": 0.664
+      "contribution": 0.276
      },
      {
       "feature": "max_slope_deg",
       "label": "Max slope",
       "value": 66.512,
-      "contribution": 0.303
+      "contribution": 0.07
      },
      {
       "feature": "avg_slope_deg",
       "label": "Avg slope angle",
       "value": 7.448,
-      "contribution": -0.859
+      "contribution": -0.271
+     },
+     {
+      "feature": "precip_mm_yr",
+      "label": "Mean annual precipitation",
+      "value": 5.7,
+      "contribution": 0.836
+     },
+     {
+      "feature": "pet_mm_yr",
+      "label": "Mean annual PET",
+      "value": 1520.8,
+      "contribution": 0.023
+     },
+     {
+      "feature": "aridity_index",
+      "label": "Aridity index",
+      "value": 0.0038,
+      "contribution": -0.241
+     },
+     {
+      "feature": "max_wind_ms",
+      "label": "Max wind speed",
+      "value": 11.85,
+      "contribution": -0.032
+     },
+     {
+      "feature": "peak_wind_ms",
+      "label": "Peak wind 2021-2025",
+      "value": 12.74,
+      "contribution": 0.058
+     },
+     {
+      "feature": "max_tri",
+      "label": "Max TRI",
+      "value": 397.91,
+      "contribution": 0.358
+     },
+     {
+      "feature": "mean_tri",
+      "label": "Mean TRI",
+      "value": 6.56,
+      "contribution": -0.034
+     },
+     {
+      "feature": "max_twi",
+      "label": "Max TWI",
+      "value": 23.39,
+      "contribution": -0.134
+     },
+     {
+      "feature": "mean_twi",
+      "label": "Mean TWI",
+      "value": 8.94,
+      "contribution": -0.078
+     },
+     {
+      "feature": "albedo",
+      "label": "Mean surface albedo",
+      "value": 0.18,
+      "contribution": -0.002
+     },
+     {
+      "feature": "insolation_kwh",
+      "label": "Mean insolation",
+      "value": 6.006,
+      "contribution": 1.506
+     },
+     {
+      "feature": "ndvi",
+      "label": "NDVI",
+      "value": 0.069,
+      "contribution": 1.052
      }
     ],
     "nearest": [
      {
-      "name": "Makhtesh Ramon",
-      "label": 1,
-      "distance": 1.381,
-      "displayName": "Makhtesh Ramon"
-     },
-     {
       "name": "Death Valley",
       "label": 1,
-      "distance": 1.465,
+      "distance": 2.175,
       "displayName": "Death Valley"
+     },
+     {
+      "name": "Makhtesh Ramon",
+      "label": 1,
+      "distance": 2.482,
+      "displayName": "Makhtesh Ramon"
      },
      {
       "name": "San Rafael Swell",
       "label": 1,
-      "distance": 1.678,
+      "distance": 2.82,
       "displayName": "San Rafael Swell"
+     }
+    ]
+   }
+  },
+  {
+   "id": "lanzarote",
+   "datasetName": "Lanzarote",
+   "name": "Lanzarote",
+   "country": "Canary Islands, Spain",
+   "lat": 29.03,
+   "lon": -13.63,
+   "type": "Volcanic",
+   "tag": "Volcanic island",
+   "coordsApproximate": true,
+   "prediction": {
+    "datasetId": "3",
+    "rank": 4,
+    "of": 30,
+    "label": 1,
+    "pGood": 0.943,
+    "heldOut": true,
+    "fitPGood": 0.9551,
+    "score": 94.3,
+    "verdict": "good",
+    "looPGood": 0.943,
+    "looCorrect": true,
+    "summary": "Predicted good analog (94 percent held-out probability of a good analog). Pushes toward good: below-average ndvi and above-average mean twi. Pushes toward poor: below-average mean surface albedo and below-average max twi.",
+    "features": {
+     "solar_index": 5.248,
+     "temp_swing": 6.85,
+     "max_slope_deg": 79.375,
+     "avg_slope_deg": 0.858,
+     "precip_mm_yr": 159,
+     "pet_mm_yr": 655.5,
+     "aridity_index": 0.2426,
+     "max_wind_ms": 13.87,
+     "peak_wind_ms": 14.64,
+     "max_tri": 439.67,
+     "mean_tri": 1.27,
+     "max_twi": 21.48,
+     "mean_twi": 12.99,
+     "albedo": 0.05,
+     "insolation_kwh": 5.1379,
+     "ndvi": 0.0444
+    },
+    "contributions": [
+     {
+      "feature": "solar_index",
+      "label": "Avg solar index",
+      "value": 5.248,
+      "contribution": 0.112
+     },
+     {
+      "feature": "temp_swing",
+      "label": "Max temperature swing",
+      "value": 6.85,
+      "contribution": -0.458
+     },
+     {
+      "feature": "max_slope_deg",
+      "label": "Max slope",
+      "value": 79.375,
+      "contribution": 0.236
+     },
+     {
+      "feature": "avg_slope_deg",
+      "label": "Avg slope angle",
+      "value": 0.858,
+      "contribution": 0.198
+     },
+     {
+      "feature": "precip_mm_yr",
+      "label": "Mean annual precipitation",
+      "value": 159,
+      "contribution": 0.723
+     },
+     {
+      "feature": "pet_mm_yr",
+      "label": "Mean annual PET",
+      "value": 655.5,
+      "contribution": -0.014
+     },
+     {
+      "feature": "aridity_index",
+      "label": "Aridity index",
+      "value": 0.2426,
+      "contribution": -0.204
+     },
+     {
+      "feature": "max_wind_ms",
+      "label": "Max wind speed",
+      "value": 13.87,
+      "contribution": 0
+     },
+     {
+      "feature": "peak_wind_ms",
+      "label": "Peak wind 2021-2025",
+      "value": 14.64,
+      "contribution": 0.023
+     },
+     {
+      "feature": "max_tri",
+      "label": "Max TRI",
+      "value": 439.67,
+      "contribution": 0.447
+     },
+     {
+      "feature": "mean_tri",
+      "label": "Mean TRI",
+      "value": 1.27,
+      "contribution": 0.125
+     },
+     {
+      "feature": "max_twi",
+      "label": "Max TWI",
+      "value": 21.48,
+      "contribution": -0.494
+     },
+     {
+      "feature": "mean_twi",
+      "label": "Mean TWI",
+      "value": 12.99,
+      "contribution": 1.104
+     },
+     {
+      "feature": "albedo",
+      "label": "Mean surface albedo",
+      "value": 0.05,
+      "contribution": -0.654
+     },
+     {
+      "feature": "insolation_kwh",
+      "label": "Mean insolation",
+      "value": 5.1379,
+      "contribution": 0.737
+     },
+     {
+      "feature": "ndvi",
+      "label": "NDVI",
+      "value": 0.0444,
+      "contribution": 1.177
+     }
+    ],
+    "nearest": [
+     {
+      "name": "Mauna Kea",
+      "label": 1,
+      "distance": 2.319,
+      "displayName": "Mauna Kea"
+     },
+     {
+      "name": "Mount Etna",
+      "label": 1,
+      "distance": 2.57,
+      "displayName": "Mount Etna"
+     },
+     {
+      "name": "Auckland",
+      "label": 0,
+      "distance": 3.609,
+      "displayName": "Auckland"
+     }
+    ]
+   }
+  },
+  {
+   "id": "qaidam-basin",
+   "datasetName": "Qaidam Basin",
+   "name": "Qaidam Basin",
+   "country": "Qinghai, China",
+   "lat": 37.3,
+   "lon": 94.5,
+   "type": "Desert",
+   "tag": "High desert basin",
+   "coordsApproximate": true,
+   "prediction": {
+    "datasetId": "9",
+    "rank": 5,
+    "of": 30,
+    "label": 1,
+    "pGood": 0.9391,
+    "heldOut": true,
+    "fitPGood": 0.9484,
+    "score": 93.9,
+    "verdict": "good",
+    "looPGood": 0.9391,
+    "looCorrect": true,
+    "summary": "Predicted good analog (94 percent held-out probability of a good analog). Pushes toward good: below-average ndvi and above-average mean insolation. Pushes toward poor: below-average max tri and below-average mean twi.",
+    "features": {
+     "solar_index": 5.28,
+     "temp_swing": 20.95,
+     "max_slope_deg": 38.966,
+     "avg_slope_deg": 1.804,
+     "precip_mm_yr": 85.7,
+     "pet_mm_yr": 1032.2,
+     "aridity_index": 0.0831,
+     "max_wind_ms": 16.27,
+     "peak_wind_ms": 17.38,
+     "max_tri": 64.99,
+     "mean_tri": 3.03,
+     "max_twi": 24.31,
+     "mean_twi": 8.17,
+     "albedo": 0.27,
+     "insolation_kwh": 5.412,
+     "ndvi": 0.0244
+    },
+    "contributions": [
+     {
+      "feature": "solar_index",
+      "label": "Avg solar index",
+      "value": 5.28,
+      "contribution": 0.116
+     },
+     {
+      "feature": "temp_swing",
+      "label": "Max temperature swing",
+      "value": 20.95,
+      "contribution": 0.231
+     },
+     {
+      "feature": "max_slope_deg",
+      "label": "Max slope",
+      "value": 38.966,
+      "contribution": -0.287
+     },
+     {
+      "feature": "avg_slope_deg",
+      "label": "Avg slope angle",
+      "value": 1.804,
+      "contribution": 0.13
+     },
+     {
+      "feature": "precip_mm_yr",
+      "label": "Mean annual precipitation",
+      "value": 85.7,
+      "contribution": 0.777
+     },
+     {
+      "feature": "pet_mm_yr",
+      "label": "Mean annual PET",
+      "value": 1032.2,
+      "contribution": 0.002
+     },
+     {
+      "feature": "aridity_index",
+      "label": "Aridity index",
+      "value": 0.0831,
+      "contribution": -0.229
+     },
+     {
+      "feature": "max_wind_ms",
+      "label": "Max wind speed",
+      "value": 16.27,
+      "contribution": 0.038
+     },
+     {
+      "feature": "peak_wind_ms",
+      "label": "Peak wind 2021-2025",
+      "value": 17.38,
+      "contribution": -0.027
+     },
+     {
+      "feature": "max_tri",
+      "label": "Max TRI",
+      "value": 64.99,
+      "contribution": -0.357
+     },
+     {
+      "feature": "mean_tri",
+      "label": "Mean TRI",
+      "value": 3.03,
+      "contribution": 0.072
+     },
+     {
+      "feature": "max_twi",
+      "label": "Max TWI",
+      "value": 24.31,
+      "contribution": 0.039
+     },
+     {
+      "feature": "mean_twi",
+      "label": "Mean TWI",
+      "value": 8.17,
+      "contribution": -0.302
+     },
+     {
+      "feature": "albedo",
+      "label": "Mean surface albedo",
+      "value": 0.27,
+      "contribution": 0.45
+     },
+     {
+      "feature": "insolation_kwh",
+      "label": "Mean insolation",
+      "value": 5.412,
+      "contribution": 0.979
+     },
+     {
+      "feature": "ndvi",
+      "label": "NDVI",
+      "value": 0.0244,
+      "contribution": 1.279
+     }
+    ],
+    "nearest": [
+     {
+      "name": "Makgadikgadi Pan",
+      "label": 1,
+      "distance": 2.378,
+      "displayName": "Makgadikgadi Pan"
+     },
+     {
+      "name": "Lonar Crater",
+      "label": 1,
+      "distance": 2.692,
+      "displayName": "Lonar Crater"
+     },
+     {
+      "name": "Great Plains Farmland",
+      "label": 0,
+      "distance": 2.971,
+      "displayName": "Great Plains Farmland"
      }
     ]
    }
@@ -163,665 +818,473 @@ export default {
    "coordsApproximate": true,
    "prediction": {
     "datasetId": "6",
-    "rank": 3,
+    "rank": 6,
     "of": 30,
     "label": 1,
-    "pGood": 0.7569,
-    "score": 75.7,
+    "pGood": 0.9368,
+    "heldOut": true,
+    "fitPGood": 0.949,
+    "score": 93.7,
     "verdict": "good",
-    "looPGood": 0.7141,
+    "looPGood": 0.9368,
     "looCorrect": true,
-    "summary": "Predicted good analog (76 percent probability of a good analog). Pushes toward good: above-average max slope and above-average max temperature swing. Pushes toward poor: above-average avg slope angle.",
+    "summary": "Predicted good analog (94 percent held-out probability of a good analog). Pushes toward good: above-average mean insolation and below-average ndvi. Pushes toward poor: below-average mean twi and above-average avg slope angle.",
     "features": {
      "solar_index": 5.614,
      "temp_swing": 21.02,
      "max_slope_deg": 78.98,
-     "avg_slope_deg": 7.846
+     "avg_slope_deg": 7.846,
+     "precip_mm_yr": 113.8,
+     "pet_mm_yr": 1582.9,
+     "aridity_index": 0.0719,
+     "max_wind_ms": 13.77,
+     "peak_wind_ms": 15.59,
+     "max_tri": 417.07,
+     "mean_tri": 10.95,
+     "max_twi": 24.35,
+     "mean_twi": 7.82,
+     "albedo": 0.19,
+     "insolation_kwh": 5.7024,
+     "ndvi": 0.1022
     },
     "contributions": [
      {
       "feature": "solar_index",
       "label": "Avg solar index",
       "value": 5.614,
-      "contribution": 0.524
+      "contribution": 0.158
      },
      {
       "feature": "temp_swing",
       "label": "Max temperature swing",
       "value": 21.02,
-      "contribution": 0.565
+      "contribution": 0.235
      },
      {
       "feature": "max_slope_deg",
       "label": "Max slope",
       "value": 78.98,
-      "contribution": 1.006
+      "contribution": 0.231
      },
      {
       "feature": "avg_slope_deg",
       "label": "Avg slope angle",
       "value": 7.846,
-      "contribution": -0.949
+      "contribution": -0.3
+     },
+     {
+      "feature": "precip_mm_yr",
+      "label": "Mean annual precipitation",
+      "value": 113.8,
+      "contribution": 0.756
+     },
+     {
+      "feature": "pet_mm_yr",
+      "label": "Mean annual PET",
+      "value": 1582.9,
+      "contribution": 0.025
+     },
+     {
+      "feature": "aridity_index",
+      "label": "Aridity index",
+      "value": 0.0719,
+      "contribution": -0.23
+     },
+     {
+      "feature": "max_wind_ms",
+      "label": "Max wind speed",
+      "value": 13.77,
+      "contribution": -0.001
+     },
+     {
+      "feature": "peak_wind_ms",
+      "label": "Peak wind 2021-2025",
+      "value": 15.59,
+      "contribution": 0.006
+     },
+     {
+      "feature": "max_tri",
+      "label": "Max TRI",
+      "value": 417.07,
+      "contribution": 0.399
+     },
+     {
+      "feature": "mean_tri",
+      "label": "Mean TRI",
+      "value": 10.95,
+      "contribution": -0.167
+     },
+     {
+      "feature": "max_twi",
+      "label": "Max TWI",
+      "value": 24.35,
+      "contribution": 0.047
+     },
+     {
+      "feature": "mean_twi",
+      "label": "Mean TWI",
+      "value": 7.82,
+      "contribution": -0.404
+     },
+     {
+      "feature": "albedo",
+      "label": "Mean surface albedo",
+      "value": 0.19,
+      "contribution": 0.049
+     },
+     {
+      "feature": "insolation_kwh",
+      "label": "Mean insolation",
+      "value": 5.7024,
+      "contribution": 1.237
+     },
+     {
+      "feature": "ndvi",
+      "label": "NDVI",
+      "value": 0.1022,
+      "contribution": 0.884
      }
     ],
     "nearest": [
      {
       "name": "San Rafael Swell",
       "label": 1,
-      "distance": 0.363,
+      "distance": 1.165,
       "displayName": "San Rafael Swell"
-     },
-     {
-      "name": "Makhtesh Ramon",
-      "label": 1,
-      "distance": 1.221,
-      "displayName": "Makhtesh Ramon"
      },
      {
       "name": "Atacama",
       "label": 1,
-      "distance": 1.465,
+      "distance": 2.175,
       "displayName": "Atacama Desert"
-     }
-    ]
-   }
-  },
-  {
-   "id": "san-rafael-swell",
-   "datasetName": "San Rafael Swell",
-   "name": "San Rafael Swell",
-   "country": "Utah, United States",
-   "lat": 38.8,
-   "lon": -110.7,
-   "type": "Desert",
-   "tag": "Desert uplift",
-   "coordsApproximate": true,
-   "prediction": {
-    "datasetId": "7",
-    "rank": 4,
-    "of": 30,
-    "label": 1,
-    "pGood": 0.7451,
-    "score": 74.5,
-    "verdict": "good",
-    "looPGood": 0.6985,
-    "looCorrect": true,
-    "summary": "Predicted good analog (75 percent probability of a good analog). Pushes toward good: above-average max slope and above-average max temperature swing. Pushes toward poor: above-average avg slope angle.",
-    "features": {
-     "solar_index": 5.309,
-     "temp_swing": 22.41,
-     "max_slope_deg": 78.063,
-     "avg_slope_deg": 8.053
-    },
-    "contributions": [
-     {
-      "feature": "solar_index",
-      "label": "Avg solar index",
-      "value": 5.309,
-      "contribution": 0.396
-     },
-     {
-      "feature": "temp_swing",
-      "label": "Max temperature swing",
-      "value": 22.41,
-      "contribution": 0.729
-     },
-     {
-      "feature": "max_slope_deg",
-      "label": "Max slope",
-      "value": 78.063,
-      "contribution": 0.954
-     },
-     {
-      "feature": "avg_slope_deg",
-      "label": "Avg slope angle",
-      "value": 8.053,
-      "contribution": -0.996
-     }
-    ],
-    "nearest": [
-     {
-      "name": "Death Valley",
-      "label": 1,
-      "distance": 0.363,
-      "displayName": "Death Valley"
      },
      {
       "name": "Makhtesh Ramon",
       "label": 1,
-      "distance": 1.338,
+      "distance": 2.374,
       "displayName": "Makhtesh Ramon"
-     },
-     {
-      "name": "The Pampas Lowlands",
-      "label": 0,
-      "distance": 1.521,
-      "displayName": "The Pampas Lowlands"
      }
     ]
    }
   },
   {
-   "id": "pingualuit-crater",
-   "datasetName": "PINGUALUIT Crater",
-   "name": "Pingualuit Crater",
-   "country": "Quebec, Canada",
-   "lat": 61.28,
-   "lon": -73.66,
-   "type": "Polar",
-   "tag": "Impact crater",
+   "id": "makgadikgadi-pan",
+   "datasetName": "Makgadikgadi Pan",
+   "name": "Makgadikgadi Pan",
+   "country": "Botswana",
+   "lat": -20.7,
+   "lon": 25.4,
+   "type": "Desert",
+   "tag": "Salt pan",
    "coordsApproximate": true,
    "prediction": {
-    "datasetId": "13",
-    "rank": 5,
-    "of": 30,
-    "label": 1,
-    "pGood": 0.7221,
-    "score": 72.2,
-    "verdict": "good",
-    "looPGood": 0.6727,
-    "looCorrect": true,
-    "summary": "Predicted good analog (72 percent probability of a good analog). Pushes toward good: above-average max slope and above-average max temperature swing. Pushes toward poor: below-average avg solar index.",
-    "features": {
-     "solar_index": 2.904,
-     "temp_swing": 20.02,
-     "max_slope_deg": 86.021,
-     "avg_slope_deg": 4.833
-    },
-    "contributions": [
-     {
-      "feature": "solar_index",
-      "label": "Avg solar index",
-      "value": 2.904,
-      "contribution": -0.615
-     },
-     {
-      "feature": "temp_swing",
-      "label": "Max temperature swing",
-      "value": 20.02,
-      "contribution": 0.448
-     },
-     {
-      "feature": "max_slope_deg",
-      "label": "Max slope",
-      "value": 86.021,
-      "contribution": 1.402
-     },
-     {
-      "feature": "avg_slope_deg",
-      "label": "Avg slope angle",
-      "value": 4.833,
-      "contribution": -0.27
-     }
-    ],
-    "nearest": [
-     {
-      "name": "McMurdo Dry Valleys",
-      "label": 1,
-      "distance": 0.959,
-      "displayName": "McMurdo Dry Valleys"
-     },
-     {
-      "name": "Odadahraun,Iceland",
-      "label": 1,
-      "distance": 1.007,
-      "displayName": "Ódáðahraun"
-     },
-     {
-      "name": "Haughton Crater",
-      "label": 1,
-      "distance": 1.287,
-      "displayName": "Haughton Crater"
-     }
-    ]
-   }
-  },
-  {
-   "id": "lanzarote",
-   "datasetName": "Lanzarote,Spain",
-   "name": "Lanzarote",
-   "country": "Canary Islands, Spain",
-   "lat": 29.03,
-   "lon": -13.63,
-   "type": "Volcanic",
-   "tag": "Volcanic island",
-   "coordsApproximate": true,
-   "prediction": {
-    "datasetId": "3",
-    "rank": 6,
-    "of": 30,
-    "label": 1,
-    "pGood": 0.7132,
-    "score": 71.3,
-    "verdict": "good",
-    "looPGood": 0.6373,
-    "looCorrect": true,
-    "summary": "Predicted good analog (71 percent probability of a good analog). Pushes toward good: above-average max slope and below-average avg slope angle. Pushes toward poor: below-average max temperature swing.",
-    "features": {
-     "solar_index": 5.248,
-     "temp_swing": 6.85,
-     "max_slope_deg": 79.375,
-     "avg_slope_deg": 0.858
-    },
-    "contributions": [
-     {
-      "feature": "solar_index",
-      "label": "Avg solar index",
-      "value": 5.248,
-      "contribution": 0.371
-     },
-     {
-      "feature": "temp_swing",
-      "label": "Max temperature swing",
-      "value": 6.85,
-      "contribution": -1.103
-     },
-     {
-      "feature": "max_slope_deg",
-      "label": "Max slope",
-      "value": 79.375,
-      "contribution": 1.028
-     },
-     {
-      "feature": "avg_slope_deg",
-      "label": "Avg slope angle",
-      "value": 0.858,
-      "contribution": 0.627
-     }
-    ],
-    "nearest": [
-     {
-      "name": "Singapore Coastal Basin",
-      "label": 0,
-      "distance": 1.186,
-      "displayName": "Singapore Coastal Basin"
-     },
-     {
-      "name": "Auckland",
-      "label": 0,
-      "distance": 1.527,
-      "displayName": "Auckland"
-     },
-     {
-      "name": "Mount Etna",
-      "label": 1,
-      "distance": 1.544,
-      "displayName": "Mount Etna"
-     }
-    ]
-   }
-  },
-  {
-   "id": "great-plains",
-   "datasetName": "The Great Plains Farmland,USA",
-   "name": "Great Plains Farmland",
-   "country": "United States",
-   "lat": 39,
-   "lon": -98.5,
-   "type": "Lowland",
-   "tag": "Farmland",
-   "coordsApproximate": true,
-   "prediction": {
-    "datasetId": "25",
+    "datasetId": "8",
     "rank": 7,
     "of": 30,
-    "label": 0,
-    "pGood": 0.6903,
-    "score": 69,
-    "verdict": "good",
-    "looPGood": 0.7877,
-    "looCorrect": false,
-    "summary": "Predicted good analog (69 percent probability of a good analog). Pushes toward good: above-average max temperature swing.",
-    "features": {
-     "solar_index": 4.582,
-     "temp_swing": 26.18,
-     "max_slope_deg": 57.964,
-     "avg_slope_deg": 4.847
-    },
-    "contributions": [
-     {
-      "feature": "solar_index",
-      "label": "Avg solar index",
-      "value": 4.582,
-      "contribution": 0.091
-     },
-     {
-      "feature": "temp_swing",
-      "label": "Max temperature swing",
-      "value": 26.18,
-      "contribution": 1.173
-     },
-     {
-      "feature": "max_slope_deg",
-      "label": "Max slope",
-      "value": 57.964,
-      "contribution": -0.179
-     },
-     {
-      "feature": "avg_slope_deg",
-      "label": "Avg slope angle",
-      "value": 4.847,
-      "contribution": -0.273
-     }
-    ],
-    "nearest": [
-     {
-      "name": "The Pampas Lowlands",
-      "label": 0,
-      "distance": 1.021,
-      "displayName": "The Pampas Lowlands"
-     },
-     {
-      "name": "Seattle,USA",
-      "label": 0,
-      "distance": 1.492,
-      "displayName": "Seattle"
-     },
-     {
-      "name": "Makhtesh Ramon",
-      "label": 1,
-      "distance": 1.532,
-      "displayName": "Makhtesh Ramon"
-     }
-    ]
-   }
-  },
-  {
-   "id": "mount-etna",
-   "datasetName": "Mount Etna",
-   "name": "Mount Etna",
-   "country": "Sicily, Italy",
-   "lat": 37.75,
-   "lon": 14.99,
-   "type": "Volcanic",
-   "tag": "Active volcano",
-   "coordsApproximate": true,
-   "prediction": {
-    "datasetId": "5",
-    "rank": 8,
-    "of": 30,
     "label": 1,
-    "pGood": 0.6577,
-    "score": 65.8,
+    "pGood": 0.9188,
+    "heldOut": true,
+    "fitPGood": 0.9406,
+    "score": 91.9,
     "verdict": "good",
-    "looPGood": 0.6297,
+    "looPGood": 0.9188,
     "looCorrect": true,
-    "summary": "Predicted good analog (66 percent probability of a good analog). Pushes toward good: above-average max slope and below-average avg slope angle.",
+    "summary": "Predicted good analog (92 percent held-out probability of a good analog). Pushes toward good: above-average mean insolation and below-average ndvi. Pushes toward poor: below-average max slope and below-average max tri.",
     "features": {
-     "solar_index": 4.707,
-     "temp_swing": 14.13,
-     "max_slope_deg": 68.19,
-     "avg_slope_deg": 2
+     "solar_index": 5.974,
+     "temp_swing": 22.15,
+     "max_slope_deg": 21.143,
+     "avg_slope_deg": 1.61,
+     "precip_mm_yr": 562.8,
+     "pet_mm_yr": 1858,
+     "aridity_index": 0.3029,
+     "max_wind_ms": 12.6,
+     "peak_wind_ms": 13.03,
+     "max_tri": 43.54,
+     "mean_tri": 3.01,
+     "max_twi": 24.89,
+     "mean_twi": 8.08,
+     "albedo": 0.21,
+     "insolation_kwh": 6.1109,
+     "ndvi": 0.0585
     },
     "contributions": [
      {
       "feature": "solar_index",
       "label": "Avg solar index",
-      "value": 4.707,
-      "contribution": 0.143
+      "value": 5.974,
+      "contribution": 0.204
      },
      {
       "feature": "temp_swing",
       "label": "Max temperature swing",
-      "value": 14.13,
-      "contribution": -0.246
+      "value": 22.15,
+      "contribution": 0.29
      },
      {
       "feature": "max_slope_deg",
       "label": "Max slope",
-      "value": 68.19,
-      "contribution": 0.397
+      "value": 21.143,
+      "contribution": -0.518
      },
      {
       "feature": "avg_slope_deg",
       "label": "Avg slope angle",
-      "value": 2,
-      "contribution": 0.369
-     }
-    ],
-    "nearest": [
-     {
-      "name": "Dhaka,Bangladesh",
-      "label": 0,
-      "distance": 0.793,
-      "displayName": "Dhaka"
+      "value": 1.61,
+      "contribution": 0.144
      },
      {
-      "name": "Auckland",
-      "label": 0,
-      "distance": 1.074,
-      "displayName": "Auckland"
+      "feature": "precip_mm_yr",
+      "label": "Mean annual precipitation",
+      "value": 562.8,
+      "contribution": 0.426
      },
      {
-      "name": "Singapore Coastal Basin",
-      "label": 0,
-      "distance": 1.261,
-      "displayName": "Singapore Coastal Basin"
-     }
-    ]
-   }
-  },
-  {
-   "id": "pampas",
-   "datasetName": "The Pampas Lowlands",
-   "name": "The Pampas Lowlands",
-   "country": "Argentina",
-   "lat": -35,
-   "lon": -62,
-   "type": "Lowland",
-   "tag": "Grassland",
-   "coordsApproximate": true,
-   "prediction": {
-    "datasetId": "24",
-    "rank": 9,
-    "of": 30,
-    "label": 0,
-    "pGood": 0.6471,
-    "score": 64.7,
-    "verdict": "good",
-    "looPGood": 0.6939,
-    "looCorrect": false,
-    "summary": "Predicted good analog (65 percent probability of a good analog). Pushes toward good: above-average max temperature swing.",
-    "features": {
-     "solar_index": 4.938,
-     "temp_swing": 20.84,
-     "max_slope_deg": 63.228,
-     "avg_slope_deg": 4.903
-    },
-    "contributions": [
-     {
-      "feature": "solar_index",
-      "label": "Avg solar index",
-      "value": 4.938,
-      "contribution": 0.24
+      "feature": "pet_mm_yr",
+      "label": "Mean annual PET",
+      "value": 1858,
+      "contribution": 0.037
      },
      {
-      "feature": "temp_swing",
-      "label": "Max temperature swing",
-      "value": 20.84,
-      "contribution": 0.544
+      "feature": "aridity_index",
+      "label": "Aridity index",
+      "value": 0.3029,
+      "contribution": -0.195
      },
      {
-      "feature": "max_slope_deg",
-      "label": "Max slope",
-      "value": 63.228,
-      "contribution": 0.118
+      "feature": "max_wind_ms",
+      "label": "Max wind speed",
+      "value": 12.6,
+      "contribution": -0.02
      },
      {
-      "feature": "avg_slope_deg",
-      "label": "Avg slope angle",
-      "value": 4.903,
-      "contribution": -0.285
-     }
-    ],
-    "nearest": [
-     {
-      "name": "The Great Plains Farmland,USA",
-      "label": 0,
-      "distance": 1.021,
-      "displayName": "Great Plains Farmland"
+      "feature": "peak_wind_ms",
+      "label": "Peak wind 2021-2025",
+      "value": 13.03,
+      "contribution": 0.053
      },
      {
-      "name": "Makhtesh Ramon",
-      "label": 1,
-      "distance": 1.047,
-      "displayName": "Makhtesh Ramon"
+      "feature": "max_tri",
+      "label": "Max TRI",
+      "value": 43.54,
+      "contribution": -0.403
      },
      {
-      "name": "Seattle,USA",
-      "label": 0,
-      "distance": 1.18,
-      "displayName": "Seattle"
-     }
-    ]
-   }
-  },
-  {
-   "id": "iceland",
-   "datasetName": "Odadahraun,Iceland",
-   "name": "Ódáðahraun",
-   "country": "Iceland",
-   "lat": 65.03,
-   "lon": -16.75,
-   "type": "Volcanic",
-   "tag": "Lava field",
-   "coordsApproximate": true,
-   "prediction": {
-    "datasetId": "4",
-    "rank": 10,
-    "of": 30,
-    "label": 1,
-    "pGood": 0.6368,
-    "score": 63.7,
-    "verdict": "good",
-    "looPGood": 0.559,
-    "looCorrect": true,
-    "summary": "Predicted good analog (64 percent probability of a good analog). Pushes toward good: above-average max slope. Pushes toward poor: below-average avg solar index.",
-    "features": {
-     "solar_index": 2.456,
-     "temp_swing": 15.15,
-     "max_slope_deg": 88.947,
-     "avg_slope_deg": 3.932
-    },
-    "contributions": [
-     {
-      "feature": "solar_index",
-      "label": "Avg solar index",
-      "value": 2.456,
-      "contribution": -0.803
+      "feature": "mean_tri",
+      "label": "Mean TRI",
+      "value": 3.01,
+      "contribution": 0.073
      },
      {
-      "feature": "temp_swing",
-      "label": "Max temperature swing",
-      "value": 15.15,
-      "contribution": -0.126
+      "feature": "max_twi",
+      "label": "Max TWI",
+      "value": 24.89,
+      "contribution": 0.149
      },
      {
-      "feature": "max_slope_deg",
-      "label": "Max slope",
-      "value": 88.947,
-      "contribution": 1.567
+      "feature": "mean_twi",
+      "label": "Mean TWI",
+      "value": 8.08,
+      "contribution": -0.329
      },
      {
-      "feature": "avg_slope_deg",
-      "label": "Avg slope angle",
-      "value": 3.932,
-      "contribution": -0.067
-     }
-    ],
-    "nearest": [
-     {
-      "name": "PINGUALUIT Crater",
-      "label": 1,
-      "distance": 1.007,
-      "displayName": "Pingualuit Crater"
+      "feature": "albedo",
+      "label": "Mean surface albedo",
+      "value": 0.21,
+      "contribution": 0.149
      },
      {
-      "name": "McMurdo Dry Valleys",
-      "label": 1,
-      "distance": 1.129,
-      "displayName": "McMurdo Dry Valleys"
+      "feature": "insolation_kwh",
+      "label": "Mean insolation",
+      "value": 6.1109,
+      "contribution": 1.599
      },
      {
-      "name": "Haughton Crater",
-      "label": 1,
-      "distance": 1.456,
-      "displayName": "Haughton Crater"
-     }
-    ]
-   }
-  },
-  {
-   "id": "mississippi",
-   "datasetName": "Mississippi",
-   "name": "Mississippi",
-   "country": "United States",
-   "lat": 32.7,
-   "lon": -90,
-   "type": "Lowland",
-   "tag": "Humid lowland",
-   "coordsApproximate": true,
-   "prediction": {
-    "datasetId": "23",
-    "rank": 11,
-    "of": 30,
-    "label": 0,
-    "pGood": 0.5977,
-    "score": 59.8,
-    "verdict": "borderline",
-    "looPGood": 0.6898,
-    "looCorrect": false,
-    "summary": "Borderline analog (60 percent probability of a good analog). Pushes toward good: below-average avg slope angle and above-average max temperature swing. Pushes toward poor: below-average max slope.",
-    "features": {
-     "solar_index": 4.67,
-     "temp_swing": 20.94,
-     "max_slope_deg": 43.757,
-     "avg_slope_deg": 0.521
-    },
-    "contributions": [
-     {
-      "feature": "solar_index",
-      "label": "Avg solar index",
-      "value": 4.67,
-      "contribution": 0.128
-     },
-     {
-      "feature": "temp_swing",
-      "label": "Max temperature swing",
-      "value": 20.94,
-      "contribution": 0.556
-     },
-     {
-      "feature": "max_slope_deg",
-      "label": "Max slope",
-      "value": 43.757,
-      "contribution": -0.98
-     },
-     {
-      "feature": "avg_slope_deg",
-      "label": "Avg slope angle",
-      "value": 0.521,
-      "contribution": 0.702
+      "feature": "ndvi",
+      "label": "NDVI",
+      "value": 0.0585,
+      "contribution": 1.106
      }
     ],
     "nearest": [
      {
       "name": "Lonar Crater",
       "label": 1,
-      "distance": 0.717,
+      "distance": 2.147,
       "displayName": "Lonar Crater"
      },
      {
       "name": "Qaidam Basin",
       "label": 1,
-      "distance": 0.755,
+      "distance": 2.378,
       "displayName": "Qaidam Basin"
      },
      {
-      "name": "Dhaka,Bangladesh",
+      "name": "Makhtesh Ramon",
+      "label": 1,
+      "distance": 3.89,
+      "displayName": "Makhtesh Ramon"
+     }
+    ]
+   }
+  },
+  {
+   "id": "mauna-kea",
+   "datasetName": "Mauna Kea",
+   "name": "Mauna Kea",
+   "country": "Hawaii, United States",
+   "lat": 19.82,
+   "lon": -155.47,
+   "type": "Volcanic",
+   "tag": "Shield volcano",
+   "coordsApproximate": true,
+   "prediction": {
+    "datasetId": "2",
+    "rank": 8,
+    "of": 30,
+    "label": 1,
+    "pGood": 0.9068,
+    "heldOut": true,
+    "fitPGood": 0.9277,
+    "score": 90.7,
+    "verdict": "good",
+    "looPGood": 0.9068,
+    "looCorrect": true,
+    "summary": "Predicted good analog (91 percent held-out probability of a good analog). Pushes toward good: below-average ndvi and above-average mean insolation. Pushes toward poor: below-average max twi and below-average mean surface albedo.",
+    "features": {
+     "solar_index": 5.467,
+     "temp_swing": 8.39,
+     "max_slope_deg": 49.849,
+     "avg_slope_deg": 0.265,
+     "precip_mm_yr": 1199.8,
+     "pet_mm_yr": 1078.7,
+     "aridity_index": 1.1123,
+     "max_wind_ms": 11.61,
+     "peak_wind_ms": 13.19,
+     "max_tri": 335.91,
+     "mean_tri": 1.23,
+     "max_twi": 21.1,
+     "mean_twi": 13.01,
+     "albedo": 0.07,
+     "insolation_kwh": 5.5963,
+     "ndvi": 0.0173
+    },
+    "contributions": [
+     {
+      "feature": "solar_index",
+      "label": "Avg solar index",
+      "value": 5.467,
+      "contribution": 0.14
+     },
+     {
+      "feature": "temp_swing",
+      "label": "Max temperature swing",
+      "value": 8.39,
+      "contribution": -0.383
+     },
+     {
+      "feature": "max_slope_deg",
+      "label": "Max slope",
+      "value": 49.849,
+      "contribution": -0.146
+     },
+     {
+      "feature": "avg_slope_deg",
+      "label": "Avg slope angle",
+      "value": 0.265,
+      "contribution": 0.24
+     },
+     {
+      "feature": "precip_mm_yr",
+      "label": "Mean annual precipitation",
+      "value": 1199.8,
+      "contribution": -0.042
+     },
+     {
+      "feature": "pet_mm_yr",
+      "label": "Mean annual PET",
+      "value": 1078.7,
+      "contribution": 0.004
+     },
+     {
+      "feature": "aridity_index",
+      "label": "Aridity index",
+      "value": 1.1123,
+      "contribution": -0.072
+     },
+     {
+      "feature": "max_wind_ms",
+      "label": "Max wind speed",
+      "value": 11.61,
+      "contribution": -0.036
+     },
+     {
+      "feature": "peak_wind_ms",
+      "label": "Peak wind 2021-2025",
+      "value": 13.19,
+      "contribution": 0.05
+     },
+     {
+      "feature": "max_tri",
+      "label": "Max TRI",
+      "value": 335.91,
+      "contribution": 0.225
+     },
+     {
+      "feature": "mean_tri",
+      "label": "Mean TRI",
+      "value": 1.23,
+      "contribution": 0.126
+     },
+     {
+      "feature": "max_twi",
+      "label": "Max TWI",
+      "value": 21.1,
+      "contribution": -0.565
+     },
+     {
+      "feature": "mean_twi",
+      "label": "Mean TWI",
+      "value": 13.01,
+      "contribution": 1.11
+     },
+     {
+      "feature": "albedo",
+      "label": "Mean surface albedo",
+      "value": 0.07,
+      "contribution": -0.554
+     },
+     {
+      "feature": "insolation_kwh",
+      "label": "Mean insolation",
+      "value": 5.5963,
+      "contribution": 1.143
+     },
+     {
+      "feature": "ndvi",
+      "label": "NDVI",
+      "value": 0.0173,
+      "contribution": 1.315
+     }
+    ],
+    "nearest": [
+     {
+      "name": "Lanzarote",
+      "label": 1,
+      "distance": 2.319,
+      "displayName": "Lanzarote"
+     },
+     {
+      "name": "Mount Etna",
+      "label": 1,
+      "distance": 2.496,
+      "displayName": "Mount Etna"
+     },
+     {
+      "name": "Auckland",
       "label": 0,
-      "distance": 1.192,
-      "displayName": "Dhaka"
+      "distance": 3.691,
+      "displayName": "Auckland"
      }
     ]
    }
@@ -838,64 +1301,1599 @@ export default {
    "coordsApproximate": true,
    "prediction": {
     "datasetId": "14",
-    "rank": 12,
+    "rank": 9,
     "of": 30,
     "label": 1,
-    "pGood": 0.5902,
-    "score": 59,
-    "verdict": "borderline",
-    "looPGood": 0.5133,
+    "pGood": 0.8853,
+    "heldOut": true,
+    "fitPGood": 0.9306,
+    "score": 88.5,
+    "verdict": "good",
+    "looPGood": 0.8853,
     "looCorrect": true,
-    "summary": "Borderline analog (59 percent probability of a good analog). Pushes toward good: above-average max slope. Pushes toward poor: above-average avg slope angle and below-average avg solar index.",
+    "summary": "Predicted good analog (89 percent held-out probability of a good analog). Pushes toward good: above-average mean surface albedo and above-average max twi. Pushes toward poor: below-average mean insolation. Missing ndvi, so the training average was used.",
     "features": {
      "solar_index": 2.973,
      "temp_swing": 16.3,
      "max_slope_deg": 89.676,
-     "avg_slope_deg": 6.551
+     "avg_slope_deg": 6.551,
+     "precip_mm_yr": 88.1,
+     "pet_mm_yr": 24,
+     "aridity_index": 3.6634,
+     "max_wind_ms": 25.06,
+     "peak_wind_ms": 32.12,
+     "max_tri": 246.68,
+     "mean_tri": 10.79,
+     "max_twi": 29.96,
+     "mean_twi": 9.05,
+     "albedo": 0.56,
+     "insolation_kwh": 2.9993,
+     "ndvi": null
     },
     "contributions": [
      {
       "feature": "solar_index",
       "label": "Avg solar index",
       "value": 2.973,
-      "contribution": -0.586
+      "contribution": -0.177
      },
      {
       "feature": "temp_swing",
       "label": "Max temperature swing",
       "value": 16.3,
-      "contribution": 0.01
+      "contribution": 0.004
      },
      {
       "feature": "max_slope_deg",
       "label": "Max slope",
       "value": 89.676,
-      "contribution": 1.608
+      "contribution": 0.37
      },
      {
       "feature": "avg_slope_deg",
       "label": "Avg slope angle",
       "value": 6.551,
-      "contribution": -0.657
+      "contribution": -0.207
+     },
+     {
+      "feature": "precip_mm_yr",
+      "label": "Mean annual precipitation",
+      "value": 88.1,
+      "contribution": 0.775
+     },
+     {
+      "feature": "pet_mm_yr",
+      "label": "Mean annual PET",
+      "value": 24,
+      "contribution": -0.041
+     },
+     {
+      "feature": "aridity_index",
+      "label": "Aridity index",
+      "value": 3.6634,
+      "contribution": 0.315
+     },
+     {
+      "feature": "max_wind_ms",
+      "label": "Max wind speed",
+      "value": 25.06,
+      "contribution": 0.178
+     },
+     {
+      "feature": "peak_wind_ms",
+      "label": "Peak wind 2021-2025",
+      "value": 32.12,
+      "contribution": -0.298
+     },
+     {
+      "feature": "max_tri",
+      "label": "Max TRI",
+      "value": 246.68,
+      "contribution": 0.033
+     },
+     {
+      "feature": "mean_tri",
+      "label": "Mean TRI",
+      "value": 10.79,
+      "contribution": -0.162
+     },
+     {
+      "feature": "max_twi",
+      "label": "Max TWI",
+      "value": 29.96,
+      "contribution": 1.104
+     },
+     {
+      "feature": "mean_twi",
+      "label": "Mean TWI",
+      "value": 9.05,
+      "contribution": -0.046
+     },
+     {
+      "feature": "albedo",
+      "label": "Mean surface albedo",
+      "value": 0.56,
+      "contribution": 1.906
+     },
+     {
+      "feature": "insolation_kwh",
+      "label": "Mean insolation",
+      "value": 2.9993,
+      "contribution": -1.158
+     },
+     {
+      "feature": "ndvi",
+      "label": "NDVI",
+      "value": 0.27627931034482767,
+      "contribution": 0
      }
     ],
     "nearest": [
      {
-      "name": "PINGUALUIT Crater",
+      "name": "Odadahraun",
       "label": 1,
-      "distance": 0.959,
+      "distance": 2.607,
+      "displayName": "Ódáðahraun"
+     },
+     {
+      "name": "Pingualuit Crater",
+      "label": 1,
+      "distance": 4.427,
       "displayName": "Pingualuit Crater"
      },
      {
-      "name": "Odadahraun,Iceland",
+      "name": "Dublin",
+      "label": 0,
+      "distance": 6.128,
+      "displayName": "Dublin"
+     }
+    ]
+   }
+  },
+  {
+   "id": "san-rafael-swell",
+   "datasetName": "San Rafael Swell",
+   "name": "San Rafael Swell",
+   "country": "Utah, United States",
+   "lat": 38.8,
+   "lon": -110.7,
+   "type": "Desert",
+   "tag": "Desert uplift",
+   "coordsApproximate": true,
+   "prediction": {
+    "datasetId": "7",
+    "rank": 10,
+    "of": 30,
+    "label": 1,
+    "pGood": 0.88,
+    "heldOut": true,
+    "fitPGood": 0.9166,
+    "score": 88,
+    "verdict": "good",
+    "looPGood": 0.88,
+    "looCorrect": true,
+    "summary": "Predicted good analog (88 percent held-out probability of a good analog). Pushes toward good: above-average mean insolation and below-average ndvi. Pushes toward poor: below-average mean twi and above-average avg slope angle.",
+    "features": {
+     "solar_index": 5.309,
+     "temp_swing": 22.41,
+     "max_slope_deg": 78.063,
+     "avg_slope_deg": 8.053,
+     "precip_mm_yr": 251.3,
+     "pet_mm_yr": 1219.3,
+     "aridity_index": 0.2061,
+     "max_wind_ms": 14.68,
+     "peak_wind_ms": 15.72,
+     "max_tri": 412.73,
+     "mean_tri": 11.87,
+     "max_twi": 24.06,
+     "mean_twi": 7.09,
+     "albedo": 0.25,
+     "insolation_kwh": 5.2874,
+     "ndvi": 0.1166
+    },
+    "contributions": [
+     {
+      "feature": "solar_index",
+      "label": "Avg solar index",
+      "value": 5.309,
+      "contribution": 0.119
+     },
+     {
+      "feature": "temp_swing",
+      "label": "Max temperature swing",
+      "value": 22.41,
+      "contribution": 0.303
+     },
+     {
+      "feature": "max_slope_deg",
+      "label": "Max slope",
+      "value": 78.063,
+      "contribution": 0.219
+     },
+     {
+      "feature": "avg_slope_deg",
+      "label": "Avg slope angle",
+      "value": 8.053,
+      "contribution": -0.314
+     },
+     {
+      "feature": "precip_mm_yr",
+      "label": "Mean annual precipitation",
+      "value": 251.3,
+      "contribution": 0.655
+     },
+     {
+      "feature": "pet_mm_yr",
+      "label": "Mean annual PET",
+      "value": 1219.3,
+      "contribution": 0.01
+     },
+     {
+      "feature": "aridity_index",
+      "label": "Aridity index",
+      "value": 0.2061,
+      "contribution": -0.21
+     },
+     {
+      "feature": "max_wind_ms",
+      "label": "Max wind speed",
+      "value": 14.68,
+      "contribution": 0.013
+     },
+     {
+      "feature": "peak_wind_ms",
+      "label": "Peak wind 2021-2025",
+      "value": 15.72,
+      "contribution": 0.003
+     },
+     {
+      "feature": "max_tri",
+      "label": "Max TRI",
+      "value": 412.73,
+      "contribution": 0.39
+     },
+     {
+      "feature": "mean_tri",
+      "label": "Mean TRI",
+      "value": 11.87,
+      "contribution": -0.195
+     },
+     {
+      "feature": "max_twi",
+      "label": "Max TWI",
+      "value": 24.06,
+      "contribution": -0.008
+     },
+     {
+      "feature": "mean_twi",
+      "label": "Mean TWI",
+      "value": 7.09,
+      "contribution": -0.617
+     },
+     {
+      "feature": "albedo",
+      "label": "Mean surface albedo",
+      "value": 0.25,
+      "contribution": 0.35
+     },
+     {
+      "feature": "insolation_kwh",
+      "label": "Mean insolation",
+      "value": 5.2874,
+      "contribution": 0.869
+     },
+     {
+      "feature": "ndvi",
+      "label": "NDVI",
+      "value": 0.1166,
+      "contribution": 0.811
+     }
+    ],
+    "nearest": [
+     {
+      "name": "Death Valley",
       "label": 1,
-      "distance": 1.129,
-      "displayName": "Ódáðahraun"
+      "distance": 1.165,
+      "displayName": "Death Valley"
+     },
+     {
+      "name": "Makhtesh Ramon",
+      "label": 1,
+      "distance": 2.555,
+      "displayName": "Makhtesh Ramon"
+     },
+     {
+      "name": "Atacama",
+      "label": 1,
+      "distance": 2.82,
+      "displayName": "Atacama Desert"
+     }
+    ]
+   }
+  },
+  {
+   "id": "mount-etna",
+   "datasetName": "Mount Etna",
+   "name": "Mount Etna",
+   "country": "Sicily, Italy",
+   "lat": 37.75,
+   "lon": 14.99,
+   "type": "Volcanic",
+   "tag": "Active volcano",
+   "coordsApproximate": true,
+   "prediction": {
+    "datasetId": "5",
+    "rank": 11,
+    "of": 30,
+    "label": 1,
+    "pGood": 0.8339,
+    "heldOut": true,
+    "fitPGood": 0.8726,
+    "score": 83.4,
+    "verdict": "good",
+    "looPGood": 0.8339,
+    "looCorrect": true,
+    "summary": "Predicted good analog (83 percent held-out probability of a good analog). Pushes toward good: below-average ndvi and above-average mean twi. Pushes toward poor: below-average mean surface albedo and below-average max twi.",
+    "features": {
+     "solar_index": 4.707,
+     "temp_swing": 14.13,
+     "max_slope_deg": 68.19,
+     "avg_slope_deg": 2,
+     "precip_mm_yr": 716.8,
+     "pet_mm_yr": 1033.9,
+     "aridity_index": 0.6933,
+     "max_wind_ms": 16.03,
+     "peak_wind_ms": 17.64,
+     "max_tri": 231.57,
+     "mean_tri": 3.39,
+     "max_twi": 22.38,
+     "mean_twi": 12.03,
+     "albedo": 0.06,
+     "insolation_kwh": 4.681,
+     "ndvi": 0.0193
+    },
+    "contributions": [
+     {
+      "feature": "solar_index",
+      "label": "Avg solar index",
+      "value": 4.707,
+      "contribution": 0.043
+     },
+     {
+      "feature": "temp_swing",
+      "label": "Max temperature swing",
+      "value": 14.13,
+      "contribution": -0.102
+     },
+     {
+      "feature": "max_slope_deg",
+      "label": "Max slope",
+      "value": 68.19,
+      "contribution": 0.091
+     },
+     {
+      "feature": "avg_slope_deg",
+      "label": "Avg slope angle",
+      "value": 2,
+      "contribution": 0.117
+     },
+     {
+      "feature": "precip_mm_yr",
+      "label": "Mean annual precipitation",
+      "value": 716.8,
+      "contribution": 0.313
+     },
+     {
+      "feature": "pet_mm_yr",
+      "label": "Mean annual PET",
+      "value": 1033.9,
+      "contribution": 0.002
+     },
+     {
+      "feature": "aridity_index",
+      "label": "Aridity index",
+      "value": 0.6933,
+      "contribution": -0.136
+     },
+     {
+      "feature": "max_wind_ms",
+      "label": "Max wind speed",
+      "value": 16.03,
+      "contribution": 0.034
+     },
+     {
+      "feature": "peak_wind_ms",
+      "label": "Peak wind 2021-2025",
+      "value": 17.64,
+      "contribution": -0.032
+     },
+     {
+      "feature": "max_tri",
+      "label": "Max TRI",
+      "value": 231.57,
+      "contribution": 0
+     },
+     {
+      "feature": "mean_tri",
+      "label": "Mean TRI",
+      "value": 3.39,
+      "contribution": 0.061
+     },
+     {
+      "feature": "max_twi",
+      "label": "Max TWI",
+      "value": 22.38,
+      "contribution": -0.324
+     },
+     {
+      "feature": "mean_twi",
+      "label": "Mean TWI",
+      "value": 12.03,
+      "contribution": 0.824
+     },
+     {
+      "feature": "albedo",
+      "label": "Mean surface albedo",
+      "value": 0.06,
+      "contribution": -0.604
+     },
+     {
+      "feature": "insolation_kwh",
+      "label": "Mean insolation",
+      "value": 4.681,
+      "contribution": 0.332
+     },
+     {
+      "feature": "ndvi",
+      "label": "NDVI",
+      "value": 0.0193,
+      "contribution": 1.305
+     }
+    ],
+    "nearest": [
+     {
+      "name": "Auckland",
+      "label": 0,
+      "distance": 2.289,
+      "displayName": "Auckland"
+     },
+     {
+      "name": "Mauna Kea",
+      "label": 1,
+      "distance": 2.496,
+      "displayName": "Mauna Kea"
+     },
+     {
+      "name": "Lanzarote",
+      "label": 1,
+      "distance": 2.57,
+      "displayName": "Lanzarote"
+     }
+    ]
+   }
+  },
+  {
+   "id": "pingualuit-crater",
+   "datasetName": "Pingualuit Crater",
+   "name": "Pingualuit Crater",
+   "country": "Quebec, Canada",
+   "lat": 61.28,
+   "lon": -73.66,
+   "type": "Polar",
+   "tag": "Impact crater",
+   "coordsApproximate": true,
+   "prediction": {
+    "datasetId": "13",
+    "rank": 12,
+    "of": 30,
+    "label": 1,
+    "pGood": 0.7658,
+    "heldOut": true,
+    "fitPGood": 0.859,
+    "score": 76.6,
+    "verdict": "good",
+    "looPGood": 0.7658,
+    "looCorrect": true,
+    "summary": "Predicted good analog (77 percent held-out probability of a good analog). Pushes toward good: below-average ndvi and above-average mean surface albedo. Pushes toward poor: below-average mean insolation and below-average max tri.",
+    "features": {
+     "solar_index": 2.904,
+     "temp_swing": 20.02,
+     "max_slope_deg": 86.021,
+     "avg_slope_deg": 4.833,
+     "precip_mm_yr": 695.3,
+     "pet_mm_yr": 292.9,
+     "aridity_index": 2.3738,
+     "max_wind_ms": 17.9,
+     "peak_wind_ms": 19.3,
+     "max_tri": 56.21,
+     "mean_tri": 6.35,
+     "max_twi": 24.43,
+     "mean_twi": 8.78,
+     "albedo": 0.43,
+     "insolation_kwh": 2.8776,
+     "ndvi": -0.0445
+    },
+    "contributions": [
+     {
+      "feature": "solar_index",
+      "label": "Avg solar index",
+      "value": 2.904,
+      "contribution": -0.185
+     },
+     {
+      "feature": "temp_swing",
+      "label": "Max temperature swing",
+      "value": 20.02,
+      "contribution": 0.186
+     },
+     {
+      "feature": "max_slope_deg",
+      "label": "Max slope",
+      "value": 86.021,
+      "contribution": 0.323
+     },
+     {
+      "feature": "avg_slope_deg",
+      "label": "Avg slope angle",
+      "value": 4.833,
+      "contribution": -0.085
+     },
+     {
+      "feature": "precip_mm_yr",
+      "label": "Mean annual precipitation",
+      "value": 695.3,
+      "contribution": 0.329
+     },
+     {
+      "feature": "pet_mm_yr",
+      "label": "Mean annual PET",
+      "value": 292.9,
+      "contribution": -0.03
+     },
+     {
+      "feature": "aridity_index",
+      "label": "Aridity index",
+      "value": 2.3738,
+      "contribution": 0.119
+     },
+     {
+      "feature": "max_wind_ms",
+      "label": "Max wind speed",
+      "value": 17.9,
+      "contribution": 0.064
+     },
+     {
+      "feature": "peak_wind_ms",
+      "label": "Peak wind 2021-2025",
+      "value": 19.3,
+      "contribution": -0.062
+     },
+     {
+      "feature": "max_tri",
+      "label": "Max TRI",
+      "value": 56.21,
+      "contribution": -0.376
+     },
+     {
+      "feature": "mean_tri",
+      "label": "Mean TRI",
+      "value": 6.35,
+      "contribution": -0.028
+     },
+     {
+      "feature": "max_twi",
+      "label": "Max TWI",
+      "value": 24.43,
+      "contribution": 0.062
+     },
+     {
+      "feature": "mean_twi",
+      "label": "Mean TWI",
+      "value": 8.78,
+      "contribution": -0.124
+     },
+     {
+      "feature": "albedo",
+      "label": "Mean surface albedo",
+      "value": 0.43,
+      "contribution": 1.253
+     },
+     {
+      "feature": "insolation_kwh",
+      "label": "Mean insolation",
+      "value": 2.8776,
+      "contribution": -1.265
+     },
+     {
+      "feature": "ndvi",
+      "label": "NDVI",
+      "value": -0.0445,
+      "contribution": 1.629
+     }
+    ],
+    "nearest": [
+     {
+      "name": "Haughton Crater",
+      "label": 1,
+      "distance": 2.962,
+      "displayName": "Haughton Crater"
+     },
+     {
+      "name": "Dublin",
+      "label": 0,
+      "distance": 3.517,
+      "displayName": "Dublin"
+     },
+     {
+      "name": "London",
+      "label": 0,
+      "distance": 3.829,
+      "displayName": "London"
+     }
+    ]
+   }
+  },
+  {
+   "id": "great-plains",
+   "datasetName": "Great Plains Farmland",
+   "name": "Great Plains Farmland",
+   "country": "United States",
+   "lat": 39,
+   "lon": -98.5,
+   "type": "Lowland",
+   "tag": "Farmland",
+   "coordsApproximate": true,
+   "prediction": {
+    "datasetId": "25",
+    "rank": 13,
+    "of": 30,
+    "label": 0,
+    "pGood": 0.6718,
+    "heldOut": true,
+    "fitPGood": 0.4109,
+    "score": 67.2,
+    "verdict": "good",
+    "looPGood": 0.6718,
+    "looCorrect": false,
+    "summary": "Predicted good analog (67 percent held-out probability of a good analog). Pushes toward good: above-average max temperature swing and below-average mean annual precipitation. Pushes toward poor: below-average mean twi.",
+    "features": {
+     "solar_index": 4.582,
+     "temp_swing": 26.18,
+     "max_slope_deg": 57.964,
+     "avg_slope_deg": 4.847,
+     "precip_mm_yr": 501.5,
+     "pet_mm_yr": 1229.3,
+     "aridity_index": 0.408,
+     "max_wind_ms": 17.64,
+     "peak_wind_ms": 20.29,
+     "max_tri": 125.53,
+     "mean_tri": 6.77,
+     "max_twi": 24.61,
+     "mean_twi": 7.36,
+     "albedo": 0.16,
+     "insolation_kwh": 3.9775,
+     "ndvi": 0.2614
+    },
+    "contributions": [
+     {
+      "feature": "solar_index",
+      "label": "Avg solar index",
+      "value": 4.582,
+      "contribution": 0.027
+     },
+     {
+      "feature": "temp_swing",
+      "label": "Max temperature swing",
+      "value": 26.18,
+      "contribution": 0.487
+     },
+     {
+      "feature": "max_slope_deg",
+      "label": "Max slope",
+      "value": 57.964,
+      "contribution": -0.041
+     },
+     {
+      "feature": "avg_slope_deg",
+      "label": "Avg slope angle",
+      "value": 4.847,
+      "contribution": -0.086
+     },
+     {
+      "feature": "precip_mm_yr",
+      "label": "Mean annual precipitation",
+      "value": 501.5,
+      "contribution": 0.471
+     },
+     {
+      "feature": "pet_mm_yr",
+      "label": "Mean annual PET",
+      "value": 1229.3,
+      "contribution": 0.01
+     },
+     {
+      "feature": "aridity_index",
+      "label": "Aridity index",
+      "value": 0.408,
+      "contribution": -0.179
+     },
+     {
+      "feature": "max_wind_ms",
+      "label": "Max wind speed",
+      "value": 17.64,
+      "contribution": 0.06
+     },
+     {
+      "feature": "peak_wind_ms",
+      "label": "Peak wind 2021-2025",
+      "value": 20.29,
+      "contribution": -0.081
+     },
+     {
+      "feature": "max_tri",
+      "label": "Max TRI",
+      "value": 125.53,
+      "contribution": -0.227
+     },
+     {
+      "feature": "mean_tri",
+      "label": "Mean TRI",
+      "value": 6.77,
+      "contribution": -0.041
+     },
+     {
+      "feature": "max_twi",
+      "label": "Max TWI",
+      "value": 24.61,
+      "contribution": 0.096
+     },
+     {
+      "feature": "mean_twi",
+      "label": "Mean TWI",
+      "value": 7.36,
+      "contribution": -0.539
+     },
+     {
+      "feature": "albedo",
+      "label": "Mean surface albedo",
+      "value": 0.16,
+      "contribution": -0.102
+     },
+     {
+      "feature": "insolation_kwh",
+      "label": "Mean insolation",
+      "value": 3.9775,
+      "contribution": -0.291
+     },
+     {
+      "feature": "ndvi",
+      "label": "NDVI",
+      "value": 0.2614,
+      "contribution": 0.076
+     }
+    ],
+    "nearest": [
+     {
+      "name": "Buenos Aires",
+      "label": 0,
+      "distance": 2.533,
+      "displayName": "The Pampas Lowlands"
+     },
+     {
+      "name": "Rhine River Valley",
+      "label": 0,
+      "distance": 2.8,
+      "displayName": "Rhine River Valley"
+     },
+     {
+      "name": "London",
+      "label": 0,
+      "distance": 2.913,
+      "displayName": "London"
+     }
+    ]
+   }
+  },
+  {
+   "id": "auckland",
+   "datasetName": "Auckland",
+   "name": "Auckland",
+   "country": "New Zealand",
+   "lat": -36.85,
+   "lon": 174.76,
+   "type": "Urban",
+   "tag": "Temperate city",
+   "coordsApproximate": true,
+   "prediction": {
+    "datasetId": "22",
+    "rank": 14,
+    "of": 30,
+    "label": 0,
+    "pGood": 0.49,
+    "heldOut": true,
+    "fitPGood": 0.333,
+    "score": 49,
+    "verdict": "borderline",
+    "looPGood": 0.49,
+    "looCorrect": true,
+    "summary": "Borderline analog (49 percent held-out probability of a good analog). Pushes toward poor: below-average mean surface albedo and below-average max twi.",
+    "features": {
+     "solar_index": 4.393,
+     "temp_swing": 9.83,
+     "max_slope_deg": 70.457,
+     "avg_slope_deg": 3.811,
+     "precip_mm_yr": 1477.1,
+     "pet_mm_yr": 813.3,
+     "aridity_index": 1.8161,
+     "max_wind_ms": 18.44,
+     "peak_wind_ms": 20.6,
+     "max_tri": 264.74,
+     "mean_tri": 5.29,
+     "max_twi": 21.99,
+     "mean_twi": 10.09,
+     "albedo": 0.1,
+     "insolation_kwh": 4.2898,
+     "ndvi": 0.2327
+    },
+    "contributions": [
+     {
+      "feature": "solar_index",
+      "label": "Avg solar index",
+      "value": 4.393,
+      "contribution": 0.003
+     },
+     {
+      "feature": "temp_swing",
+      "label": "Max temperature swing",
+      "value": 9.83,
+      "contribution": -0.312
+     },
+     {
+      "feature": "max_slope_deg",
+      "label": "Max slope",
+      "value": 70.457,
+      "contribution": 0.121
+     },
+     {
+      "feature": "avg_slope_deg",
+      "label": "Avg slope angle",
+      "value": 3.811,
+      "contribution": -0.012
+     },
+     {
+      "feature": "precip_mm_yr",
+      "label": "Mean annual precipitation",
+      "value": 1477.1,
+      "contribution": -0.246
+     },
+     {
+      "feature": "pet_mm_yr",
+      "label": "Mean annual PET",
+      "value": 813.3,
+      "contribution": -0.008
+     },
+     {
+      "feature": "aridity_index",
+      "label": "Aridity index",
+      "value": 1.8161,
+      "contribution": 0.035
+     },
+     {
+      "feature": "max_wind_ms",
+      "label": "Max wind speed",
+      "value": 18.44,
+      "contribution": 0.073
+     },
+     {
+      "feature": "peak_wind_ms",
+      "label": "Peak wind 2021-2025",
+      "value": 20.6,
+      "contribution": -0.086
+     },
+     {
+      "feature": "max_tri",
+      "label": "Max TRI",
+      "value": 264.74,
+      "contribution": 0.072
+     },
+     {
+      "feature": "mean_tri",
+      "label": "Mean TRI",
+      "value": 5.29,
+      "contribution": 0.004
+     },
+     {
+      "feature": "max_twi",
+      "label": "Max TWI",
+      "value": 21.99,
+      "contribution": -0.398
+     },
+     {
+      "feature": "mean_twi",
+      "label": "Mean TWI",
+      "value": 10.09,
+      "contribution": 0.258
+     },
+     {
+      "feature": "albedo",
+      "label": "Mean surface albedo",
+      "value": 0.1,
+      "contribution": -0.403
+     },
+     {
+      "feature": "insolation_kwh",
+      "label": "Mean insolation",
+      "value": 4.2898,
+      "contribution": -0.014
+     },
+     {
+      "feature": "ndvi",
+      "label": "NDVI",
+      "value": 0.2327,
+      "contribution": 0.221
+     }
+    ],
+    "nearest": [
+     {
+      "name": "Mount Etna",
+      "label": 1,
+      "distance": 2.289,
+      "displayName": "Mount Etna"
+     },
+     {
+      "name": "Dublin",
+      "label": 0,
+      "distance": 2.555,
+      "displayName": "Dublin"
+     },
+     {
+      "name": "Dhaka",
+      "label": 0,
+      "distance": 2.829,
+      "displayName": "Dhaka"
+     }
+    ]
+   }
+  },
+  {
+   "id": "seattle",
+   "datasetName": "Seattle",
+   "name": "Seattle",
+   "country": "Washington, United States",
+   "lat": 47.61,
+   "lon": -122.33,
+   "type": "Urban",
+   "tag": "Temperate city",
+   "coordsApproximate": true,
+   "prediction": {
+    "datasetId": "21",
+    "rank": 15,
+    "of": 30,
+    "label": 0,
+    "pGood": 0.3558,
+    "heldOut": true,
+    "fitPGood": 0.2425,
+    "score": 35.6,
+    "verdict": "bad",
+    "looPGood": 0.3558,
+    "looCorrect": true,
+    "summary": "Predicted poor analog (36 percent held-out probability of a good analog). Pushes toward good: below-average ndvi. Pushes toward poor: below-average mean insolation and below-average mean surface albedo.",
+    "features": {
+     "solar_index": 3.563,
+     "temp_swing": 19.2,
+     "max_slope_deg": 60.363,
+     "avg_slope_deg": 5.035,
+     "precip_mm_yr": 1276.8,
+     "pet_mm_yr": 781.8,
+     "aridity_index": 1.6331,
+     "max_wind_ms": 8.15,
+     "peak_wind_ms": 8.79,
+     "max_tri": 179.39,
+     "mean_tri": 6.76,
+     "max_twi": 23.53,
+     "mean_twi": 8.45,
+     "albedo": 0.11,
+     "insolation_kwh": 3.4178,
+     "ndvi": 0.1565
+    },
+    "contributions": [
+     {
+      "feature": "solar_index",
+      "label": "Avg solar index",
+      "value": 3.563,
+      "contribution": -0.102
+     },
+     {
+      "feature": "temp_swing",
+      "label": "Max temperature swing",
+      "value": 19.2,
+      "contribution": 0.146
+     },
+     {
+      "feature": "max_slope_deg",
+      "label": "Max slope",
+      "value": 60.363,
+      "contribution": -0.01
+     },
+     {
+      "feature": "avg_slope_deg",
+      "label": "Avg slope angle",
+      "value": 5.035,
+      "contribution": -0.1
+     },
+     {
+      "feature": "precip_mm_yr",
+      "label": "Mean annual precipitation",
+      "value": 1276.8,
+      "contribution": -0.099
+     },
+     {
+      "feature": "pet_mm_yr",
+      "label": "Mean annual PET",
+      "value": 781.8,
+      "contribution": -0.009
+     },
+     {
+      "feature": "aridity_index",
+      "label": "Aridity index",
+      "value": 1.6331,
+      "contribution": 0.007
+     },
+     {
+      "feature": "max_wind_ms",
+      "label": "Max wind speed",
+      "value": 8.15,
+      "contribution": -0.091
+     },
+     {
+      "feature": "peak_wind_ms",
+      "label": "Peak wind 2021-2025",
+      "value": 8.79,
+      "contribution": 0.131
+     },
+     {
+      "feature": "max_tri",
+      "label": "Max TRI",
+      "value": 179.39,
+      "contribution": -0.112
+     },
+     {
+      "feature": "mean_tri",
+      "label": "Mean TRI",
+      "value": 6.76,
+      "contribution": -0.04
+     },
+     {
+      "feature": "max_twi",
+      "label": "Max TWI",
+      "value": 23.53,
+      "contribution": -0.108
+     },
+     {
+      "feature": "mean_twi",
+      "label": "Mean TWI",
+      "value": 8.45,
+      "contribution": -0.221
+     },
+     {
+      "feature": "albedo",
+      "label": "Mean surface albedo",
+      "value": 0.11,
+      "contribution": -0.353
+     },
+     {
+      "feature": "insolation_kwh",
+      "label": "Mean insolation",
+      "value": 3.4178,
+      "contribution": -0.787
+     },
+     {
+      "feature": "ndvi",
+      "label": "NDVI",
+      "value": 0.1565,
+      "contribution": 0.608
+     }
+    ],
+    "nearest": [
+     {
+      "name": "Haughton Crater",
+      "label": 1,
+      "distance": 2.436,
+      "displayName": "Haughton Crater"
+     },
+     {
+      "name": "London",
+      "label": 0,
+      "distance": 3.027,
+      "displayName": "London"
+     },
+     {
+      "name": "Rhine River Valley",
+      "label": 0,
+      "distance": 3.035,
+      "displayName": "Rhine River Valley"
+     }
+    ]
+   }
+  },
+  {
+   "id": "haughton",
+   "datasetName": "Haughton Crater",
+   "name": "Haughton Crater",
+   "country": "Devon Island, Canada",
+   "lat": 75.38,
+   "lon": -89.67,
+   "type": "Polar",
+   "tag": "Impact crater",
+   "coordsApproximate": true,
+   "prediction": {
+    "datasetId": "12",
+    "rank": 16,
+    "of": 30,
+    "label": 1,
+    "pGood": 0.3305,
+    "heldOut": true,
+    "fitPGood": 0.6347,
+    "score": 33.1,
+    "verdict": "bad",
+    "looPGood": 0.3305,
+    "looCorrect": false,
+    "summary": "Predicted poor analog (33 percent held-out probability of a good analog). Pushes toward good: below-average ndvi and below-average mean annual precipitation. Pushes toward poor: below-average mean insolation.",
+    "features": {
+     "solar_index": 2.418,
+     "temp_swing": 17.9,
+     "max_slope_deg": 64.116,
+     "avg_slope_deg": 4.893,
+     "precip_mm_yr": 334.4,
+     "pet_mm_yr": 160.2,
+     "aridity_index": 2.0871,
+     "max_wind_ms": 14.15,
+     "peak_wind_ms": 16.37,
+     "max_tri": 145.73,
+     "mean_tri": 6.48,
+     "max_twi": 23.52,
+     "mean_twi": 8.49,
+     "albedo": 0.14,
+     "insolation_kwh": 3.5172,
+     "ndvi": -0.0337
+    },
+    "contributions": [
+     {
+      "feature": "solar_index",
+      "label": "Avg solar index",
+      "value": 2.418,
+      "contribution": -0.247
+     },
+     {
+      "feature": "temp_swing",
+      "label": "Max temperature swing",
+      "value": 17.9,
+      "contribution": 0.082
+     },
+     {
+      "feature": "max_slope_deg",
+      "label": "Max slope",
+      "value": 64.116,
+      "contribution": 0.039
+     },
+     {
+      "feature": "avg_slope_deg",
+      "label": "Avg slope angle",
+      "value": 4.893,
+      "contribution": -0.089
+     },
+     {
+      "feature": "precip_mm_yr",
+      "label": "Mean annual precipitation",
+      "value": 334.4,
+      "contribution": 0.594
+     },
+     {
+      "feature": "pet_mm_yr",
+      "label": "Mean annual PET",
+      "value": 160.2,
+      "contribution": -0.035
+     },
+     {
+      "feature": "aridity_index",
+      "label": "Aridity index",
+      "value": 2.0871,
+      "contribution": 0.076
+     },
+     {
+      "feature": "max_wind_ms",
+      "label": "Max wind speed",
+      "value": 14.15,
+      "contribution": 0.005
+     },
+     {
+      "feature": "peak_wind_ms",
+      "label": "Peak wind 2021-2025",
+      "value": 16.37,
+      "contribution": -0.009
+     },
+     {
+      "feature": "max_tri",
+      "label": "Max TRI",
+      "value": 145.73,
+      "contribution": -0.184
+     },
+     {
+      "feature": "mean_tri",
+      "label": "Mean TRI",
+      "value": 6.48,
+      "contribution": -0.032
+     },
+     {
+      "feature": "max_twi",
+      "label": "Max TWI",
+      "value": 23.52,
+      "contribution": -0.109
+     },
+     {
+      "feature": "mean_twi",
+      "label": "Mean TWI",
+      "value": 8.49,
+      "contribution": -0.209
+     },
+     {
+      "feature": "albedo",
+      "label": "Mean surface albedo",
+      "value": 0.14,
+      "contribution": -0.202
+     },
+     {
+      "feature": "insolation_kwh",
+      "label": "Mean insolation",
+      "value": 3.5172,
+      "contribution": -0.699
+     },
+     {
+      "feature": "ndvi",
+      "label": "NDVI",
+      "value": -0.0337,
+      "contribution": 1.574
+     }
+    ],
+    "nearest": [
+     {
+      "name": "Seattle",
+      "label": 0,
+      "distance": 2.436,
+      "displayName": "Seattle"
+     },
+     {
+      "name": "London",
+      "label": 0,
+      "distance": 2.701,
+      "displayName": "London"
+     },
+     {
+      "name": "Dublin",
+      "label": 0,
+      "distance": 2.843,
+      "displayName": "Dublin"
+     }
+    ]
+   }
+  },
+  {
+   "id": "sarychev-peak",
+   "datasetName": "Sarychev Peak",
+   "name": "Sarychev Peak",
+   "country": "Kuril Islands, Russia",
+   "lat": 48.09,
+   "lon": 153.2,
+   "type": "Volcanic",
+   "tag": "Stratovolcano",
+   "coordsApproximate": true,
+   "prediction": {
+    "datasetId": "15",
+    "rank": 17,
+    "of": 30,
+    "label": 1,
+    "pGood": 0.3173,
+    "heldOut": true,
+    "fitPGood": 0.8401,
+    "score": 31.7,
+    "verdict": "bad",
+    "looPGood": 0.3173,
+    "looCorrect": false,
+    "summary": "Predicted poor analog (32 percent held-out probability of a good analog). Pushes toward good: below-average ndvi and above-average mean twi. Pushes toward poor: below-average mean insolation and below-average mean surface albedo.",
+    "features": {
+     "solar_index": 2.707,
+     "temp_swing": 7.92,
+     "max_slope_deg": 79.58,
+     "avg_slope_deg": 0.167,
+     "precip_mm_yr": 1109.7,
+     "pet_mm_yr": 207.1,
+     "aridity_index": 5.3596,
+     "max_wind_ms": 25.5,
+     "peak_wind_ms": 27.78,
+     "max_tri": 674.67,
+     "mean_tri": 0.93,
+     "max_twi": 22.39,
+     "mean_twi": 12.89,
+     "albedo": 0.06,
+     "insolation_kwh": 2.6587,
+     "ndvi": -0.0158
+    },
+    "contributions": [
+     {
+      "feature": "solar_index",
+      "label": "Avg solar index",
+      "value": 2.707,
+      "contribution": -0.21
+     },
+     {
+      "feature": "temp_swing",
+      "label": "Max temperature swing",
+      "value": 7.92,
+      "contribution": -0.406
+     },
+     {
+      "feature": "max_slope_deg",
+      "label": "Max slope",
+      "value": 79.58,
+      "contribution": 0.239
+     },
+     {
+      "feature": "avg_slope_deg",
+      "label": "Avg slope angle",
+      "value": 0.167,
+      "contribution": 0.247
+     },
+     {
+      "feature": "precip_mm_yr",
+      "label": "Mean annual precipitation",
+      "value": 1109.7,
+      "contribution": 0.024
+     },
+     {
+      "feature": "pet_mm_yr",
+      "label": "Mean annual PET",
+      "value": 207.1,
+      "contribution": -0.033
+     },
+     {
+      "feature": "aridity_index",
+      "label": "Aridity index",
+      "value": 5.3596,
+      "contribution": 0.573
+     },
+     {
+      "feature": "max_wind_ms",
+      "label": "Max wind speed",
+      "value": 25.5,
+      "contribution": 0.185
+     },
+     {
+      "feature": "peak_wind_ms",
+      "label": "Peak wind 2021-2025",
+      "value": 27.78,
+      "contribution": -0.219
+     },
+     {
+      "feature": "max_tri",
+      "label": "Max TRI",
+      "value": 674.67,
+      "contribution": 0.952
+     },
+     {
+      "feature": "mean_tri",
+      "label": "Mean TRI",
+      "value": 0.93,
+      "contribution": 0.136
+     },
+     {
+      "feature": "max_twi",
+      "label": "Max TWI",
+      "value": 22.39,
+      "contribution": -0.322
+     },
+     {
+      "feature": "mean_twi",
+      "label": "Mean TWI",
+      "value": 12.89,
+      "contribution": 1.075
+     },
+     {
+      "feature": "albedo",
+      "label": "Mean surface albedo",
+      "value": 0.06,
+      "contribution": -0.604
+     },
+     {
+      "feature": "insolation_kwh",
+      "label": "Mean insolation",
+      "value": 2.6587,
+      "contribution": -1.459
+     },
+     {
+      "feature": "ndvi",
+      "label": "NDVI",
+      "value": -0.0158,
+      "contribution": 1.483
+     }
+    ],
+    "nearest": [
+     {
+      "name": "Dublin",
+      "label": 0,
+      "distance": 5.277,
+      "displayName": "Dublin"
+     },
+     {
+      "name": "Auckland",
+      "label": 0,
+      "distance": 5.402,
+      "displayName": "Auckland"
+     },
+     {
+      "name": "Lanzarote",
+      "label": 1,
+      "distance": 5.73,
+      "displayName": "Lanzarote"
+     }
+    ]
+   }
+  },
+  {
+   "id": "dublin",
+   "datasetName": "Dublin",
+   "name": "Dublin",
+   "country": "Ireland",
+   "lat": 53.35,
+   "lon": -6.26,
+   "type": "Urban",
+   "tag": "Temperate city",
+   "coordsApproximate": true,
+   "prediction": {
+    "datasetId": "20",
+    "rank": 18,
+    "of": 30,
+    "label": 0,
+    "pGood": 0.2561,
+    "heldOut": true,
+    "fitPGood": 0.1775,
+    "score": 25.6,
+    "verdict": "bad",
+    "looPGood": 0.2561,
+    "looCorrect": true,
+    "summary": "Predicted poor analog (26 percent held-out probability of a good analog). Pushes toward good: below-average ndvi. Pushes toward poor: below-average mean insolation and below-average max temperature swing.",
+    "features": {
+     "solar_index": 2.788,
+     "temp_swing": 9.07,
+     "max_slope_deg": 68.889,
+     "avg_slope_deg": 2.761,
+     "precip_mm_yr": 1097.3,
+     "pet_mm_yr": 536,
+     "aridity_index": 2.0473,
+     "max_wind_ms": 20.18,
+     "peak_wind_ms": 23.92,
+     "max_tri": 168.97,
+     "mean_tri": 3.66,
+     "max_twi": 23.02,
+     "mean_twi": 8.77,
+     "albedo": 0.18,
+     "insolation_kwh": 2.7413,
+     "ndvi": 0.1547
+    },
+    "contributions": [
+     {
+      "feature": "solar_index",
+      "label": "Avg solar index",
+      "value": 2.788,
+      "contribution": -0.2
+     },
+     {
+      "feature": "temp_swing",
+      "label": "Max temperature swing",
+      "value": 9.07,
+      "contribution": -0.35
+     },
+     {
+      "feature": "max_slope_deg",
+      "label": "Max slope",
+      "value": 68.889,
+      "contribution": 0.1
+     },
+     {
+      "feature": "avg_slope_deg",
+      "label": "Avg slope angle",
+      "value": 2.761,
+      "contribution": 0.062
+     },
+     {
+      "feature": "precip_mm_yr",
+      "label": "Mean annual precipitation",
+      "value": 1097.3,
+      "contribution": 0.033
+     },
+     {
+      "feature": "pet_mm_yr",
+      "label": "Mean annual PET",
+      "value": 536,
+      "contribution": -0.019
+     },
+     {
+      "feature": "aridity_index",
+      "label": "Aridity index",
+      "value": 2.0473,
+      "contribution": 0.07
+     },
+     {
+      "feature": "max_wind_ms",
+      "label": "Max wind speed",
+      "value": 20.18,
+      "contribution": 0.1
+     },
+     {
+      "feature": "peak_wind_ms",
+      "label": "Peak wind 2021-2025",
+      "value": 23.92,
+      "contribution": -0.147
+     },
+     {
+      "feature": "max_tri",
+      "label": "Max TRI",
+      "value": 168.97,
+      "contribution": -0.134
+     },
+     {
+      "feature": "mean_tri",
+      "label": "Mean TRI",
+      "value": 3.66,
+      "contribution": 0.053
+     },
+     {
+      "feature": "max_twi",
+      "label": "Max TWI",
+      "value": 23.02,
+      "contribution": -0.204
+     },
+     {
+      "feature": "mean_twi",
+      "label": "Mean TWI",
+      "value": 8.77,
+      "contribution": -0.127
+     },
+     {
+      "feature": "albedo",
+      "label": "Mean surface albedo",
+      "value": 0.18,
+      "contribution": -0.002
+     },
+     {
+      "feature": "insolation_kwh",
+      "label": "Mean insolation",
+      "value": 2.7413,
+      "contribution": -1.386
+     },
+     {
+      "feature": "ndvi",
+      "label": "NDVI",
+      "value": 0.1547,
+      "contribution": 0.617
+     }
+    ],
+    "nearest": [
+     {
+      "name": "London",
+      "label": 0,
+      "distance": 2.551,
+      "displayName": "London"
+     },
+     {
+      "name": "Auckland",
+      "label": 0,
+      "distance": 2.555,
+      "displayName": "Auckland"
      },
      {
       "name": "Haughton Crater",
       "label": 1,
-      "distance": 1.599,
+      "distance": 2.843,
       "displayName": "Haughton Crater"
      }
     ]
@@ -903,7 +2901,7 @@ export default {
   },
   {
    "id": "dhaka",
-   "datasetName": "Dhaka,Bangladesh",
+   "datasetName": "Dhaka",
    "name": "Dhaka",
    "country": "Bangladesh",
    "lat": 23.81,
@@ -913,20 +2911,34 @@ export default {
    "coordsApproximate": true,
    "prediction": {
     "datasetId": "29",
-    "rank": 13,
+    "rank": 19,
     "of": 30,
     "label": 0,
-    "pGood": 0.5798,
-    "score": 58,
-    "verdict": "borderline",
-    "looPGood": 0.6153,
-    "looCorrect": false,
-    "summary": "Borderline analog (58 percent probability of a good analog). Pushes toward good: below-average avg slope angle.",
+    "pGood": 0.1667,
+    "heldOut": true,
+    "fitPGood": 0.1277,
+    "score": 16.7,
+    "verdict": "bad",
+    "looPGood": 0.1667,
+    "looCorrect": true,
+    "summary": "Predicted poor analog (17 percent held-out probability of a good analog). Pushes toward poor: above-average mean annual precipitation and above-average ndvi.",
     "features": {
      "solar_index": 4.366,
      "temp_swing": 17.12,
      "max_slope_deg": 58.356,
-     "avg_slope_deg": 1.936
+     "avg_slope_deg": 1.936,
+     "precip_mm_yr": 2558.9,
+     "pet_mm_yr": 1388.9,
+     "aridity_index": 1.8424,
+     "max_wind_ms": 13.56,
+     "peak_wind_ms": 19.21,
+     "max_tri": 269.12,
+     "mean_tri": 3.46,
+     "max_twi": 23.76,
+     "mean_twi": 8.31,
+     "albedo": 0.11,
+     "insolation_kwh": 4.5031,
+     "ndvi": 0.4013
     },
     "contributions": [
      {
@@ -939,38 +2951,1398 @@ export default {
       "feature": "temp_swing",
       "label": "Max temperature swing",
       "value": 17.12,
-      "contribution": 0.106
+      "contribution": 0.044
      },
      {
       "feature": "max_slope_deg",
       "label": "Max slope",
       "value": 58.356,
-      "contribution": -0.157
+      "contribution": -0.036
      },
      {
       "feature": "avg_slope_deg",
       "label": "Avg slope angle",
       "value": 1.936,
-      "contribution": 0.383
+      "contribution": 0.121
+     },
+     {
+      "feature": "precip_mm_yr",
+      "label": "Mean annual precipitation",
+      "value": 2558.9,
+      "contribution": -1.041
+     },
+     {
+      "feature": "pet_mm_yr",
+      "label": "Mean annual PET",
+      "value": 1388.9,
+      "contribution": 0.017
+     },
+     {
+      "feature": "aridity_index",
+      "label": "Aridity index",
+      "value": 1.8424,
+      "contribution": 0.039
+     },
+     {
+      "feature": "max_wind_ms",
+      "label": "Max wind speed",
+      "value": 13.56,
+      "contribution": -0.005
+     },
+     {
+      "feature": "peak_wind_ms",
+      "label": "Peak wind 2021-2025",
+      "value": 19.21,
+      "contribution": -0.061
+     },
+     {
+      "feature": "max_tri",
+      "label": "Max TRI",
+      "value": 269.12,
+      "contribution": 0.081
+     },
+     {
+      "feature": "mean_tri",
+      "label": "Mean TRI",
+      "value": 3.46,
+      "contribution": 0.059
+     },
+     {
+      "feature": "max_twi",
+      "label": "Max TWI",
+      "value": 23.76,
+      "contribution": -0.064
+     },
+     {
+      "feature": "mean_twi",
+      "label": "Mean TWI",
+      "value": 8.31,
+      "contribution": -0.261
+     },
+     {
+      "feature": "albedo",
+      "label": "Mean surface albedo",
+      "value": 0.11,
+      "contribution": -0.353
+     },
+     {
+      "feature": "insolation_kwh",
+      "label": "Mean insolation",
+      "value": 4.5031,
+      "contribution": 0.174
+     },
+     {
+      "feature": "ndvi",
+      "label": "NDVI",
+      "value": 0.4013,
+      "contribution": -0.635
      }
     ],
     "nearest": [
      {
-      "name": "Mount Etna",
-      "label": 1,
-      "distance": 0.793,
-      "displayName": "Mount Etna"
-     },
-     {
-      "name": "Mississippi",
+      "name": "Auckland",
       "label": 0,
-      "distance": 1.192,
-      "displayName": "Mississippi"
+      "distance": 2.829,
+      "displayName": "Auckland"
      },
      {
       "name": "Lonar Crater",
       "label": 1,
-      "distance": 1.304,
+      "distance": 2.874,
+      "displayName": "Lonar Crater"
+     },
+     {
+      "name": "Everglades",
+      "label": 0,
+      "distance": 2.938,
+      "displayName": "The Everglades"
+     }
+    ]
+   }
+  },
+  {
+   "id": "london",
+   "datasetName": "London",
+   "name": "London",
+   "country": "United Kingdom",
+   "lat": 51.51,
+   "lon": -0.13,
+   "type": "Urban",
+   "tag": "Temperate city",
+   "coordsApproximate": true,
+   "prediction": {
+    "datasetId": "19",
+    "rank": 20,
+    "of": 30,
+    "label": 0,
+    "pGood": 0.1557,
+    "heldOut": true,
+    "fitPGood": 0.1234,
+    "score": 15.6,
+    "verdict": "bad",
+    "looPGood": 0.1557,
+    "looCorrect": true,
+    "summary": "Predicted poor analog (16 percent held-out probability of a good analog). Pushes toward good: below-average mean annual precipitation. Pushes toward poor: below-average mean insolation and below-average mean twi.",
+    "features": {
+     "solar_index": 3.029,
+     "temp_swing": 16.15,
+     "max_slope_deg": 40.948,
+     "avg_slope_deg": 3.267,
+     "precip_mm_yr": 708.5,
+     "pet_mm_yr": 780,
+     "aridity_index": 0.9084,
+     "max_wind_ms": 17.44,
+     "peak_wind_ms": 20.48,
+     "max_tri": 65.18,
+     "mean_tri": 4.4,
+     "max_twi": 24.1,
+     "mean_twi": 7.74,
+     "albedo": 0.17,
+     "insolation_kwh": 2.9398,
+     "ndvi": 0.2202
+    },
+    "contributions": [
+     {
+      "feature": "solar_index",
+      "label": "Avg solar index",
+      "value": 3.029,
+      "contribution": -0.17
+     },
+     {
+      "feature": "temp_swing",
+      "label": "Max temperature swing",
+      "value": 16.15,
+      "contribution": -0.003
+     },
+     {
+      "feature": "max_slope_deg",
+      "label": "Max slope",
+      "value": 40.948,
+      "contribution": -0.262
+     },
+     {
+      "feature": "avg_slope_deg",
+      "label": "Avg slope angle",
+      "value": 3.267,
+      "contribution": 0.026
+     },
+     {
+      "feature": "precip_mm_yr",
+      "label": "Mean annual precipitation",
+      "value": 708.5,
+      "contribution": 0.319
+     },
+     {
+      "feature": "pet_mm_yr",
+      "label": "Mean annual PET",
+      "value": 780,
+      "contribution": -0.009
+     },
+     {
+      "feature": "aridity_index",
+      "label": "Aridity index",
+      "value": 0.9084,
+      "contribution": -0.103
+     },
+     {
+      "feature": "max_wind_ms",
+      "label": "Max wind speed",
+      "value": 17.44,
+      "contribution": 0.057
+     },
+     {
+      "feature": "peak_wind_ms",
+      "label": "Peak wind 2021-2025",
+      "value": 20.48,
+      "contribution": -0.084
+     },
+     {
+      "feature": "max_tri",
+      "label": "Max TRI",
+      "value": 65.18,
+      "contribution": -0.357
+     },
+     {
+      "feature": "mean_tri",
+      "label": "Mean TRI",
+      "value": 4.4,
+      "contribution": 0.031
+     },
+     {
+      "feature": "max_twi",
+      "label": "Max TWI",
+      "value": 24.1,
+      "contribution": 0
+     },
+     {
+      "feature": "mean_twi",
+      "label": "Mean TWI",
+      "value": 7.74,
+      "contribution": -0.428
+     },
+     {
+      "feature": "albedo",
+      "label": "Mean surface albedo",
+      "value": 0.17,
+      "contribution": -0.052
+     },
+     {
+      "feature": "insolation_kwh",
+      "label": "Mean insolation",
+      "value": 2.9398,
+      "contribution": -1.21
+     },
+     {
+      "feature": "ndvi",
+      "label": "NDVI",
+      "value": 0.2202,
+      "contribution": 0.285
+     }
+    ],
+    "nearest": [
+     {
+      "name": "Rhine River Valley",
+      "label": 0,
+      "distance": 2.137,
+      "displayName": "Rhine River Valley"
+     },
+     {
+      "name": "Dublin",
+      "label": 0,
+      "distance": 2.551,
+      "displayName": "Dublin"
+     },
+     {
+      "name": "Haughton Crater",
+      "label": 1,
+      "distance": 2.701,
+      "displayName": "Haughton Crater"
+     }
+    ]
+   }
+  },
+  {
+   "id": "mississippi",
+   "datasetName": "Mississippi Lowlands",
+   "name": "Mississippi",
+   "country": "United States",
+   "lat": 32.7,
+   "lon": -90,
+   "type": "Lowland",
+   "tag": "Humid lowland",
+   "coordsApproximate": true,
+   "prediction": {
+    "datasetId": "23",
+    "rank": 21,
+    "of": 30,
+    "label": 0,
+    "pGood": 0.1554,
+    "heldOut": true,
+    "fitPGood": 0.112,
+    "score": 15.5,
+    "verdict": "bad",
+    "looPGood": 0.1554,
+    "looCorrect": true,
+    "summary": "Predicted poor analog (16 percent held-out probability of a good analog). Pushes toward good: above-average mean twi and above-average mean insolation. Pushes toward poor: above-average ndvi and below-average mean surface albedo.",
+    "features": {
+     "solar_index": 4.67,
+     "temp_swing": 20.94,
+     "max_slope_deg": 43.757,
+     "avg_slope_deg": 0.521,
+     "precip_mm_yr": 1382.1,
+     "pet_mm_yr": 1369.6,
+     "aridity_index": 1.0091,
+     "max_wind_ms": 12.65,
+     "peak_wind_ms": 14.4,
+     "max_tri": 126.58,
+     "mean_tri": 0.99,
+     "max_twi": 23.47,
+     "mean_twi": 11.08,
+     "albedo": 0.05,
+     "insolation_kwh": 4.6886,
+     "ndvi": 0.6933
+    },
+    "contributions": [
+     {
+      "feature": "solar_index",
+      "label": "Avg solar index",
+      "value": 4.67,
+      "contribution": 0.038
+     },
+     {
+      "feature": "temp_swing",
+      "label": "Max temperature swing",
+      "value": 20.94,
+      "contribution": 0.231
+     },
+     {
+      "feature": "max_slope_deg",
+      "label": "Max slope",
+      "value": 43.757,
+      "contribution": -0.225
+     },
+     {
+      "feature": "avg_slope_deg",
+      "label": "Avg slope angle",
+      "value": 0.521,
+      "contribution": 0.222
+     },
+     {
+      "feature": "precip_mm_yr",
+      "label": "Mean annual precipitation",
+      "value": 1382.1,
+      "contribution": -0.176
+     },
+     {
+      "feature": "pet_mm_yr",
+      "label": "Mean annual PET",
+      "value": 1369.6,
+      "contribution": 0.016
+     },
+     {
+      "feature": "aridity_index",
+      "label": "Aridity index",
+      "value": 1.0091,
+      "contribution": -0.088
+     },
+     {
+      "feature": "max_wind_ms",
+      "label": "Max wind speed",
+      "value": 12.65,
+      "contribution": -0.019
+     },
+     {
+      "feature": "peak_wind_ms",
+      "label": "Peak wind 2021-2025",
+      "value": 14.4,
+      "contribution": 0.028
+     },
+     {
+      "feature": "max_tri",
+      "label": "Max TRI",
+      "value": 126.58,
+      "contribution": -0.225
+     },
+     {
+      "feature": "mean_tri",
+      "label": "Mean TRI",
+      "value": 0.99,
+      "contribution": 0.134
+     },
+     {
+      "feature": "max_twi",
+      "label": "Max TWI",
+      "value": 23.47,
+      "contribution": -0.119
+     },
+     {
+      "feature": "mean_twi",
+      "label": "Mean TWI",
+      "value": 11.08,
+      "contribution": 0.547
+     },
+     {
+      "feature": "albedo",
+      "label": "Mean surface albedo",
+      "value": 0.05,
+      "contribution": -0.654
+     },
+     {
+      "feature": "insolation_kwh",
+      "label": "Mean insolation",
+      "value": 4.6886,
+      "contribution": 0.339
+     },
+     {
+      "feature": "ndvi",
+      "label": "NDVI",
+      "value": 0.6933,
+      "contribution": -2.117
+     }
+    ],
+    "nearest": [
+     {
+      "name": "Lonar Crater",
+      "label": 1,
+      "distance": 2.772,
+      "displayName": "Lonar Crater"
+     },
+     {
+      "name": "Everglades",
+      "label": 0,
+      "distance": 2.856,
+      "displayName": "The Everglades"
+     },
+     {
+      "name": "Dhaka",
+      "label": 0,
+      "distance": 2.965,
+      "displayName": "Dhaka"
+     }
+    ]
+   }
+  },
+  {
+   "id": "lonar-crater",
+   "datasetName": "Lonar Crater",
+   "name": "Lonar Crater",
+   "country": "Maharashtra, India",
+   "lat": 19.98,
+   "lon": 76.51,
+   "type": "Crater",
+   "tag": "Impact crater",
+   "coordsApproximate": true,
+   "prediction": {
+    "datasetId": "11",
+    "rank": 22,
+    "of": 30,
+    "label": 1,
+    "pGood": 0.1502,
+    "heldOut": true,
+    "fitPGood": 0.3951,
+    "score": 15,
+    "verdict": "bad",
+    "looPGood": 0.1502,
+    "looCorrect": false,
+    "summary": "Predicted poor analog (15 percent held-out probability of a good analog). Pushes toward good: above-average mean insolation. Pushes toward poor: above-average ndvi and below-average max tri.",
+    "features": {
+     "solar_index": 4.987,
+     "temp_swing": 21.1,
+     "max_slope_deg": 40.096,
+     "avg_slope_deg": 2.151,
+     "precip_mm_yr": 1026.4,
+     "pet_mm_yr": 1746.1,
+     "aridity_index": 0.5878,
+     "max_wind_ms": 11.66,
+     "peak_wind_ms": 12.53,
+     "max_tri": 61.94,
+     "mean_tri": 3.67,
+     "max_twi": 24.52,
+     "mean_twi": 7.98,
+     "albedo": 0.12,
+     "insolation_kwh": 5.3366,
+     "ndvi": 0.3922
+    },
+    "contributions": [
+     {
+      "feature": "solar_index",
+      "label": "Avg solar index",
+      "value": 4.987,
+      "contribution": 0.079
+     },
+     {
+      "feature": "temp_swing",
+      "label": "Max temperature swing",
+      "value": 21.1,
+      "contribution": 0.239
+     },
+     {
+      "feature": "max_slope_deg",
+      "label": "Max slope",
+      "value": 40.096,
+      "contribution": -0.273
+     },
+     {
+      "feature": "avg_slope_deg",
+      "label": "Avg slope angle",
+      "value": 2.151,
+      "contribution": 0.106
+     },
+     {
+      "feature": "precip_mm_yr",
+      "label": "Mean annual precipitation",
+      "value": 1026.4,
+      "contribution": 0.085
+     },
+     {
+      "feature": "pet_mm_yr",
+      "label": "Mean annual PET",
+      "value": 1746.1,
+      "contribution": 0.032
+     },
+     {
+      "feature": "aridity_index",
+      "label": "Aridity index",
+      "value": 0.5878,
+      "contribution": -0.152
+     },
+     {
+      "feature": "max_wind_ms",
+      "label": "Max wind speed",
+      "value": 11.66,
+      "contribution": -0.035
+     },
+     {
+      "feature": "peak_wind_ms",
+      "label": "Peak wind 2021-2025",
+      "value": 12.53,
+      "contribution": 0.062
+     },
+     {
+      "feature": "max_tri",
+      "label": "Max TRI",
+      "value": 61.94,
+      "contribution": -0.364
+     },
+     {
+      "feature": "mean_tri",
+      "label": "Mean TRI",
+      "value": 3.67,
+      "contribution": 0.053
+     },
+     {
+      "feature": "max_twi",
+      "label": "Max TWI",
+      "value": 24.52,
+      "contribution": 0.079
+     },
+     {
+      "feature": "mean_twi",
+      "label": "Mean TWI",
+      "value": 7.98,
+      "contribution": -0.358
+     },
+     {
+      "feature": "albedo",
+      "label": "Mean surface albedo",
+      "value": 0.12,
+      "contribution": -0.303
+     },
+     {
+      "feature": "insolation_kwh",
+      "label": "Mean insolation",
+      "value": 5.3366,
+      "contribution": 0.913
+     },
+     {
+      "feature": "ndvi",
+      "label": "NDVI",
+      "value": 0.3922,
+      "contribution": -0.589
+     }
+    ],
+    "nearest": [
+     {
+      "name": "Makgadikgadi Pan",
+      "label": 1,
+      "distance": 2.147,
+      "displayName": "Makgadikgadi Pan"
+     },
+     {
+      "name": "Qaidam Basin",
+      "label": 1,
+      "distance": 2.692,
+      "displayName": "Qaidam Basin"
+     },
+     {
+      "name": "Mississippi Lowlands",
+      "label": 0,
+      "distance": 2.772,
+      "displayName": "Mississippi"
+     }
+    ]
+   }
+  },
+  {
+   "id": "everglades",
+   "datasetName": "Everglades",
+   "name": "The Everglades",
+   "country": "Florida, United States",
+   "lat": 25.3,
+   "lon": -80.9,
+   "type": "Wetland",
+   "tag": "Subtropical wetland",
+   "coordsApproximate": true,
+   "prediction": {
+    "datasetId": "28",
+    "rank": 23,
+    "of": 30,
+    "label": 0,
+    "pGood": 0.1251,
+    "heldOut": true,
+    "fitPGood": 0.0955,
+    "score": 12.5,
+    "verdict": "bad",
+    "looPGood": 0.1251,
+    "looCorrect": true,
+    "summary": "Predicted poor analog (13 percent held-out probability of a good analog). Pushes toward good: above-average mean insolation. Pushes toward poor: above-average ndvi and below-average mean surface albedo.",
+    "features": {
+     "solar_index": 5.062,
+     "temp_swing": 8.25,
+     "max_slope_deg": 49.518,
+     "avg_slope_deg": 0.993,
+     "precip_mm_yr": 1369.1,
+     "pet_mm_yr": 792.8,
+     "aridity_index": 1.727,
+     "max_wind_ms": 14.89,
+     "peak_wind_ms": 18.24,
+     "max_tri": 158.4,
+     "mean_tri": 1.82,
+     "max_twi": 24.18,
+     "mean_twi": 9.82,
+     "albedo": 0.09,
+     "insolation_kwh": 5.0112,
+     "ndvi": 0.6938
+    },
+    "contributions": [
+     {
+      "feature": "solar_index",
+      "label": "Avg solar index",
+      "value": 5.062,
+      "contribution": 0.088
+     },
+     {
+      "feature": "temp_swing",
+      "label": "Max temperature swing",
+      "value": 8.25,
+      "contribution": -0.39
+     },
+     {
+      "feature": "max_slope_deg",
+      "label": "Max slope",
+      "value": 49.518,
+      "contribution": -0.151
+     },
+     {
+      "feature": "avg_slope_deg",
+      "label": "Avg slope angle",
+      "value": 0.993,
+      "contribution": 0.188
+     },
+     {
+      "feature": "precip_mm_yr",
+      "label": "Mean annual precipitation",
+      "value": 1369.1,
+      "contribution": -0.166
+     },
+     {
+      "feature": "pet_mm_yr",
+      "label": "Mean annual PET",
+      "value": 792.8,
+      "contribution": -0.008
+     },
+     {
+      "feature": "aridity_index",
+      "label": "Aridity index",
+      "value": 1.727,
+      "contribution": 0.021
+     },
+     {
+      "feature": "max_wind_ms",
+      "label": "Max wind speed",
+      "value": 14.89,
+      "contribution": 0.016
+     },
+     {
+      "feature": "peak_wind_ms",
+      "label": "Peak wind 2021-2025",
+      "value": 18.24,
+      "contribution": -0.043
+     },
+     {
+      "feature": "max_tri",
+      "label": "Max TRI",
+      "value": 158.4,
+      "contribution": -0.157
+     },
+     {
+      "feature": "mean_tri",
+      "label": "Mean TRI",
+      "value": 1.82,
+      "contribution": 0.109
+     },
+     {
+      "feature": "max_twi",
+      "label": "Max TWI",
+      "value": 24.18,
+      "contribution": 0.015
+     },
+     {
+      "feature": "mean_twi",
+      "label": "Mean TWI",
+      "value": 9.82,
+      "contribution": 0.179
+     },
+     {
+      "feature": "albedo",
+      "label": "Mean surface albedo",
+      "value": 0.09,
+      "contribution": -0.454
+     },
+     {
+      "feature": "insolation_kwh",
+      "label": "Mean insolation",
+      "value": 5.0112,
+      "contribution": 0.624
+     },
+     {
+      "feature": "ndvi",
+      "label": "NDVI",
+      "value": 0.6938,
+      "contribution": -2.12
+     }
+    ],
+    "nearest": [
+     {
+      "name": "Mississippi Lowlands",
+      "label": 0,
+      "distance": 2.856,
+      "displayName": "Mississippi"
+     },
+     {
+      "name": "Dhaka",
+      "label": 0,
+      "distance": 2.938,
+      "displayName": "Dhaka"
+     },
+     {
+      "name": "Auckland",
+      "label": 0,
+      "distance": 3.036,
+      "displayName": "Auckland"
+     }
+    ]
+   }
+  },
+  {
+   "id": "rhine-valley",
+   "datasetName": "Rhine River Valley",
+   "name": "Rhine River Valley",
+   "country": "Germany",
+   "lat": 50,
+   "lon": 7.8,
+   "type": "Lowland",
+   "tag": "River valley",
+   "coordsApproximate": true,
+   "prediction": {
+    "datasetId": "26",
+    "rank": 24,
+    "of": 30,
+    "label": 0,
+    "pGood": 0.0876,
+    "heldOut": true,
+    "fitPGood": 0.0756,
+    "score": 8.8,
+    "verdict": "bad",
+    "looPGood": 0.0876,
+    "looCorrect": true,
+    "summary": "Predicted poor analog (9 percent held-out probability of a good analog). Pushes toward poor: above-average ndvi.",
+    "features": {
+     "solar_index": 3.101,
+     "temp_swing": 18.03,
+     "max_slope_deg": 44.387,
+     "avg_slope_deg": 3.123,
+     "precip_mm_yr": 780.3,
+     "pet_mm_yr": 815.8,
+     "aridity_index": 0.9565,
+     "max_wind_ms": 15.42,
+     "peak_wind_ms": 17.68,
+     "max_tri": 119.56,
+     "mean_tri": 6.81,
+     "max_twi": 25.58,
+     "mean_twi": 8.22,
+     "albedo": 0.16,
+     "insolation_kwh": 3.9775,
+     "ndvi": 0.6153
+    },
+    "contributions": [
+     {
+      "feature": "solar_index",
+      "label": "Avg solar index",
+      "value": 3.101,
+      "contribution": -0.16
+     },
+     {
+      "feature": "temp_swing",
+      "label": "Max temperature swing",
+      "value": 18.03,
+      "contribution": 0.089
+     },
+     {
+      "feature": "max_slope_deg",
+      "label": "Max slope",
+      "value": 44.387,
+      "contribution": -0.217
+     },
+     {
+      "feature": "avg_slope_deg",
+      "label": "Avg slope angle",
+      "value": 3.123,
+      "contribution": 0.037
+     },
+     {
+      "feature": "precip_mm_yr",
+      "label": "Mean annual precipitation",
+      "value": 780.3,
+      "contribution": 0.266
+     },
+     {
+      "feature": "pet_mm_yr",
+      "label": "Mean annual PET",
+      "value": 815.8,
+      "contribution": -0.007
+     },
+     {
+      "feature": "aridity_index",
+      "label": "Aridity index",
+      "value": 0.9565,
+      "contribution": -0.096
+     },
+     {
+      "feature": "max_wind_ms",
+      "label": "Max wind speed",
+      "value": 15.42,
+      "contribution": 0.025
+     },
+     {
+      "feature": "peak_wind_ms",
+      "label": "Peak wind 2021-2025",
+      "value": 17.68,
+      "contribution": -0.033
+     },
+     {
+      "feature": "max_tri",
+      "label": "Max TRI",
+      "value": 119.56,
+      "contribution": -0.24
+     },
+     {
+      "feature": "mean_tri",
+      "label": "Mean TRI",
+      "value": 6.81,
+      "contribution": -0.042
+     },
+     {
+      "feature": "max_twi",
+      "label": "Max TWI",
+      "value": 25.58,
+      "contribution": 0.279
+     },
+     {
+      "feature": "mean_twi",
+      "label": "Mean TWI",
+      "value": 8.22,
+      "contribution": -0.288
+     },
+     {
+      "feature": "albedo",
+      "label": "Mean surface albedo",
+      "value": 0.16,
+      "contribution": -0.102
+     },
+     {
+      "feature": "insolation_kwh",
+      "label": "Mean insolation",
+      "value": 3.9775,
+      "contribution": -0.291
+     },
+     {
+      "feature": "ndvi",
+      "label": "NDVI",
+      "value": 0.6153,
+      "contribution": -1.721
+     }
+    ],
+    "nearest": [
+     {
+      "name": "London",
+      "label": 0,
+      "distance": 2.137,
+      "displayName": "London"
+     },
+     {
+      "name": "Great Plains Farmland",
+      "label": 0,
+      "distance": 2.8,
+      "displayName": "Great Plains Farmland"
+     },
+     {
+      "name": "Seattle",
+      "label": 0,
+      "distance": 3.035,
+      "displayName": "Seattle"
+     }
+    ]
+   }
+  },
+  {
+   "id": "west-siberian-plain",
+   "datasetName": "Central Siberian Plateau",
+   "name": "West Siberian Plain",
+   "country": "Russia",
+   "lat": 61,
+   "lon": 73,
+   "type": "Lowland",
+   "tag": "Boreal plain",
+   "coordsApproximate": true,
+   "prediction": {
+    "datasetId": "27",
+    "rank": 25,
+    "of": 30,
+    "label": 0,
+    "pGood": 0.0844,
+    "heldOut": true,
+    "fitPGood": 0.0627,
+    "score": 8.4,
+    "verdict": "bad",
+    "looPGood": 0.0844,
+    "looCorrect": true,
+    "summary": "Predicted poor analog (8 percent held-out probability of a good analog). Pushes toward poor: below-average mean insolation and above-average ndvi.",
+    "features": {
+     "solar_index": 2.608,
+     "temp_swing": 22.28,
+     "max_slope_deg": 24.841,
+     "avg_slope_deg": 1.719,
+     "precip_mm_yr": 788,
+     "pet_mm_yr": 502.3,
+     "aridity_index": 1.5687,
+     "max_wind_ms": 6.29,
+     "peak_wind_ms": 7.84,
+     "max_tri": 27.93,
+     "mean_tri": 2.45,
+     "max_twi": 23.83,
+     "mean_twi": 8.09,
+     "albedo": 0.22,
+     "insolation_kwh": 2.657,
+     "ndvi": 0.4187
+    },
+    "contributions": [
+     {
+      "feature": "solar_index",
+      "label": "Avg solar index",
+      "value": 2.608,
+      "contribution": -0.223
+     },
+     {
+      "feature": "temp_swing",
+      "label": "Max temperature swing",
+      "value": 22.28,
+      "contribution": 0.296
+     },
+     {
+      "feature": "max_slope_deg",
+      "label": "Max slope",
+      "value": 24.841,
+      "contribution": -0.471
+     },
+     {
+      "feature": "avg_slope_deg",
+      "label": "Avg slope angle",
+      "value": 1.719,
+      "contribution": 0.137
+     },
+     {
+      "feature": "precip_mm_yr",
+      "label": "Mean annual precipitation",
+      "value": 788,
+      "contribution": 0.261
+     },
+     {
+      "feature": "pet_mm_yr",
+      "label": "Mean annual PET",
+      "value": 502.3,
+      "contribution": -0.021
+     },
+     {
+      "feature": "aridity_index",
+      "label": "Aridity index",
+      "value": 1.5687,
+      "contribution": -0.003
+     },
+     {
+      "feature": "max_wind_ms",
+      "label": "Max wind speed",
+      "value": 6.29,
+      "contribution": -0.12
+     },
+     {
+      "feature": "peak_wind_ms",
+      "label": "Peak wind 2021-2025",
+      "value": 7.84,
+      "contribution": 0.148
+     },
+     {
+      "feature": "max_tri",
+      "label": "Max TRI",
+      "value": 27.93,
+      "contribution": -0.437
+     },
+     {
+      "feature": "mean_tri",
+      "label": "Mean TRI",
+      "value": 2.45,
+      "contribution": 0.09
+     },
+     {
+      "feature": "max_twi",
+      "label": "Max TWI",
+      "value": 23.83,
+      "contribution": -0.051
+     },
+     {
+      "feature": "mean_twi",
+      "label": "Mean TWI",
+      "value": 8.09,
+      "contribution": -0.326
+     },
+     {
+      "feature": "albedo",
+      "label": "Mean surface albedo",
+      "value": 0.22,
+      "contribution": 0.199
+     },
+     {
+      "feature": "insolation_kwh",
+      "label": "Mean insolation",
+      "value": 2.657,
+      "contribution": -1.461
+     },
+     {
+      "feature": "ndvi",
+      "label": "NDVI",
+      "value": 0.4187,
+      "contribution": -0.723
+     }
+    ],
+    "nearest": [
+     {
+      "name": "London",
+      "label": 0,
+      "distance": 3.231,
+      "displayName": "London"
+     },
+     {
+      "name": "Rhine River Valley",
+      "label": 0,
+      "distance": 3.387,
+      "displayName": "Rhine River Valley"
+     },
+     {
+      "name": "Seattle",
+      "label": 0,
+      "distance": 3.393,
+      "displayName": "Seattle"
+     }
+    ]
+   }
+  },
+  {
+   "id": "pampas",
+   "datasetName": "Buenos Aires",
+   "name": "The Pampas Lowlands",
+   "country": "Argentina",
+   "lat": -35,
+   "lon": -62,
+   "type": "Lowland",
+   "tag": "Grassland",
+   "coordsApproximate": true,
+   "prediction": {
+    "datasetId": "24",
+    "rank": 26,
+    "of": 30,
+    "label": 0,
+    "pGood": 0.0649,
+    "heldOut": true,
+    "fitPGood": 0.0549,
+    "score": 6.5,
+    "verdict": "bad",
+    "looPGood": 0.0649,
+    "looCorrect": true,
+    "summary": "Predicted poor analog (6 percent held-out probability of a good analog). Pushes toward poor: above-average ndvi and below-average mean insolation.",
+    "features": {
+     "solar_index": 4.938,
+     "temp_swing": 20.84,
+     "max_slope_deg": 63.228,
+     "avg_slope_deg": 4.903,
+     "precip_mm_yr": 931.2,
+     "pet_mm_yr": 1409.9,
+     "aridity_index": 0.6605,
+     "max_wind_ms": 14.36,
+     "peak_wind_ms": 18.24,
+     "max_tri": 242.54,
+     "mean_tri": 7.21,
+     "max_twi": 22.55,
+     "mean_twi": 8.98,
+     "albedo": 0.18,
+     "insolation_kwh": 2.9393,
+     "ndvi": 0.5674
+    },
+    "contributions": [
+     {
+      "feature": "solar_index",
+      "label": "Avg solar index",
+      "value": 4.938,
+      "contribution": 0.072
+     },
+     {
+      "feature": "temp_swing",
+      "label": "Max temperature swing",
+      "value": 20.84,
+      "contribution": 0.226
+     },
+     {
+      "feature": "max_slope_deg",
+      "label": "Max slope",
+      "value": 63.228,
+      "contribution": 0.027
+     },
+     {
+      "feature": "avg_slope_deg",
+      "label": "Avg slope angle",
+      "value": 4.903,
+      "contribution": -0.09
+     },
+     {
+      "feature": "precip_mm_yr",
+      "label": "Mean annual precipitation",
+      "value": 931.2,
+      "contribution": 0.155
+     },
+     {
+      "feature": "pet_mm_yr",
+      "label": "Mean annual PET",
+      "value": 1409.9,
+      "contribution": 0.018
+     },
+     {
+      "feature": "aridity_index",
+      "label": "Aridity index",
+      "value": 0.6605,
+      "contribution": -0.141
+     },
+     {
+      "feature": "max_wind_ms",
+      "label": "Max wind speed",
+      "value": 14.36,
+      "contribution": 0.008
+     },
+     {
+      "feature": "peak_wind_ms",
+      "label": "Peak wind 2021-2025",
+      "value": 18.24,
+      "contribution": -0.043
+     },
+     {
+      "feature": "max_tri",
+      "label": "Max TRI",
+      "value": 242.54,
+      "contribution": 0.024
+     },
+     {
+      "feature": "mean_tri",
+      "label": "Mean TRI",
+      "value": 7.21,
+      "contribution": -0.054
+     },
+     {
+      "feature": "max_twi",
+      "label": "Max TWI",
+      "value": 22.55,
+      "contribution": -0.292
+     },
+     {
+      "feature": "mean_twi",
+      "label": "Mean TWI",
+      "value": 8.98,
+      "contribution": -0.066
+     },
+     {
+      "feature": "albedo",
+      "label": "Mean surface albedo",
+      "value": 0.18,
+      "contribution": -0.002
+     },
+     {
+      "feature": "insolation_kwh",
+      "label": "Mean insolation",
+      "value": 2.9393,
+      "contribution": -1.211
+     },
+     {
+      "feature": "ndvi",
+      "label": "NDVI",
+      "value": 0.5674,
+      "contribution": -1.478
+     }
+    ],
+    "nearest": [
+     {
+      "name": "Great Plains Farmland",
+      "label": 0,
+      "distance": 2.533,
+      "displayName": "Great Plains Farmland"
+     },
+     {
+      "name": "Dhaka",
+      "label": 0,
+      "distance": 2.983,
+      "displayName": "Dhaka"
+     },
+     {
+      "name": "Rhine River Valley",
+      "label": 0,
+      "distance": 3.086,
+      "displayName": "Rhine River Valley"
+     }
+    ]
+   }
+  },
+  {
+   "id": "congo-basin",
+   "datasetName": "Congo Basin Lowlands",
+   "name": "Congo Basin Lowlands",
+   "country": "Central Africa",
+   "lat": -0.5,
+   "lon": 22,
+   "type": "Rainforest",
+   "tag": "Tropical lowland",
+   "coordsApproximate": true,
+   "prediction": {
+    "datasetId": "17",
+    "rank": 27,
+    "of": 30,
+    "label": 0,
+    "pGood": 0.0476,
+    "heldOut": true,
+    "fitPGood": 0.0406,
+    "score": 4.8,
+    "verdict": "bad",
+    "looPGood": 0.0476,
+    "looCorrect": true,
+    "summary": "Predicted poor analog (5 percent held-out probability of a good analog). Pushes toward good: above-average mean insolation. Pushes toward poor: above-average ndvi and above-average mean annual precipitation.",
+    "features": {
+     "solar_index": 4.658,
+     "temp_swing": 11.25,
+     "max_slope_deg": 28.629,
+     "avg_slope_deg": 0.681,
+     "precip_mm_yr": 1937.1,
+     "pet_mm_yr": 1353.9,
+     "aridity_index": 1.4308,
+     "max_wind_ms": 1.82,
+     "peak_wind_ms": 2.11,
+     "max_tri": 146.24,
+     "mean_tri": 2.37,
+     "max_twi": 25.58,
+     "mean_twi": 10.21,
+     "albedo": 0.1,
+     "insolation_kwh": 4.7405,
+     "ndvi": 0.8038
+    },
+    "contributions": [
+     {
+      "feature": "solar_index",
+      "label": "Avg solar index",
+      "value": 4.658,
+      "contribution": 0.037
+     },
+     {
+      "feature": "temp_swing",
+      "label": "Max temperature swing",
+      "value": 11.25,
+      "contribution": -0.243
+     },
+     {
+      "feature": "max_slope_deg",
+      "label": "Max slope",
+      "value": 28.629,
+      "contribution": -0.421
+     },
+     {
+      "feature": "avg_slope_deg",
+      "label": "Avg slope angle",
+      "value": 0.681,
+      "contribution": 0.21
+     },
+     {
+      "feature": "precip_mm_yr",
+      "label": "Mean annual precipitation",
+      "value": 1937.1,
+      "contribution": -0.584
+     },
+     {
+      "feature": "pet_mm_yr",
+      "label": "Mean annual PET",
+      "value": 1353.9,
+      "contribution": 0.016
+     },
+     {
+      "feature": "aridity_index",
+      "label": "Aridity index",
+      "value": 1.4308,
+      "contribution": -0.024
+     },
+     {
+      "feature": "max_wind_ms",
+      "label": "Max wind speed",
+      "value": 1.82,
+      "contribution": -0.191
+     },
+     {
+      "feature": "peak_wind_ms",
+      "label": "Peak wind 2021-2025",
+      "value": 2.11,
+      "contribution": 0.254
+     },
+     {
+      "feature": "max_tri",
+      "label": "Max TRI",
+      "value": 146.24,
+      "contribution": -0.183
+     },
+     {
+      "feature": "mean_tri",
+      "label": "Mean TRI",
+      "value": 2.37,
+      "contribution": 0.092
+     },
+     {
+      "feature": "max_twi",
+      "label": "Max TWI",
+      "value": 25.58,
+      "contribution": 0.279
+     },
+     {
+      "feature": "mean_twi",
+      "label": "Mean TWI",
+      "value": 10.21,
+      "contribution": 0.293
+     },
+     {
+      "feature": "albedo",
+      "label": "Mean surface albedo",
+      "value": 0.1,
+      "contribution": -0.403
+     },
+     {
+      "feature": "insolation_kwh",
+      "label": "Mean insolation",
+      "value": 4.7405,
+      "contribution": 0.385
+     },
+     {
+      "feature": "ndvi",
+      "label": "NDVI",
+      "value": 0.8038,
+      "contribution": -2.678
+     }
+    ],
+    "nearest": [
+     {
+      "name": "Mississippi Lowlands",
+      "label": 0,
+      "distance": 3.417,
+      "displayName": "Mississippi"
+     },
+     {
+      "name": "Everglades",
+      "label": 0,
+      "distance": 3.668,
+      "displayName": "The Everglades"
+     },
+     {
+      "name": "Lonar Crater",
+      "label": 1,
+      "distance": 3.88,
       "displayName": "Lonar Crater"
      }
     ]
@@ -988,890 +4360,151 @@ export default {
    "coordsApproximate": true,
    "prediction": {
     "datasetId": "18",
-    "rank": 14,
+    "rank": 28,
     "of": 30,
     "label": 0,
-    "pGood": 0.5381,
-    "score": 53.8,
-    "verdict": "borderline",
-    "looPGood": 0.6155,
-    "looCorrect": false,
-    "summary": "Borderline analog (54 percent probability of a good analog). Pushes toward good: above-average max slope. Pushes toward poor: below-average max temperature swing.",
+    "pGood": 0.0239,
+    "heldOut": true,
+    "fitPGood": 0.0247,
+    "score": 2.4,
+    "verdict": "bad",
+    "looPGood": 0.0239,
+    "looCorrect": true,
+    "summary": "Predicted poor analog (2 percent held-out probability of a good analog). Pushes toward good: above-average mean insolation and above-average max tri. Pushes toward poor: above-average mean annual precipitation and above-average ndvi.",
     "features": {
      "solar_index": 4.779,
      "temp_swing": 9.16,
      "max_slope_deg": 80.297,
-     "avg_slope_deg": 4.784
+     "avg_slope_deg": 4.784,
+     "precip_mm_yr": 4381.4,
+     "pet_mm_yr": 1191.9,
+     "aridity_index": 3.676,
+     "max_wind_ms": 1.62,
+     "peak_wind_ms": 1.74,
+     "max_tri": 437.29,
+     "mean_tri": 7.59,
+     "max_twi": 23.51,
+     "mean_twi": 8.83,
+     "albedo": 0.1,
+     "insolation_kwh": 5.0719,
+     "ndvi": 0.6685
     },
     "contributions": [
      {
       "feature": "solar_index",
       "label": "Avg solar index",
       "value": 4.779,
-      "contribution": 0.173
+      "contribution": 0.052
      },
      {
       "feature": "temp_swing",
       "label": "Max temperature swing",
       "value": 9.16,
-      "contribution": -0.831
+      "contribution": -0.345
      },
      {
       "feature": "max_slope_deg",
       "label": "Max slope",
       "value": 80.297,
-      "contribution": 1.08
+      "contribution": 0.248
      },
      {
       "feature": "avg_slope_deg",
       "label": "Avg slope angle",
       "value": 4.784,
-      "contribution": -0.259
-     }
-    ],
-    "nearest": [
-     {
-      "name": "Auckland",
-      "label": 0,
-      "distance": 0.731,
-      "displayName": "Auckland"
+      "contribution": -0.082
      },
      {
-      "name": "Singapore Coastal Basin",
-      "label": 0,
-      "distance": 1.156,
-      "displayName": "Singapore Coastal Basin"
+      "feature": "precip_mm_yr",
+      "label": "Mean annual precipitation",
+      "value": 4381.4,
+      "contribution": -2.381
      },
      {
-      "name": "Mount Etna",
-      "label": 1,
-      "distance": 1.538,
-      "displayName": "Mount Etna"
-     }
-    ]
-   }
-  },
-  {
-   "id": "sarychev-peak",
-   "datasetName": "Sarychev Peak",
-   "name": "Sarychev Peak",
-   "country": "Kuril Islands, Russia",
-   "lat": 48.09,
-   "lon": 153.2,
-   "type": "Volcanic",
-   "tag": "Stratovolcano",
-   "coordsApproximate": true,
-   "prediction": {
-    "datasetId": "15",
-    "rank": 15,
-    "of": 30,
-    "label": 1,
-    "pGood": 0.5341,
-    "score": 53.4,
-    "verdict": "borderline",
-    "looPGood": 0.3935,
-    "looCorrect": false,
-    "summary": "Borderline analog (53 percent probability of a good analog). Pushes toward good: above-average max slope and below-average avg slope angle. Pushes toward poor: below-average max temperature swing and below-average avg solar index.",
-    "features": {
-     "solar_index": 2.707,
-     "temp_swing": 7.92,
-     "max_slope_deg": 79.58,
-     "avg_slope_deg": 0.167
-    },
-    "contributions": [
-     {
-      "feature": "solar_index",
-      "label": "Avg solar index",
-      "value": 2.707,
-      "contribution": -0.697
+      "feature": "pet_mm_yr",
+      "label": "Mean annual PET",
+      "value": 1191.9,
+      "contribution": 0.009
      },
      {
-      "feature": "temp_swing",
-      "label": "Max temperature swing",
-      "value": 7.92,
-      "contribution": -0.977
+      "feature": "aridity_index",
+      "label": "Aridity index",
+      "value": 3.676,
+      "contribution": 0.317
      },
      {
-      "feature": "max_slope_deg",
-      "label": "Max slope",
-      "value": 79.58,
-      "contribution": 1.039
+      "feature": "max_wind_ms",
+      "label": "Max wind speed",
+      "value": 1.62,
+      "contribution": -0.194
      },
      {
-      "feature": "avg_slope_deg",
-      "label": "Avg slope angle",
-      "value": 0.167,
-      "contribution": 0.782
-     }
-    ],
-    "nearest": [
-     {
-      "name": "Dublin,Ireland",
-      "label": 0,
-      "distance": 1.183,
-      "displayName": "Dublin"
-     },
-     {
-      "name": "Singapore Coastal Basin",
-      "label": 0,
-      "distance": 1.964,
-      "displayName": "Singapore Coastal Basin"
-     },
-     {
-      "name": "Odadahraun,Iceland",
-      "label": 1,
-      "distance": 2.018,
-      "displayName": "Ódáðahraun"
-     }
-    ]
-   }
-  },
-  {
-   "id": "qaidam-basin",
-   "datasetName": "Qaidam Basin",
-   "name": "Qaidam Basin",
-   "country": "Qinghai, China",
-   "lat": 37.3,
-   "lon": 94.5,
-   "type": "Desert",
-   "tag": "High desert basin",
-   "coordsApproximate": true,
-   "prediction": {
-    "datasetId": "9",
-    "rank": 16,
-    "of": 30,
-    "label": 1,
-    "pGood": 0.5235,
-    "score": 52.4,
-    "verdict": "borderline",
-    "looPGood": 0.4567,
-    "looCorrect": false,
-    "summary": "Borderline analog (52 percent probability of a good analog). Pushes toward good: above-average max temperature swing and below-average avg slope angle. Pushes toward poor: below-average max slope.",
-    "features": {
-     "solar_index": 5.28,
-     "temp_swing": 20.95,
-     "max_slope_deg": 38.966,
-     "avg_slope_deg": 1.804
-    },
-    "contributions": [
-     {
-      "feature": "solar_index",
-      "label": "Avg solar index",
-      "value": 5.28,
-      "contribution": 0.384
-     },
-     {
-      "feature": "temp_swing",
-      "label": "Max temperature swing",
-      "value": 20.95,
-      "contribution": 0.557
-     },
-     {
-      "feature": "max_slope_deg",
-      "label": "Max slope",
-      "value": 38.966,
-      "contribution": -1.25
-     },
-     {
-      "feature": "avg_slope_deg",
-      "label": "Avg slope angle",
-      "value": 1.804,
-      "contribution": 0.413
-     }
-    ],
-    "nearest": [
-     {
-      "name": "Lonar Crater",
-      "label": 1,
-      "distance": 0.285,
-      "displayName": "Lonar Crater"
-     },
-     {
-      "name": "Mississippi",
-      "label": 0,
-      "distance": 0.755,
-      "displayName": "Mississippi"
-     },
-     {
-      "name": "Makgadikgadi Pan",
-      "label": 1,
-      "distance": 1.13,
-      "displayName": "Makgadikgadi Pan"
-     }
-    ]
-   }
-  },
-  {
-   "id": "lonar-crater",
-   "datasetName": "Lonar Crater",
-   "name": "Lonar Crater",
-   "country": "Maharashtra, India",
-   "lat": 19.98,
-   "lon": 76.51,
-   "type": "Crater",
-   "tag": "Impact crater",
-   "coordsApproximate": true,
-   "prediction": {
-    "datasetId": "11",
-    "rank": 17,
-    "of": 30,
-    "label": 1,
-    "pGood": 0.4935,
-    "score": 49.4,
-    "verdict": "borderline",
-    "looPGood": 0.4319,
-    "looCorrect": false,
-    "summary": "Borderline analog (49 percent probability of a good analog). Pushes toward good: above-average max temperature swing and below-average avg slope angle. Pushes toward poor: below-average max slope.",
-    "features": {
-     "solar_index": 4.987,
-     "temp_swing": 21.1,
-     "max_slope_deg": 40.096,
-     "avg_slope_deg": 2.151
-    },
-    "contributions": [
-     {
-      "feature": "solar_index",
-      "label": "Avg solar index",
-      "value": 4.987,
+      "feature": "peak_wind_ms",
+      "label": "Peak wind 2021-2025",
+      "value": 1.74,
       "contribution": 0.261
      },
      {
-      "feature": "temp_swing",
-      "label": "Max temperature swing",
-      "value": 21.1,
-      "contribution": 0.575
+      "feature": "max_tri",
+      "label": "Max TRI",
+      "value": 437.29,
+      "contribution": 0.442
      },
      {
-      "feature": "max_slope_deg",
-      "label": "Max slope",
-      "value": 40.096,
-      "contribution": -1.186
+      "feature": "mean_tri",
+      "label": "Mean TRI",
+      "value": 7.59,
+      "contribution": -0.065
      },
      {
-      "feature": "avg_slope_deg",
-      "label": "Avg slope angle",
-      "value": 2.151,
-      "contribution": 0.335
+      "feature": "max_twi",
+      "label": "Max TWI",
+      "value": 23.51,
+      "contribution": -0.111
+     },
+     {
+      "feature": "mean_twi",
+      "label": "Mean TWI",
+      "value": 8.83,
+      "contribution": -0.11
+     },
+     {
+      "feature": "albedo",
+      "label": "Mean surface albedo",
+      "value": 0.1,
+      "contribution": -0.403
+     },
+     {
+      "feature": "insolation_kwh",
+      "label": "Mean insolation",
+      "value": 5.0719,
+      "contribution": 0.678
+     },
+     {
+      "feature": "ndvi",
+      "label": "NDVI",
+      "value": 0.6685,
+      "contribution": -1.991
      }
     ],
     "nearest": [
      {
-      "name": "Qaidam Basin",
-      "label": 1,
-      "distance": 0.285,
-      "displayName": "Qaidam Basin"
+      "name": "Singapore Coastal Basin",
+      "label": 0,
+      "distance": 2.683,
+      "displayName": "Singapore Coastal Basin"
      },
      {
-      "name": "Mississippi",
+      "name": "Amazon",
       "label": 0,
-      "distance": 0.717,
-      "displayName": "Mississippi"
+      "distance": 4.323,
+      "displayName": "Amazon"
      },
      {
-      "name": "Dhaka,Bangladesh",
+      "name": "Dhaka",
       "label": 0,
-      "distance": 1.304,
+      "distance": 4.729,
       "displayName": "Dhaka"
-     }
-    ]
-   }
-  },
-  {
-   "id": "auckland",
-   "datasetName": "Auckland",
-   "name": "Auckland",
-   "country": "New Zealand",
-   "lat": -36.85,
-   "lon": 174.76,
-   "type": "Urban",
-   "tag": "Temperate city",
-   "coordsApproximate": true,
-   "prediction": {
-    "datasetId": "22",
-    "rank": 18,
-    "of": 30,
-    "label": 0,
-    "pGood": 0.4339,
-    "score": 43.4,
-    "verdict": "borderline",
-    "looPGood": 0.474,
-    "looCorrect": true,
-    "summary": "Borderline analog (43 percent probability of a good analog). Pushes toward good: above-average max slope. Pushes toward poor: below-average max temperature swing.",
-    "features": {
-     "solar_index": 4.393,
-     "temp_swing": 9.83,
-     "max_slope_deg": 70.457,
-     "avg_slope_deg": 3.811
-    },
-    "contributions": [
-     {
-      "feature": "solar_index",
-      "label": "Avg solar index",
-      "value": 4.393,
-      "contribution": 0.011
-     },
-     {
-      "feature": "temp_swing",
-      "label": "Max temperature swing",
-      "value": 9.83,
-      "contribution": -0.752
-     },
-     {
-      "feature": "max_slope_deg",
-      "label": "Max slope",
-      "value": 70.457,
-      "contribution": 0.525
-     },
-     {
-      "feature": "avg_slope_deg",
-      "label": "Avg slope angle",
-      "value": 3.811,
-      "contribution": -0.039
-     }
-    ],
-    "nearest": [
-     {
-      "name": "Singapore Coastal Basin",
-      "label": 0,
-      "distance": 0.663,
-      "displayName": "Singapore Coastal Basin"
-     },
-     {
-      "name": "Borneo Rainforest",
-      "label": 0,
-      "distance": 0.731,
-      "displayName": "Borneo Rainforest"
-     },
-     {
-      "name": "Mount Etna",
-      "label": 1,
-      "distance": 1.074,
-      "displayName": "Mount Etna"
-     }
-    ]
-   }
-  },
-  {
-   "id": "mauna-kea",
-   "datasetName": "Mauna Kea",
-   "name": "Mauna Kea",
-   "country": "Hawaii, United States",
-   "lat": 19.82,
-   "lon": -155.47,
-   "type": "Volcanic",
-   "tag": "Shield volcano",
-   "coordsApproximate": true,
-   "prediction": {
-    "datasetId": "2",
-    "rank": 19,
-    "of": 30,
-    "label": 1,
-    "pGood": 0.4144,
-    "score": 41.4,
-    "verdict": "borderline",
-    "looPGood": 0.2953,
-    "looCorrect": false,
-    "summary": "Borderline analog (41 percent probability of a good analog). Pushes toward good: below-average avg slope angle and above-average avg solar index. Pushes toward poor: below-average max temperature swing and below-average max slope.",
-    "features": {
-     "solar_index": 5.467,
-     "temp_swing": 8.39,
-     "max_slope_deg": 49.849,
-     "avg_slope_deg": 0.265
-    },
-    "contributions": [
-     {
-      "feature": "solar_index",
-      "label": "Avg solar index",
-      "value": 5.467,
-      "contribution": 0.463
-     },
-     {
-      "feature": "temp_swing",
-      "label": "Max temperature swing",
-      "value": 8.39,
-      "contribution": -0.922
-     },
-     {
-      "feature": "max_slope_deg",
-      "label": "Max slope",
-      "value": 49.849,
-      "contribution": -0.636
-     },
-     {
-      "feature": "avg_slope_deg",
-      "label": "Avg slope angle",
-      "value": 0.265,
-      "contribution": 0.76
-     }
-    ],
-    "nearest": [
-     {
-      "name": "The Everglades,USA",
-      "label": 0,
-      "distance": 0.44,
-      "displayName": "The Everglades"
-     },
-     {
-      "name": "Congo Basin Lowlands",
-      "label": 0,
-      "distance": 1.413,
-      "displayName": "Congo Basin Lowlands"
-     },
-     {
-      "name": "Singapore Coastal Basin",
-      "label": 0,
-      "distance": 1.531,
-      "displayName": "Singapore Coastal Basin"
-     }
-    ]
-   }
-  },
-  {
-   "id": "seattle",
-   "datasetName": "Seattle,USA",
-   "name": "Seattle",
-   "country": "Washington, United States",
-   "lat": 47.61,
-   "lon": -122.33,
-   "type": "Urban",
-   "tag": "Temperate city",
-   "coordsApproximate": true,
-   "prediction": {
-    "datasetId": "21",
-    "rank": 20,
-    "of": 30,
-    "label": 0,
-    "pGood": 0.4119,
-    "score": 41.2,
-    "verdict": "borderline",
-    "looPGood": 0.449,
-    "looCorrect": true,
-    "summary": "Borderline analog (41 percent probability of a good analog). Pushes toward good: above-average max temperature swing. Pushes toward poor: below-average avg solar index and above-average avg slope angle.",
-    "features": {
-     "solar_index": 3.563,
-     "temp_swing": 19.2,
-     "max_slope_deg": 60.363,
-     "avg_slope_deg": 5.035
-    },
-    "contributions": [
-     {
-      "feature": "solar_index",
-      "label": "Avg solar index",
-      "value": 3.563,
-      "contribution": -0.338
-     },
-     {
-      "feature": "temp_swing",
-      "label": "Max temperature swing",
-      "value": 19.2,
-      "contribution": 0.351
-     },
-     {
-      "feature": "max_slope_deg",
-      "label": "Max slope",
-      "value": 60.363,
-      "contribution": -0.044
-     },
-     {
-      "feature": "avg_slope_deg",
-      "label": "Avg slope angle",
-      "value": 5.035,
-      "contribution": -0.315
-     }
-    ],
-    "nearest": [
-     {
-      "name": "Haughton Crater",
-      "label": 1,
-      "distance": 0.993,
-      "displayName": "Haughton Crater"
-     },
-     {
-      "name": "The Pampas Lowlands",
-      "label": 0,
-      "distance": 1.18,
-      "displayName": "The Pampas Lowlands"
-     },
-     {
-      "name": "The Rhine River Valley,Germany",
-      "label": 0,
-      "distance": 1.212,
-      "displayName": "Rhine River Valley"
-     }
-    ]
-   }
-  },
-  {
-   "id": "makgadikgadi-pan",
-   "datasetName": "Makgadikgadi Pan",
-   "name": "Makgadikgadi Pan",
-   "country": "Botswana",
-   "lat": -20.7,
-   "lon": 25.4,
-   "type": "Desert",
-   "tag": "Salt pan",
-   "coordsApproximate": true,
-   "prediction": {
-    "datasetId": "8",
-    "rank": 21,
-    "of": 30,
-    "label": 1,
-    "pGood": 0.3933,
-    "score": 39.3,
-    "verdict": "bad",
-    "looPGood": 0.2196,
-    "looCorrect": false,
-    "summary": "Predicted poor analog (39 percent probability of a good analog). Pushes toward good: above-average max temperature swing and above-average avg solar index. Pushes toward poor: below-average max slope.",
-    "features": {
-     "solar_index": 5.974,
-     "temp_swing": 22.15,
-     "max_slope_deg": 21.143,
-     "avg_slope_deg": 1.61
-    },
-    "contributions": [
-     {
-      "feature": "solar_index",
-      "label": "Avg solar index",
-      "value": 5.974,
-      "contribution": 0.676
-     },
-     {
-      "feature": "temp_swing",
-      "label": "Max temperature swing",
-      "value": 22.15,
-      "contribution": 0.698
-     },
-     {
-      "feature": "max_slope_deg",
-      "label": "Max slope",
-      "value": 21.143,
-      "contribution": -2.254
-     },
-     {
-      "feature": "avg_slope_deg",
-      "label": "Avg slope angle",
-      "value": 1.61,
-      "contribution": 0.457
-     }
-    ],
-    "nearest": [
-     {
-      "name": "Qaidam Basin",
-      "label": 1,
-      "distance": 1.13,
-      "displayName": "Qaidam Basin"
-     },
-     {
-      "name": "Lonar Crater",
-      "label": 1,
-      "distance": 1.325,
-      "displayName": "Lonar Crater"
-     },
-     {
-      "name": "Mississippi",
-      "label": 0,
-      "distance": 1.682,
-      "displayName": "Mississippi"
-     }
-    ]
-   }
-  },
-  {
-   "id": "singapore",
-   "datasetName": "Singapore Coastal Basin",
-   "name": "Singapore Coastal Basin",
-   "country": "Singapore",
-   "lat": 1.35,
-   "lon": 103.82,
-   "type": "Urban",
-   "tag": "Coastal city",
-   "coordsApproximate": true,
-   "prediction": {
-    "datasetId": "30",
-    "rank": 22,
-    "of": 30,
-    "label": 0,
-    "pGood": 0.3727,
-    "score": 37.3,
-    "verdict": "bad",
-    "looPGood": 0.4214,
-    "looCorrect": true,
-    "summary": "Predicted poor analog (37 percent probability of a good analog). Pushes toward poor: below-average max temperature swing.",
-    "features": {
-     "solar_index": 4.541,
-     "temp_swing": 7.23,
-     "max_slope_deg": 66.136,
-     "avg_slope_deg": 2.779
-    },
-    "contributions": [
-     {
-      "feature": "solar_index",
-      "label": "Avg solar index",
-      "value": 4.541,
-      "contribution": 0.073
-     },
-     {
-      "feature": "temp_swing",
-      "label": "Max temperature swing",
-      "value": 7.23,
-      "contribution": -1.058
-     },
-     {
-      "feature": "max_slope_deg",
-      "label": "Max slope",
-      "value": 66.136,
-      "contribution": 0.282
-     },
-     {
-      "feature": "avg_slope_deg",
-      "label": "Avg slope angle",
-      "value": 2.779,
-      "contribution": 0.193
-     }
-    ],
-    "nearest": [
-     {
-      "name": "Auckland",
-      "label": 0,
-      "distance": 0.663,
-      "displayName": "Auckland"
-     },
-     {
-      "name": "Borneo Rainforest",
-      "label": 0,
-      "distance": 1.156,
-      "displayName": "Borneo Rainforest"
-     },
-     {
-      "name": "Lanzarote,Spain",
-      "label": 1,
-      "distance": 1.186,
-      "displayName": "Lanzarote"
-     }
-    ]
-   }
-  },
-  {
-   "id": "everglades",
-   "datasetName": "The Everglades,USA",
-   "name": "The Everglades",
-   "country": "Florida, United States",
-   "lat": 25.3,
-   "lon": -80.9,
-   "type": "Wetland",
-   "tag": "Subtropical wetland",
-   "coordsApproximate": true,
-   "prediction": {
-    "datasetId": "28",
-    "rank": 23,
-    "of": 30,
-    "label": 0,
-    "pGood": 0.3284,
-    "score": 32.8,
-    "verdict": "bad",
-    "looPGood": 0.3798,
-    "looCorrect": true,
-    "summary": "Predicted poor analog (33 percent probability of a good analog). Pushes toward good: below-average avg slope angle. Pushes toward poor: below-average max temperature swing and below-average max slope.",
-    "features": {
-     "solar_index": 5.062,
-     "temp_swing": 8.25,
-     "max_slope_deg": 49.518,
-     "avg_slope_deg": 0.993
-    },
-    "contributions": [
-     {
-      "feature": "solar_index",
-      "label": "Avg solar index",
-      "value": 5.062,
-      "contribution": 0.292
-     },
-     {
-      "feature": "temp_swing",
-      "label": "Max temperature swing",
-      "value": 8.25,
-      "contribution": -0.938
-     },
-     {
-      "feature": "max_slope_deg",
-      "label": "Max slope",
-      "value": 49.518,
-      "contribution": -0.655
-     },
-     {
-      "feature": "avg_slope_deg",
-      "label": "Avg slope angle",
-      "value": 0.993,
-      "contribution": 0.596
-     }
-    ],
-    "nearest": [
-     {
-      "name": "Mauna Kea",
-      "label": 1,
-      "distance": 0.44,
-      "displayName": "Mauna Kea"
-     },
-     {
-      "name": "Singapore Coastal Basin",
-      "label": 0,
-      "distance": 1.219,
-      "displayName": "Singapore Coastal Basin"
-     },
-     {
-      "name": "Congo Basin Lowlands",
-      "label": 0,
-      "distance": 1.28,
-      "displayName": "Congo Basin Lowlands"
-     }
-    ]
-   }
-  },
-  {
-   "id": "haughton",
-   "datasetName": "Haughton Crater",
-   "name": "Haughton Crater",
-   "country": "Devon Island, Canada",
-   "lat": 75.38,
-   "lon": -89.67,
-   "type": "Polar",
-   "tag": "Impact crater",
-   "coordsApproximate": true,
-   "prediction": {
-    "datasetId": "12",
-    "rank": 24,
-    "of": 30,
-    "label": 1,
-    "pGood": 0.3215,
-    "score": 32.2,
-    "verdict": "bad",
-    "looPGood": 0.2188,
-    "looCorrect": false,
-    "summary": "Predicted poor analog (32 percent probability of a good analog). Pushes toward poor: below-average avg solar index.",
-    "features": {
-     "solar_index": 2.418,
-     "temp_swing": 17.9,
-     "max_slope_deg": 64.116,
-     "avg_slope_deg": 4.893
-    },
-    "contributions": [
-     {
-      "feature": "solar_index",
-      "label": "Avg solar index",
-      "value": 2.418,
-      "contribution": -0.819
-     },
-     {
-      "feature": "temp_swing",
-      "label": "Max temperature swing",
-      "value": 17.9,
-      "contribution": 0.198
-     },
-     {
-      "feature": "max_slope_deg",
-      "label": "Max slope",
-      "value": 64.116,
-      "contribution": 0.168
-     },
-     {
-      "feature": "avg_slope_deg",
-      "label": "Avg slope angle",
-      "value": 4.893,
-      "contribution": -0.283
-     }
-    ],
-    "nearest": [
-     {
-      "name": "Seattle,USA",
-      "label": 0,
-      "distance": 0.993,
-      "displayName": "Seattle"
-     },
-     {
-      "name": "PINGUALUIT Crater",
-      "label": 1,
-      "distance": 1.287,
-      "displayName": "Pingualuit Crater"
-     },
-     {
-      "name": "The Rhine River Valley,Germany",
-      "label": 0,
-      "distance": 1.378,
-      "displayName": "Rhine River Valley"
-     }
-    ]
-   }
-  },
-  {
-   "id": "dublin",
-   "datasetName": "Dublin,Ireland",
-   "name": "Dublin",
-   "country": "Ireland",
-   "lat": 53.35,
-   "lon": -6.26,
-   "type": "Urban",
-   "tag": "Temperate city",
-   "coordsApproximate": true,
-   "prediction": {
-    "datasetId": "20",
-    "rank": 25,
-    "of": 30,
-    "label": 0,
-    "pGood": 0.2929,
-    "score": 29.3,
-    "verdict": "bad",
-    "looPGood": 0.3311,
-    "looCorrect": true,
-    "summary": "Predicted poor analog (29 percent probability of a good analog). Pushes toward good: above-average max slope. Pushes toward poor: below-average max temperature swing and below-average avg solar index.",
-    "features": {
-     "solar_index": 2.788,
-     "temp_swing": 9.07,
-     "max_slope_deg": 68.889,
-     "avg_slope_deg": 2.761
-    },
-    "contributions": [
-     {
-      "feature": "solar_index",
-      "label": "Avg solar index",
-      "value": 2.788,
-      "contribution": -0.663
-     },
-     {
-      "feature": "temp_swing",
-      "label": "Max temperature swing",
-      "value": 9.07,
-      "contribution": -0.842
-     },
-     {
-      "feature": "max_slope_deg",
-      "label": "Max slope",
-      "value": 68.889,
-      "contribution": 0.437
-     },
-     {
-      "feature": "avg_slope_deg",
-      "label": "Avg slope angle",
-      "value": 2.761,
-      "contribution": 0.197
-     }
-    ],
-    "nearest": [
-     {
-      "name": "Sarychev Peak",
-      "label": 1,
-      "distance": 1.183,
-      "displayName": "Sarychev Peak"
-     },
-     {
-      "name": "Auckland",
-      "label": 0,
-      "distance": 1.394,
-      "displayName": "Auckland"
-     },
-     {
-      "name": "Singapore Coastal Basin",
-      "label": 0,
-      "distance": 1.487,
-      "displayName": "Singapore Coastal Basin"
      }
     ]
    }
@@ -1888,365 +4521,312 @@ export default {
    "coordsApproximate": true,
    "prediction": {
     "datasetId": "16",
-    "rank": 26,
+    "rank": 29,
     "of": 30,
     "label": 0,
-    "pGood": 0.2477,
-    "score": 24.8,
+    "pGood": 0.0116,
+    "heldOut": true,
+    "fitPGood": 0.0112,
+    "score": 1.2,
     "verdict": "bad",
-    "looPGood": 0.3705,
+    "looPGood": 0.0116,
     "looCorrect": true,
-    "summary": "Predicted poor analog (25 percent probability of a good analog). Pushes toward good: above-average max slope. Pushes toward poor: above-average avg slope angle and below-average max temperature swing.",
+    "summary": "Predicted poor analog (1 percent held-out probability of a good analog). Pushes toward poor: above-average ndvi and above-average mean annual precipitation.",
     "features": {
      "solar_index": 4.689,
      "temp_swing": 12.29,
      "max_slope_deg": 74.728,
-     "avg_slope_deg": 10.463
+     "avg_slope_deg": 10.463,
+     "precip_mm_yr": 2388.4,
+     "pet_mm_yr": 1354.5,
+     "aridity_index": 1.7633,
+     "max_wind_ms": 1.91,
+     "peak_wind_ms": 2.13,
+     "max_tri": 338.61,
+     "mean_tri": 16.5,
+     "max_twi": 24.03,
+     "mean_twi": 7.56,
+     "albedo": 0.14,
+     "insolation_kwh": 3.8386,
+     "ndvi": 0.6687
     },
     "contributions": [
      {
       "feature": "solar_index",
       "label": "Avg solar index",
       "value": 4.689,
-      "contribution": 0.136
+      "contribution": 0.041
      },
      {
       "feature": "temp_swing",
       "label": "Max temperature swing",
       "value": 12.29,
-      "contribution": -0.463
+      "contribution": -0.192
      },
      {
       "feature": "max_slope_deg",
       "label": "Max slope",
       "value": 74.728,
-      "contribution": 0.766
+      "contribution": 0.176
      },
      {
       "feature": "avg_slope_deg",
       "label": "Avg slope angle",
       "value": 10.463,
-      "contribution": -1.539
+      "contribution": -0.486
+     },
+     {
+      "feature": "precip_mm_yr",
+      "label": "Mean annual precipitation",
+      "value": 2388.4,
+      "contribution": -0.916
+     },
+     {
+      "feature": "pet_mm_yr",
+      "label": "Mean annual PET",
+      "value": 1354.5,
+      "contribution": 0.016
+     },
+     {
+      "feature": "aridity_index",
+      "label": "Aridity index",
+      "value": 1.7633,
+      "contribution": 0.027
+     },
+     {
+      "feature": "max_wind_ms",
+      "label": "Max wind speed",
+      "value": 1.91,
+      "contribution": -0.19
+     },
+     {
+      "feature": "peak_wind_ms",
+      "label": "Peak wind 2021-2025",
+      "value": 2.13,
+      "contribution": 0.254
+     },
+     {
+      "feature": "max_tri",
+      "label": "Max TRI",
+      "value": 338.61,
+      "contribution": 0.23
+     },
+     {
+      "feature": "mean_tri",
+      "label": "Mean TRI",
+      "value": 16.5,
+      "contribution": -0.334
+     },
+     {
+      "feature": "max_twi",
+      "label": "Max TWI",
+      "value": 24.03,
+      "contribution": -0.013
+     },
+     {
+      "feature": "mean_twi",
+      "label": "Mean TWI",
+      "value": 7.56,
+      "contribution": -0.48
+     },
+     {
+      "feature": "albedo",
+      "label": "Mean surface albedo",
+      "value": 0.14,
+      "contribution": -0.202
+     },
+     {
+      "feature": "insolation_kwh",
+      "label": "Mean insolation",
+      "value": 3.8386,
+      "contribution": -0.414
+     },
+     {
+      "feature": "ndvi",
+      "label": "NDVI",
+      "value": 0.6687,
+      "contribution": -1.992
      }
     ],
     "nearest": [
      {
-      "name": "Death Valley",
-      "label": 1,
-      "distance": 2.007,
-      "displayName": "Death Valley"
+      "name": "Borneo Rainforest",
+      "label": 0,
+      "distance": 4.323,
+      "displayName": "Borneo Rainforest"
+     },
+     {
+      "name": "Seattle",
+      "label": 0,
+      "distance": 4.928,
+      "displayName": "Seattle"
      },
      {
       "name": "San Rafael Swell",
       "label": 1,
-      "distance": 2.082,
+      "distance": 5.024,
       "displayName": "San Rafael Swell"
-     },
-     {
-      "name": "Borneo Rainforest",
-      "label": 0,
-      "distance": 2.31,
-      "displayName": "Borneo Rainforest"
      }
     ]
    }
   },
   {
-   "id": "rhine-valley",
-   "datasetName": "The Rhine River Valley,Germany",
-   "name": "Rhine River Valley",
-   "country": "Germany",
-   "lat": 50,
-   "lon": 7.8,
-   "type": "Lowland",
-   "tag": "River valley",
-   "coordsApproximate": true,
-   "prediction": {
-    "datasetId": "26",
-    "rank": 27,
-    "of": 30,
-    "label": 0,
-    "pGood": 0.2391,
-    "score": 23.9,
-    "verdict": "bad",
-    "looPGood": 0.2664,
-    "looCorrect": true,
-    "summary": "Predicted poor analog (24 percent probability of a good analog). Pushes toward poor: below-average max slope and below-average avg solar index.",
-    "features": {
-     "solar_index": 3.101,
-     "temp_swing": 18.03,
-     "max_slope_deg": 44.387,
-     "avg_slope_deg": 3.123
-    },
-    "contributions": [
-     {
-      "feature": "solar_index",
-      "label": "Avg solar index",
-      "value": 3.101,
-      "contribution": -0.532
-     },
-     {
-      "feature": "temp_swing",
-      "label": "Max temperature swing",
-      "value": 18.03,
-      "contribution": 0.213
-     },
-     {
-      "feature": "max_slope_deg",
-      "label": "Max slope",
-      "value": 44.387,
-      "contribution": -0.944
-     },
-     {
-      "feature": "avg_slope_deg",
-      "label": "Avg slope angle",
-      "value": 3.123,
-      "contribution": 0.116
-     }
-    ],
-    "nearest": [
-     {
-      "name": "London",
-      "label": 0,
-      "distance": 0.386,
-      "displayName": "London"
-     },
-     {
-      "name": "Seattle,USA",
-      "label": 0,
-      "distance": 1.212,
-      "displayName": "Seattle"
-     },
-     {
-      "name": "Dhaka,Bangladesh",
-      "label": 0,
-      "distance": 1.371,
-      "displayName": "Dhaka"
-     }
-    ]
-   }
-  },
-  {
-   "id": "london",
-   "datasetName": "London",
-   "name": "London",
-   "country": "United Kingdom",
-   "lat": 51.51,
-   "lon": -0.13,
+   "id": "singapore",
+   "datasetName": "Singapore Coastal Basin",
+   "name": "Singapore Coastal Basin",
+   "country": "Singapore",
+   "lat": 1.35,
+   "lon": 103.82,
    "type": "Urban",
-   "tag": "Temperate city",
+   "tag": "Coastal city",
    "coordsApproximate": true,
    "prediction": {
-    "datasetId": "19",
-    "rank": 28,
-    "of": 30,
-    "label": 0,
-    "pGood": 0.1631,
-    "score": 16.3,
-    "verdict": "bad",
-    "looPGood": 0.181,
-    "looCorrect": true,
-    "summary": "Predicted poor analog (16 percent probability of a good analog). Pushes toward poor: below-average max slope and below-average avg solar index.",
-    "features": {
-     "solar_index": 3.029,
-     "temp_swing": 16.15,
-     "max_slope_deg": 40.948,
-     "avg_slope_deg": 3.267
-    },
-    "contributions": [
-     {
-      "feature": "solar_index",
-      "label": "Avg solar index",
-      "value": 3.029,
-      "contribution": -0.562
-     },
-     {
-      "feature": "temp_swing",
-      "label": "Max temperature swing",
-      "value": 16.15,
-      "contribution": -0.008
-     },
-     {
-      "feature": "max_slope_deg",
-      "label": "Max slope",
-      "value": 40.948,
-      "contribution": -1.138
-     },
-     {
-      "feature": "avg_slope_deg",
-      "label": "Avg slope angle",
-      "value": 3.267,
-      "contribution": 0.083
-     }
-    ],
-    "nearest": [
-     {
-      "name": "The Rhine River Valley,Germany",
-      "label": 0,
-      "distance": 0.386,
-      "displayName": "Rhine River Valley"
-     },
-     {
-      "name": "Seattle,USA",
-      "label": 0,
-      "distance": 1.423,
-      "displayName": "Seattle"
-     },
-     {
-      "name": "Haughton Crater",
-      "label": 1,
-      "distance": 1.507,
-      "displayName": "Haughton Crater"
-     }
-    ]
-   }
-  },
-  {
-   "id": "congo-basin",
-   "datasetName": "Congo Basin Lowlands",
-   "name": "Congo Basin Lowlands",
-   "country": "Central Africa",
-   "lat": -0.5,
-   "lon": 22,
-   "type": "Rainforest",
-   "tag": "Tropical lowland",
-   "coordsApproximate": true,
-   "prediction": {
-    "datasetId": "17",
-    "rank": 29,
-    "of": 30,
-    "label": 0,
-    "pGood": 0.1626,
-    "score": 16.3,
-    "verdict": "bad",
-    "looPGood": 0.1809,
-    "looCorrect": true,
-    "summary": "Predicted poor analog (16 percent probability of a good analog). Pushes toward good: below-average avg slope angle. Pushes toward poor: below-average max slope and below-average max temperature swing.",
-    "features": {
-     "solar_index": 4.658,
-     "temp_swing": 11.25,
-     "max_slope_deg": 28.629,
-     "avg_slope_deg": 0.681
-    },
-    "contributions": [
-     {
-      "feature": "solar_index",
-      "label": "Avg solar index",
-      "value": 4.658,
-      "contribution": 0.123
-     },
-     {
-      "feature": "temp_swing",
-      "label": "Max temperature swing",
-      "value": 11.25,
-      "contribution": -0.585
-     },
-     {
-      "feature": "max_slope_deg",
-      "label": "Max slope",
-      "value": 28.629,
-      "contribution": -1.832
-     },
-     {
-      "feature": "avg_slope_deg",
-      "label": "Avg slope angle",
-      "value": 0.681,
-      "contribution": 0.666
-     }
-    ],
-    "nearest": [
-     {
-      "name": "The Everglades,USA",
-      "label": 0,
-      "distance": 1.28,
-      "displayName": "The Everglades"
-     },
-     {
-      "name": "Mauna Kea",
-      "label": 1,
-      "distance": 1.413,
-      "displayName": "Mauna Kea"
-     },
-     {
-      "name": "Mississippi",
-      "label": 0,
-      "distance": 1.882,
-      "displayName": "Mississippi"
-     }
-    ]
-   }
-  },
-  {
-   "id": "west-siberian-plain",
-   "datasetName": "The West Siberian Plain,Russia",
-   "name": "West Siberian Plain",
-   "country": "Russia",
-   "lat": 61,
-   "lon": 73,
-   "type": "Lowland",
-   "tag": "Boreal plain",
-   "coordsApproximate": true,
-   "prediction": {
-    "datasetId": "27",
+    "datasetId": "30",
     "rank": 30,
     "of": 30,
     "label": 0,
-    "pGood": 0.1612,
-    "score": 16.1,
+    "pGood": 0.0048,
+    "heldOut": true,
+    "fitPGood": 0.0105,
+    "score": 0.5,
     "verdict": "bad",
-    "looPGood": 0.1922,
+    "looPGood": 0.0048,
     "looCorrect": true,
-    "summary": "Predicted poor analog (16 percent probability of a good analog). Pushes toward good: above-average max temperature swing and below-average avg slope angle. Pushes toward poor: below-average max slope and below-average avg solar index.",
+    "summary": "Predicted poor analog (0 percent held-out probability of a good analog). Pushes toward good: above-average aridity index. Pushes toward poor: above-average mean annual precipitation and above-average ndvi.",
     "features": {
-     "solar_index": 2.608,
-     "temp_swing": 22.28,
-     "max_slope_deg": 24.841,
-     "avg_slope_deg": 1.719
+     "solar_index": 4.541,
+     "temp_swing": 7.23,
+     "max_slope_deg": 66.136,
+     "avg_slope_deg": 2.779,
+     "precip_mm_yr": 5324.6,
+     "pet_mm_yr": 1094.5,
+     "aridity_index": 4.865,
+     "max_wind_ms": 7.58,
+     "peak_wind_ms": 8.32,
+     "max_tri": 270.02,
+     "mean_tri": 4.41,
+     "max_twi": 23.01,
+     "mean_twi": 9.86,
+     "albedo": 0.12,
+     "insolation_kwh": 4.5919,
+     "ndvi": 0.6258
     },
     "contributions": [
      {
       "feature": "solar_index",
       "label": "Avg solar index",
-      "value": 2.608,
-      "contribution": -0.739
+      "value": 4.541,
+      "contribution": 0.022
      },
      {
       "feature": "temp_swing",
       "label": "Max temperature swing",
-      "value": 22.28,
-      "contribution": 0.714
+      "value": 7.23,
+      "contribution": -0.439
      },
      {
       "feature": "max_slope_deg",
       "label": "Max slope",
-      "value": 24.841,
-      "contribution": -2.046
+      "value": 66.136,
+      "contribution": 0.065
      },
      {
       "feature": "avg_slope_deg",
       "label": "Avg slope angle",
-      "value": 1.719,
-      "contribution": 0.432
+      "value": 2.779,
+      "contribution": 0.061
+     },
+     {
+      "feature": "precip_mm_yr",
+      "label": "Mean annual precipitation",
+      "value": 5324.6,
+      "contribution": -3.074
+     },
+     {
+      "feature": "pet_mm_yr",
+      "label": "Mean annual PET",
+      "value": 1094.5,
+      "contribution": 0.004
+     },
+     {
+      "feature": "aridity_index",
+      "label": "Aridity index",
+      "value": 4.865,
+      "contribution": 0.498
+     },
+     {
+      "feature": "max_wind_ms",
+      "label": "Max wind speed",
+      "value": 7.58,
+      "contribution": -0.1
+     },
+     {
+      "feature": "peak_wind_ms",
+      "label": "Peak wind 2021-2025",
+      "value": 8.32,
+      "contribution": 0.14
+     },
+     {
+      "feature": "max_tri",
+      "label": "Max TRI",
+      "value": 270.02,
+      "contribution": 0.083
+     },
+     {
+      "feature": "mean_tri",
+      "label": "Mean TRI",
+      "value": 4.41,
+      "contribution": 0.031
+     },
+     {
+      "feature": "max_twi",
+      "label": "Max TWI",
+      "value": 23.01,
+      "contribution": -0.206
+     },
+     {
+      "feature": "mean_twi",
+      "label": "Mean TWI",
+      "value": 9.86,
+      "contribution": 0.191
+     },
+     {
+      "feature": "albedo",
+      "label": "Mean surface albedo",
+      "value": 0.12,
+      "contribution": -0.303
+     },
+     {
+      "feature": "insolation_kwh",
+      "label": "Mean insolation",
+      "value": 4.5919,
+      "contribution": 0.253
+     },
+     {
+      "feature": "ndvi",
+      "label": "NDVI",
+      "value": 0.6258,
+      "contribution": -1.775
      }
     ],
     "nearest": [
      {
-      "name": "The Rhine River Valley,Germany",
+      "name": "Borneo Rainforest",
       "label": 0,
-      "distance": 1.451,
-      "displayName": "Rhine River Valley"
+      "distance": 2.683,
+      "displayName": "Borneo Rainforest"
      },
      {
-      "name": "London",
+      "name": "Dhaka",
       "label": 0,
-      "distance": 1.542,
-      "displayName": "London"
+      "distance": 4.292,
+      "displayName": "Dhaka"
      },
      {
-      "name": "Mississippi",
+      "name": "Everglades",
       "label": 0,
-      "distance": 2.043,
-      "displayName": "Mississippi"
+      "distance": 4.762,
+      "displayName": "The Everglades"
      }
     ]
    }
@@ -2263,43 +4843,107 @@ export default {
    {
     "key": "solar_index",
     "label": "Avg solar index",
-    "coef": 0.5100168418107422
+    "coef": 0.1538484094989446
    },
    {
     "key": "temp_swing",
     "label": "Max temperature swing",
-    "coef": 0.6711982899599992
+    "coef": 0.2786961893582517
    },
    {
     "key": "max_slope_deg",
     "label": "Max slope",
-    "coef": 1.059424657276211
+    "coef": 0.24367346384739466
    },
    {
     "key": "avg_slope_deg",
     "label": "Avg slope angle",
-    "coef": -0.5759077493446346
+    "coef": -0.18185025207983868
+   },
+   {
+    "key": "precip_mm_yr",
+    "label": "Mean annual precipitation",
+    "coef": -0.8703394543719895
+   },
+   {
+    "key": "pet_mm_yr",
+    "label": "Mean annual PET",
+    "coef": 0.02131394869640883
+   },
+   {
+    "key": "aridity_index",
+    "label": "Aridity index",
+    "coef": 0.22018086394770725
+   },
+   {
+    "key": "max_wind_ms",
+    "label": "Max wind speed",
+    "coef": 0.09708055454244503
+   },
+   {
+    "key": "peak_wind_ms",
+    "label": "Peak wind 2021-2025",
+    "coef": -0.13375106623977823
+   },
+   {
+    "key": "max_tri",
+    "label": "Max TRI",
+    "coef": 0.31813961030036586
+   },
+   {
+    "key": "mean_tri",
+    "label": "Mean TRI",
+    "coef": -0.1071442420063427
+   },
+   {
+    "key": "max_twi",
+    "label": "Max TWI",
+    "coef": 0.3862616721376683
+   },
+   {
+    "key": "mean_twi",
+    "label": "Mean TWI",
+    "coef": 0.48767888697207057
+   },
+   {
+    "key": "albedo",
+    "label": "Mean surface albedo",
+    "coef": 0.623077466765398
+   },
+   {
+    "key": "insolation_kwh",
+    "label": "Mean insolation",
+    "coef": 1.0063619270805146
+   },
+   {
+    "key": "ndvi",
+    "label": "NDVI",
+    "coef": -1.381003235622258
    }
   ],
   "validation": {
    "method": "leave-one-out (standardiser refit inside every fold)",
-   "accuracy": 0.6333,
+   "accuracy": 0.8667,
    "accuracyCi95": [
-    0.467,
-    0.8
+    0.733,
+    0.967
    ],
-   "auc": 0.6533,
+   "auc": 0.9422,
    "baselineAccuracy": 0.5,
    "confusion": {
-    "true_good": 9,
-    "false_good": 5,
-    "true_bad": 10,
-    "missed_good": 6
+    "true_good": 12,
+    "false_good": 1,
+    "true_bad": 14,
+    "missed_good": 3
    }
   },
   "dataWarnings": [
+   "\"McMurdo Dry Valleys\" has no value for ndvi, so the training average was used for it",
+   "\"Buenos Aires\" and \"Everglades\" have identical values for peak_wind_ms, which may be a copy error in the source data",
+   "\"Congo Basin Lowlands\" and \"Rhine River Valley\" have identical values for max_twi, which may be a copy error in the source data",
+   "\"Great Plains Farmland\" and \"Rhine River Valley\" have identical values for insolation_kwh, which may be a copy error in the source data",
    "Only 30 labelled sites, so accuracy estimates carry wide uncertainty"
   ],
-  "trainedAt": "2026-11-12T21:11:47.849Z"
+  "trainedAt": "2026-11-13T12:31:40.242Z"
  }
 };

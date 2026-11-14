@@ -5,19 +5,33 @@
  * with leave-one-out validation. Plain JavaScript with no dependencies, so the same file
  * runs in Node (API, training) and in the browser (static demo via dist-static/analog-model.js).
  *
- * Why this model: the dataset has about 30 labelled sites and 4 usable numbers. A model with
- * 5 parameters and a ridge penalty is about as much as that data can support. Anything more
- * flexible would memorise the sites.
+ * Why this model: the dataset has about 30 labelled sites and 16 numeric parameters. The ridge
+ * penalty shrinks the coefficients so the model does not simply memorise the sites. Missing values
+ * (for example NDVI over Antarctica) are filled with the training-fold mean, so no site is dropped.
  */
 (function (root, factory) {
   if (typeof module === 'object' && module.exports) module.exports = factory();
   else root.AnalogModel = factory();
 })(typeof self !== 'undefined' ? self : this, function () {
+  // All numeric environmental parameters in the dataset. Not features: lat, lon (identity),
+  // years_used (constant metadata), label (target), and the text columns.
   const FEATURES = [
     { key: 'solar_index', label: 'Avg solar index' },
     { key: 'temp_swing', label: 'Max temperature swing' },
     { key: 'max_slope_deg', label: 'Max slope' },
-    { key: 'avg_slope_deg', label: 'Avg slope angle' }
+    { key: 'avg_slope_deg', label: 'Avg slope angle' },
+    { key: 'precip_mm_yr', label: 'Mean annual precipitation' },
+    { key: 'pet_mm_yr', label: 'Mean annual PET' },
+    { key: 'aridity_index', label: 'Aridity index' },
+    { key: 'max_wind_ms', label: 'Max wind speed' },
+    { key: 'peak_wind_ms', label: 'Peak wind 2021-2025' },
+    { key: 'max_tri', label: 'Max TRI' },
+    { key: 'mean_tri', label: 'Mean TRI' },
+    { key: 'max_twi', label: 'Max TWI' },
+    { key: 'mean_twi', label: 'Mean TWI' },
+    { key: 'albedo', label: 'Mean surface albedo' },
+    { key: 'insolation_kwh', label: 'Mean insolation' },
+    { key: 'ndvi', label: 'NDVI' }
   ];
 
   const isNum = (v) => typeof v === 'number' && Number.isFinite(v);
@@ -58,10 +72,12 @@
     const mean = new Array(d).fill(0);
     const sd = new Array(d).fill(0);
     for (let j = 0; j < d; j++) {
-      mean[j] = X.reduce((s, r) => s + r[j], 0) / n;
-      sd[j] = Math.sqrt(X.reduce((s, r) => s + (r[j] - mean[j]) ** 2, 0) / n) || 1;
+      const obs = X.map((r) => r[j]).filter(isNum);
+      mean[j] = obs.reduce((s, v) => s + v, 0) / obs.length;
+      sd[j] = Math.sqrt(obs.reduce((s, v) => s + (v - mean[j]) ** 2, 0) / obs.length) || 1;
     }
-    const Z = X.map((r) => r.map((v, j) => (v - mean[j]) / sd[j]));
+    // A missing value becomes the training mean, which is z = 0 after standardising.
+    const Z = X.map((r) => r.map((v, j) => (isNum(v) ? (v - mean[j]) / sd[j] : 0)));
     const w = new Array(d).fill(0);
     let b = 0;
     for (let iter = 0; iter < 100; iter++) {
@@ -114,7 +130,7 @@
       const ytr = y.filter((_, k) => k !== i);
       const m = fit(Xtr, ytr, C);
       let eta = m.intercept;
-      for (let j = 0; j < X[i].length; j++) eta += m.coef[j] * ((X[i][j] - m.mean[j]) / m.sd[j]);
+      for (let j = 0; j < X[i].length; j++) if (isNum(X[i][j])) eta += m.coef[j] * ((X[i][j] - m.mean[j]) / m.sd[j]);
       probs.push(sigmoid(eta));
     }
     return probs;
@@ -141,9 +157,9 @@
   /** Train on site objects that carry the feature keys and a 0/1 `label`. */
   function train(sites, { features = FEATURES, C = 1 } = {}) {
     const keys = features.map((f) => f.key);
-    const usable = sites.filter((s) => (s.label === 0 || s.label === 1) && keys.every((k) => isNum(s[k])));
+    const usable = sites.filter((s) => (s.label === 0 || s.label === 1) && keys.some((k) => isNum(s[k])));
     const dropped = sites.length - usable.length;
-    const X = usable.map((s) => keys.map((k) => s[k]));
+    const X = usable.map((s) => keys.map((k) => (isNum(s[k]) ? s[k] : null)));
     const y = usable.map((s) => s.label);
 
     const m = fit(X, y, C);
@@ -156,17 +172,26 @@
     const fn = loo.filter((p, i) => p <= 0.5 && y[i] === 1).length;
 
     const warnings = [];
-    if (dropped) warnings.push(`${dropped} row(s) dropped for missing label or feature values`);
-    const seen = new Map();
+    if (dropped) warnings.push(`${dropped} row(s) dropped for missing label or all feature values`);
     for (const s of usable) {
-      const sig = keys.slice(0, 2).map((k) => s[k]).join('|');
-      if (seen.has(sig)) warnings.push(`"${seen.get(sig)}" and "${s.name}" have identical values for ${keys.slice(0, 2).join(' and ')}, which may be a copy error in the source data`);
-      else seen.set(sig, s.name);
+      const gaps = keys.filter((k) => !isNum(s[k]));
+      if (gaps.length) warnings.push(`"${s.name}" has no value for ${gaps.join(', ')}, so the training average was used for it`);
+    }
+    // Flag pairs of sites that share an identical value on a continuous feature (likely copy errors).
+    for (const k of keys) {
+      const vals = usable.map((s) => s[k]).filter(isNum);
+      if (new Set(vals).size < 0.95 * vals.length) continue; // coarse or rounded feature, ties are expected
+      const seen = new Map();
+      for (const s of usable) {
+        if (!isNum(s[k])) continue;
+        if (seen.has(s[k])) warnings.push(`"${seen.get(s[k])}" and "${s.name}" have identical values for ${k}, which may be a copy error in the source data`);
+        else seen.set(s[k], s.name);
+      }
     }
     if (usable.length < 50) warnings.push(`Only ${usable.length} labelled sites, so accuracy estimates carry wide uncertainty`);
 
     return {
-      version: 1,
+      version: 2,
       trained_at: new Date().toISOString(),
       n: usable.length,
       class_counts: { good: y.filter((v) => v === 1).length, bad: y.filter((v) => v === 0).length },
@@ -258,22 +283,23 @@
       .map((r, i) => ({ rank: i + 1, ...r }));
   }
 
-  /** k nearest known sites in standardised feature space. */
+  /**
+   * k nearest known sites in standardised feature space, using only the features present in both
+   * the input and the site (distance is rescaled so sites with fewer shared features stay comparable).
+   */
   function nearest(model, sites, input, k = 3) {
     const rows = [];
     for (const s of sites) {
       let d2 = 0;
-      let ok = true;
+      let used = 0;
       for (const f of model.features) {
-        const a = Number(input[f.key]);
+        const a = input[f.key] === '' || input[f.key] == null ? NaN : Number(input[f.key]);
         const b = s[f.key];
-        if (!isNum(a) || !isNum(b)) {
-          ok = false;
-          break;
-        }
+        if (!isNum(a) || !isNum(b)) continue;
         d2 += ((a - b) / f.sd) ** 2;
+        used++;
       }
-      if (ok) rows.push({ id: s.id, name: s.name, label: s.label ?? null, distance: round(Math.sqrt(d2), 3) });
+      if (used > 0) rows.push({ id: s.id, name: s.name, label: s.label ?? null, distance: round(Math.sqrt((d2 * model.features.length) / used), 3) });
     }
     return rows.sort((a, b) => a.distance - b.distance).slice(0, k);
   }

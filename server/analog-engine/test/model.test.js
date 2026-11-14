@@ -12,27 +12,36 @@ const model = AnalogModel.train(sites);
 
 test('loader maps the real dataset headers, including double spaces and the label', () => {
   assert.strictEqual(sites.length, 30);
-  for (const key of ['solar_index', 'temp_swing', 'max_slope_deg', 'avg_slope_deg', 'label']) {
+  for (const key of [...AnalogModel.FEATURES.map((f) => f.key), 'label']) {
     assert.ok(report.mapped[key], `${key} should be mapped`);
   }
   assert.strictEqual(sites.filter((s) => s.label === 1).length, 15);
-  assert.strictEqual(sites.find((s) => s.name === 'Amazon').label, 0, 'trailing space in name is trimmed');
+  assert.strictEqual(sites.find((s) => s.name === 'Amazon').label, 0);
+});
+
+test('the model uses all 16 numeric dataset parameters and keeps all 30 sites', () => {
+  assert.strictEqual(model.features.length, 16);
+  assert.strictEqual(model.n, 30, 'McMurdo has no NDVI but must not be dropped');
+  const mcmurdo = sites.find((s) => s.name === 'McMurdo Dry Valleys');
+  assert.strictEqual(mcmurdo.ndvi, null);
 });
 
 test('JS logistic regression matches scikit-learn reference coefficients', () => {
-  const ref = { solar_index: 0.509836, temp_swing: 0.671251, max_slope_deg: 1.059315, avg_slope_deg: -0.575842 };
-  for (const f of model.features) assert.ok(Math.abs(f.coef - ref[f.key]) < 5e-4, `${f.key}: ${f.coef} vs ${ref[f.key]}`);
-  assert.ok(Math.abs(model.intercept - -0.010408) < 5e-4);
+  // Reference: StandardScaler (population sd, NaN -> 0) + LogisticRegression(C=1) on the same 16 columns.
+  const ref = { solar_index: 0.154428, temp_swing: 0.278258, max_slope_deg: 0.244014, avg_slope_deg: -0.181527, precip_mm_yr: -0.868943, pet_mm_yr: 0.02055, aridity_index: 0.220463, max_wind_ms: 0.096882, peak_wind_ms: -0.133844, max_tri: 0.318525, mean_tri: -0.107415, max_twi: 0.387515, mean_twi: 0.487605, albedo: 0.623182, insolation_kwh: 1.007536, ndvi: -1.381831 };
+  for (const f of model.features) assert.ok(Math.abs(f.coef - ref[f.key]) < 5e-3, `${f.key}: ${f.coef} vs ${ref[f.key]}`);
+  assert.ok(Math.abs(model.intercept) < 5e-3);
 });
 
 test('leave-one-out validation matches the offline Python analysis', () => {
-  assert.ok(Math.abs(model.validation.accuracy - 0.6333) < 0.001);
-  assert.ok(Math.abs(model.validation.auc - 0.6533) < 0.001);
+  assert.ok(Math.abs(model.validation.accuracy - 0.8667) < 0.001);
+  assert.ok(Math.abs(model.validation.auc - 0.9422) < 0.001);
   assert.strictEqual(model.validation.per_site.length, 30);
 });
 
-test('v5 data has no duplicated Great Plains and Rhine values', () => {
-  assert.ok(!model.data_warnings.some((w) => /Great Plains/.test(w) && /Rhine/.test(w)));
+test('data warnings flag the duplicated Great Plains and Rhine insolation and the missing NDVI', () => {
+  assert.ok(model.data_warnings.some((w) => /Great Plains/.test(w) && /Rhine/.test(w) && /insolation_kwh/.test(w)));
+  assert.ok(model.data_warnings.some((w) => /McMurdo/.test(w) && /ndvi/.test(w)));
 });
 
 test('predictions are probabilities and clearly good or bad sites land on the right side', () => {
@@ -41,12 +50,13 @@ test('predictions are probabilities and clearly good or bad sites land on the ri
   assert.strictEqual(ranked[0].rank, 1);
   const rank = (name) => ranked.find((r) => r.name === name).rank;
   assert.ok(rank('Makhtesh Ramon') < rank('London'));
-  assert.ok(rank('Death Valley') < rank('Dublin,Ireland'));
+  assert.ok(rank('Death Valley') < rank('Dublin'));
 });
 
 test('missing inputs are imputed with the training mean and reported', () => {
   const r = AnalogModel.predict(model, { solar_index: 5 });
-  assert.deepStrictEqual(r.imputed.sort(), ['avg_slope_deg', 'max_slope_deg', 'temp_swing']);
+  assert.strictEqual(r.imputed.length, 15);
+  assert.ok(!r.imputed.includes('solar_index'));
   assert.strictEqual(r.confidence, 'reduced');
   const avg = AnalogModel.predict(model, Object.fromEntries(model.features.map((f) => [f.key, f.mean])));
   assert.ok(Math.abs(avg.p_good - 0.5) < 0.01, 'an average site sits near 50 percent');

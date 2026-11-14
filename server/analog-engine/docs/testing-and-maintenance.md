@@ -54,4 +54,4 @@ curl 'http://localhost:3001/api/analog/predictions?limit=30'
 curl http://localhost:3001/api/analog/challenge-sites
 ```
 
-Test one POST prediction with all four feature fields. Confirm the frontend renders `loo_correct` and the leave-one-out accuracy from the model endpoint.
+Test one POST prediction with all 16 feature fields. Confirm the frontend renders `loo_correct` and the leave-one-out accuracy from the model endpoint.

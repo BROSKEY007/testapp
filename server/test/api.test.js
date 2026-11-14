@@ -42,13 +42,21 @@ test("locations carry the model's predictions, ranked best first", async () => {
     const ranked = await getJson(base + "/api/analog/predictions");
     for (const s of data.locations) {
       const p = ranked.results.find((r) => r.name === s.datasetName);
-      assert.equal(s.prediction.pGood, p.p_good);
+      // Headline is the held-out probability. The engine's in-sample value is kept apart.
+      assert.equal(s.prediction.heldOut, true);
+      assert.equal(s.prediction.pGood, p.loo_p_good);
+      assert.equal(s.prediction.fitPGood, p.p_good);
       assert.equal(s.prediction.label, p.label);
       assert.equal(s.prediction.looCorrect, p.loo_correct);
+      const expected = p.loo_p_good >= 0.6 ? "good" : p.loo_p_good <= 0.4 ? "bad" : "borderline";
+      assert.equal(s.prediction.verdict, expected);
+      assert.ok(s.prediction.summary.includes(`${Math.round(p.loo_p_good * 100)} percent held-out`));
     }
+    const heldOut = data.locations.map((s) => s.prediction.pGood);
+    assert.deepEqual(heldOut, [...heldOut].sort((a, b) => b - a), "rank follows the held-out probability");
     assert.equal(data.model.n, 30);
-    assert.equal(data.model.validation.accuracy, 0.7667);
-    assert.deepEqual(data.model.validation.accuracyCi95, [0.6, 0.9]);
+    assert.equal(data.model.validation.accuracy, 0.8667);
+    assert.deepEqual(data.model.validation.accuracyCi95, [0.733, 0.967]);
   });
 });
 
@@ -80,7 +88,7 @@ test("site details come from PostgreSQL when a pool is provided", async () => {
     const data = await getJson(base + "/api/v1/locations");
     assert.equal(data.catalog, "postgres");
     assert.deepEqual(data.locations.map((s) => s.id), ["dv", "not-in-dataset"]);
-    assert.equal(data.locations[0].prediction.rank, 2);
+    assert.equal(data.locations[0].prediction.rank, 6); // held-out rank of Death Valley
     assert.equal(data.locations[0].coordsApproximate, false);
     // No dataset row means no prediction. A score is never invented.
     assert.equal(data.locations[1].prediction, null);
@@ -108,7 +116,7 @@ test("health reports the model, and degrades when the database is unreachable", 
     assert.deepEqual(await getJson(base + "/api/v1/health"), {
       status: "ok",
       database: "not configured",
-      model: { loaded: true, sites: 30, accuracy: 0.7667 },
+      model: { loaded: true, sites: 30, accuracy: 0.8667 },
     });
   });
   const pool = { query: async () => { throw Error("down"); } };
@@ -127,18 +135,33 @@ test("the analog engine API works when mounted in this Express 5 app", async () 
     assert.equal(health.model_loaded, true);
     assert.equal((await getJson(a + "/predictions?label=1")).total, 15);
     assert.equal((await getJson(a + "/challenge-sites")).total, 3);
-    assert.equal((await getJson(a + "/model")).validation.accuracy, 0.7667);
+    assert.equal((await getJson(a + "/model")).validation.accuracy, 0.8667);
 
-    const input = { solar_index: 5.9, temp_swing: 23, max_slope_deg: 70, avg_slope_deg: 5 };
+    // All 16 features, as documented in the engine hand-off (p_good 0.9747).
+    const input = {
+      solar_index: 5.9, temp_swing: 23, max_slope_deg: 70, avg_slope_deg: 5, precip_mm_yr: 190,
+      pet_mm_yr: 1700, aridity_index: 0.11, max_wind_ms: 12.7, peak_wind_ms: 14.6, max_tri: 260,
+      mean_tri: 7.5, max_twi: 24, mean_twi: 7.4, albedo: 0.35, insolation_kwh: 6.0, ndvi: 0.12,
+    };
     const viaPost = await (await post(a + "/predict", input)).json();
     const viaGet = await getJson(a + "/predict?" + new URLSearchParams(input));
-    assert.equal(viaPost.p_good, 0.9416); // value documented in the engine hand-off
+    assert.equal(viaPost.p_good, 0.9747);
     assert.equal(viaGet.p_good, viaPost.p_good);
     assert.equal(viaPost.nearest_known_sites.length, 3);
 
-    const partial = await (await post(a + "/predict", { solar_index: 5 })).json();
-    assert.equal(partial.confidence, "reduced");
-    assert.equal(partial.imputed.length, 3);
+    // Fewer than 12 of the 16 features are refused. 12 are scored with the rest imputed.
+    const keys = Object.keys(input);
+    const subset = (n) => Object.fromEntries(keys.slice(0, n).map((k) => [k, input[k]]));
+    assert.equal((await post(a + "/predict", { solar_index: 5 })).status, 400);
+    assert.equal((await post(a + "/predict", subset(3))).status, 400);
+    assert.equal((await post(a + "/predict", subset(11))).status, 400);
+    const twelve = await (await post(a + "/predict", subset(12))).json();
+    assert.equal(twelve.confidence, "reduced");
+    assert.equal(twelve.imputed.length, 4);
+    assert.equal(twelve.nearest_known_sites.length, 3);
+    // Only the model's features are echoed back.
+    const echoed = await getJson(a + "/predict?" + new URLSearchParams({ ...input, zzz: "<script>" }));
+    assert.deepEqual(Object.keys(echoed.input).sort(), Object.keys(input).sort());
 
     assert.equal((await post(a + "/predict", {})).status, 400);
     assert.equal((await post(a + "/predict", { solar_index: "abc" })).status, 400);
@@ -183,4 +206,26 @@ test("rate limit covers both APIs and counts the real visitor behind one proxy",
     assert.equal((await hit("/api/analog/predict?solar_index=5", "203.0.113.7")).status, 429);
     assert.equal((await hit("/api/v1/locations", "203.0.113.8")).status, 200);
   });
+});
+
+test("engine routes reject prototype keys and null sites instead of returning 500", async () => {
+  await withServer({}, async (base) => {
+    const a = base + "/api/analog";
+    for (const target of ["constructor", "__proto__", "toString", "", "venus"])
+      assert.equal((await fetch(a + "/rank?target=" + target)).status, 400, target);
+    assert.equal((await fetch(a + "/rank?target=moon&target=mars")).status, 400);
+    assert.equal((await fetch(a + "/rank?target=Moon")).status, 200);
+    assert.equal((await post(a + "/score", { target: "moon", site: null, sites: [null] })).status, 400);
+    assert.equal((await post(a + "/score", { target: "moon", sites: [null] })).status, 400);
+    assert.equal((await post(a + "/score", { target: "moon", sites: [1] })).status, 400);
+    assert.equal((await post(a + "/score", { target: "constructor", site: {} })).status, 400);
+    assert.equal((await post(a + "/score", { target: "moon", site: { albedo: 0.1 } })).status, 200);
+  });
+});
+
+test("TRUST_PROXY: start-up can tell whether it was set deliberately", () => {
+  assert.equal(getConfig({}).trustProxyExplicit, false);
+  assert.equal(getConfig({ TRUST_PROXY: "" }).trustProxyExplicit, false);
+  assert.equal(getConfig({ TRUST_PROXY: "0" }).trustProxyExplicit, true);
+  assert.equal(getConfig({ TRUST_PROXY: "1" }).trustProxy, 1);
 });
